@@ -1,0 +1,101 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: clock_seq_hi_and_reserved
+    rw: RW
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: clock_seq_low
+    rw: RW
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: nodes
+    rw: RW
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: time_hi_and_version
+    rw: RW
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: time_low
+    rw: RW
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: time_mid
+    rw: RW
+class_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: mac_address=
+  - !ruby/object:RI::MethodSummary 
+    name: md5_create
+  - !ruby/object:RI::MethodSummary 
+    name: new
+  - !ruby/object:RI::MethodSummary 
+    name: parse
+  - !ruby/object:RI::MethodSummary 
+    name: parse_hexdigest
+  - !ruby/object:RI::MethodSummary 
+    name: parse_int
+  - !ruby/object:RI::MethodSummary 
+    name: parse_raw
+  - !ruby/object:RI::MethodSummary 
+    name: random_create
+  - !ruby/object:RI::MethodSummary 
+    name: sha1_create
+  - !ruby/object:RI::MethodSummary 
+    name: timestamp_create
+comment: 
+  - !ruby/struct:SM::Flow::H 
+    level: 1
+    text: uuidtools.rb
+  - !ruby/struct:SM::Flow::VERB 
+    body: " UUIDTools was designed to be a simple library for generating any\n of the various types of UUIDs.  It conforms to RFC 4122 whenever\n possible.\n"
+  - !ruby/struct:SM::Flow::H 
+    level: 2
+    text: Example
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  UUID.md5_create(UUID_DNS_NAMESPACE, &quot;www.widgets.com&quot;)\n  =&gt; #&lt;UUID:0x287576 UUID:3d813cbb-47fb-32ba-91df-831e1593ac29&gt;\n  UUID.sha1_create(UUID_DNS_NAMESPACE, &quot;www.widgets.com&quot;)\n  =&gt; #&lt;UUID:0x2a0116 UUID:21f7f8de-8051-5b89-8680-0195ef798b6a&gt;\n  UUID.timestamp_create\n  =&gt; #&lt;UUID:0x2adfdc UUID:64a5189c-25b3-11da-a97b-00c04fd430c8&gt;\n  UUID.random_create\n  =&gt; #&lt;UUID:0x19013a UUID:984265dc-4200-4f02-ae70-fe4f48964159&gt;\n"
+constants: []
+
+full_name: UUIDTools::UUID
+includes: 
+  - !ruby/object:RI::IncludedModule 
+    name: Comparable
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: <=>
+  - !ruby/object:RI::MethodSummary 
+    name: eql?
+  - !ruby/object:RI::MethodSummary 
+    name: hash
+  - !ruby/object:RI::MethodSummary 
+    name: hexdigest
+  - !ruby/object:RI::MethodSummary 
+    name: inspect
+  - !ruby/object:RI::MethodSummary 
+    name: mac_address
+  - !ruby/object:RI::MethodSummary 
+    name: nil_uuid?
+  - !ruby/object:RI::MethodSummary 
+    name: random_node_id?
+  - !ruby/object:RI::MethodSummary 
+    name: raw
+  - !ruby/object:RI::MethodSummary 
+    name: timestamp
+  - !ruby/object:RI::MethodSummary 
+    name: to_i
+  - !ruby/object:RI::MethodSummary 
+    name: to_s
+  - !ruby/object:RI::MethodSummary 
+    name: to_str
+  - !ruby/object:RI::MethodSummary 
+    name: to_uri
+  - !ruby/object:RI::MethodSummary 
+    name: valid?
+  - !ruby/object:RI::MethodSummary 
+    name: variant
+  - !ruby/object:RI::MethodSummary 
+    name: version
+name: UUID
+superclass: Object

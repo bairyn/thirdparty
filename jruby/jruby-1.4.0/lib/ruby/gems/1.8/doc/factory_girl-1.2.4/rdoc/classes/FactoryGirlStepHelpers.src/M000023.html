@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>convert_association_string_to_instance (FactoryGirlStepHelpers)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>    <span class="ruby-comment cmt"># File lib/factory_girl/step_definitions.rb, line 2</span>
+ 2:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">convert_association_string_to_instance</span>(<span class="ruby-identifier">factory_name</span>, <span class="ruby-identifier">assignment</span>)
+ 3:     <span class="ruby-identifier">attribute</span>, <span class="ruby-identifier">value</span> = <span class="ruby-identifier">assignment</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">':'</span>, <span class="ruby-value">2</span>)
+ 4:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">blank?</span>
+ 5:     <span class="ruby-identifier">attributes</span> = <span class="ruby-identifier">convert_human_hash_to_attribute_hash</span>(<span class="ruby-identifier">attribute</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">strip</span>)
+ 6:     <span class="ruby-identifier">factory</span> = <span class="ruby-constant">Factory</span>.<span class="ruby-identifier">factory_by_name</span>(<span class="ruby-identifier">factory_name</span>)
+ 7:     <span class="ruby-identifier">model_class</span> = <span class="ruby-identifier">factory</span>.<span class="ruby-identifier">build_class</span>
+ 8:     <span class="ruby-identifier">model_class</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">:first</span>, <span class="ruby-identifier">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">attributes</span>) <span class="ruby-keyword kw">or</span>
+ 9:       <span class="ruby-constant">Factory</span>(<span class="ruby-identifier">factory_name</span>, <span class="ruby-identifier">attributes</span>)
+10:   <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

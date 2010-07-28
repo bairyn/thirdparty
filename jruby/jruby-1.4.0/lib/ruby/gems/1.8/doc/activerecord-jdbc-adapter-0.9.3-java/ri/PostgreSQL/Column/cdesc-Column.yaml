@@ -1,0 +1,22 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: "::PostgreSQL::Column"
+includes: []
+
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: cast_to_boolean
+  - !ruby/object:RI::MethodSummary 
+    name: default_value
+  - !ruby/object:RI::MethodSummary 
+    name: simplified_type
+  - !ruby/object:RI::MethodSummary 
+    name: type_cast
+name: Column
+superclass: 

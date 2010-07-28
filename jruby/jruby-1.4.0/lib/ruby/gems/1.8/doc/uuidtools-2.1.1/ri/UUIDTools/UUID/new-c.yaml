@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: UUIDTools::UUID::new
+is_singleton: true
+name: new
+params: (time_low, time_mid, time_hi_and_version, clock_seq_hi_and_reserved, clock_seq_low, nodes)
+visibility: public

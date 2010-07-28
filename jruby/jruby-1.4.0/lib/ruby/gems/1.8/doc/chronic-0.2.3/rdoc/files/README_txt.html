@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: README.txt</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>README.txt</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>README.txt
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Thu Apr 01 16:31:52 -0700 2010</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+<a href="../classes/Chronic.html">Chronic</a>
+</p>
+<pre>
+        http://chronic.rubyforge.org/
+        by Tom Preston-Werner
+</pre>
+<h2>DESCRIPTION:</h2>
+<p>
+<a href="../classes/Chronic.html">Chronic</a> is a natural language
+date/time parser written in pure Ruby. See below for the wide variety of
+formats <a href="../classes/Chronic.html">Chronic</a> will parse.
+</p>
+<h2>INSTALLATION:</h2>
+<p>
+<a href="../classes/Chronic.html">Chronic</a> can be installed via
+RubyGems:
+</p>
+<pre>
+  $ sudo gem install chronic
+</pre>
+<h2>USAGE:</h2>
+<p>
+You can parse strings containing a natural language date using the <a
+href="../classes/Chronic.html#M000214">Chronic.parse</a> method.
+</p>
+<pre>
+  require 'rubygems'
+  require 'chronic'
+
+  Time.now   #=&gt; Sun Aug 27 23:18:25 PDT 2006
+
+  #---
+
+  Chronic.parse('tomorrow')
+    #=&gt; Mon Aug 28 12:00:00 PDT 2006
+
+  Chronic.parse('monday', :context =&gt; :past)
+    #=&gt; Mon Aug 21 12:00:00 PDT 2006
+
+  Chronic.parse('this tuesday 5:00')
+    #=&gt; Tue Aug 29 17:00:00 PDT 2006
+
+  Chronic.parse('this tuesday 5:00', :ambiguous_time_range =&gt; :none)
+    #=&gt; Tue Aug 29 05:00:00 PDT 2006
+
+  Chronic.parse('may 27th', :now =&gt; Time.local(2000, 1, 1))
+    #=&gt; Sat May 27 12:00:00 PDT 2000
+
+  Chronic.parse('may 27th', :guess =&gt; false)
+    #=&gt; Sun May 27 00:00:00 PDT 2007..Mon May 28 00:00:00 PDT 2007
+</pre>
+<p>
+See <a href="../classes/Chronic.html#M000214">Chronic.parse</a> for
+detailed usage instructions.
+</p>
+<h2>EXAMPLES:</h2>
+<p>
+<a href="../classes/Chronic.html">Chronic</a> can parse a huge variety of
+date and time formats. Following is a small sample of strings that will be
+properly parsed. Parsing is case insensitive and will handle common
+abbreviations and misspellings.
+</p>
+<p>
+Simple
+</p>
+<pre>
+  thursday
+  november
+  summer
+  friday 13:00
+  mon 2:35
+  4pm
+  6 in the morning
+  friday 1pm
+  sat 7 in the evening
+  yesterday
+  today
+  tomorrow
+  this tuesday
+  next month
+  last winter
+  this morning
+  last night
+  this second
+  yesterday at 4:00
+  last friday at 20:00
+  last week tuesday
+  tomorrow at 6:45pm
+  afternoon yesterday
+  thursday last week
+</pre>
+<p>
+Complex
+</p>
+<pre>
+  3 years ago
+  5 months before now
+  7 hours ago
+  7 days from now
+  1 week hence
+  in 3 hours
+  1 year ago tomorrow
+  3 months ago saturday at 5:00 pm
+  7 hours before tomorrow at noon
+  3rd wednesday in november
+  3rd month next year
+  3rd thursday this september
+  4th day last week
+</pre>
+<p>
+Specific Dates
+</p>
+<pre>
+  January 5
+  dec 25
+  may 27th
+  October 2006
+  oct 06
+  jan 3 2010
+  february 14, 2004
+  3 jan 2000
+  17 april 85
+  5/27/1979
+  27/5/1979
+  05/06
+  1979-05-27
+  Friday
+  5
+  4:00
+  17:00
+  0800
+</pre>
+<p>
+Specific Times (many of the above with an added time)
+</p>
+<pre>
+  January 5 at 7pm
+  1979-05-27 05:00:00
+  etc
+</pre>
+<h2>LIMITATIONS:</h2>
+<p>
+<a href="../classes/Chronic.html">Chronic</a> uses Ruby&#8216;s built in <a
+href="../classes/Time.html">Time</a> class for all time storage and
+computation. Because of this, only times that the <a
+href="../classes/Time.html">Time</a> class can handle will be properly
+parsed. Parsing for times outside of this range will simply return nil.
+Support for a wider range of times is planned for a future release.
+</p>
+<p>
+<a href="../classes/Time.html">Time</a> zones other than the local one are
+not currently supported. Support for other time zones is planned for a
+future release.
+</p>
+<h2>LICENSE:</h2>
+<p>
+(The MIT License)
+</p>
+<p>
+Copyright (c) 2006 Ryan Davis, Zen Spider Software
+</p>
+<p>
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the
+&quot;Software&quot;), to deal in the Software without restriction,
+including without limitation the rights to use, copy, modify, merge,
+publish, distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to the
+following conditions:
+</p>
+<p>
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+</p>
+<p>
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+USE OR OTHER DEALINGS IN THE SOFTWARE.
+</p>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The API key for your project, found on the project edit form.
+    name: api_key
+    rw: RW
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: "A list of filters for cleaning and pruning the backtrace. See #filter_backtrace."
+    name: backtrace_filters
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: A list of environments in which notifications should not be sent.
+    name: development_environments
+    rw: RW
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: <tt>true</tt> if you want to check for production errors matching development errors, <tt>false</tt> otherwise.
+    name: development_lookup
+    rw: RW
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The name of the environment the application is running in
+    name: environment_name
+    rw: RW
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The framework HoptoadNotifier is configured to use
+    name: framework
+    rw: RW
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The host to connect to (defaults to hoptoadapp.com).
+    name: host
+    rw: RW
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The HTTP open timeout in seconds (defaults to 2).
+    name: http_open_timeout
+    rw: RW
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The HTTP read timeout in seconds (defaults to 5).
+    name: http_read_timeout
+    rw: RW
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: A list of exception classes to ignore. The array can be appended to.
+    name: ignore
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: "A list of filters for ignoring exceptions. See #ignore_by_filter."
+    name: ignore_by_filters
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: A list of user agents that are being ignored. The array can be appended to.
+    name: ignore_user_agent
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The logger used by HoptoadNotifier
+    name: logger
+    rw: RW
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The name of the notifier library being used to send notifications (such as &quot;Hoptoad Notifier&quot;)
+    name: notifier_name
+    rw: RW
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The url of the notifier library being used to send notifications
+    name: notifier_url
+    rw: RW
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The version of the notifier library being used to send notifications (such as &quot;1.0.2&quot;)
+    name: notifier_version
+    rw: RW
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: A list of parameters that should be filtered out of what is sent to Hoptoad. By default, all &quot;password&quot; attributes will have their contents replaced.
+    name: params_filters
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The port on which your Hoptoad server runs (defaults to 443 for secure connections, 80 for insecure connections).
+    name: port
+    rw: RW
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The path to the project in which the error occurred, such as the RAILS_ROOT
+    name: project_root
+    rw: RW
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The hostname of your proxy server (if using a proxy)
+    name: proxy_host
+    rw: RW
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The password to use when logging into your proxy server (if using a proxy)
+    name: proxy_pass
+    rw: RW
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The port of your proxy server (if using a proxy)
+    name: proxy_port
+    rw: RW
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The username to use when logging into your proxy server (if using a proxy)
+    name: proxy_user
+    rw: RW
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: <tt>true</tt> for https connections, <tt>false</tt> for http connections.
+    name: secure
+    rw: RW
+class_methods: []
+
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Used to set up and modify settings for the notifier.
+constants: 
+  - !ruby/object:RI::Constant 
+    comment: 
+    name: OPTIONS
+    value: "[:api_key, :backtrace_filters, :development_environments,         :development_lookup, :environment_name, :host,         :http_open_timeout, :http_read_timeout, :ignore, :ignore_by_filters,         :ignore_user_agent, :notifier_name, :notifier_url, :notifier_version,         :params_filters, :project_root, :port, :protocol, :proxy_host,         :proxy_pass, :proxy_port, :proxy_user, :secure, :framework].freeze"
+  - !ruby/object:RI::Constant 
+    comment: 
+    name: DEFAULT_PARAMS_FILTERS
+    value: "%w(password password_confirmation).freeze"
+  - !ruby/object:RI::Constant 
+    comment: 
+    name: DEFAULT_BACKTRACE_FILTERS
+    value: "[       lambda { |line|         if defined?(HoptoadNotifier.configuration.project_root) && HoptoadNotifier.configuration.project_root.to_s != ''"
+full_name: HoptoadNotifier::Configuration
+includes: []
+
+instance_methods: []
+
+name: Configuration
+superclass: Object

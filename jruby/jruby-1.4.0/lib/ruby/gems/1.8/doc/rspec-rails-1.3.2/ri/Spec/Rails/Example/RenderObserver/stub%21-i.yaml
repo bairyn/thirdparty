@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: FIXME - for some reason, neither alias nor alias_method are working as expected in the else branch, so this is a duplicate of stub() above. Could delegate, but then we'd run into craziness handling :expected_from. This will have to do for the moment.
+full_name: Spec::Rails::Example::RenderObserver#stub!
+is_singleton: false
+name: stub!
+params: (*args)
+visibility: public

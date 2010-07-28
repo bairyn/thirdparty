@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Alias for #referrer"
+full_name: ActionController::AbstractRequest#referer
+is_singleton: false
+name: referer
+params: ()
+visibility: public

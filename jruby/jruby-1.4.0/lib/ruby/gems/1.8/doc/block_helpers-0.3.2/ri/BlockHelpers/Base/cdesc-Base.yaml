@@ -1,0 +1,40 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: current_helper
+    rw: RW
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: current_parent_block_helper
+    rw: RW
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: helper
+    rw: W
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: parent
+    rw: W
+class_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: inherited
+comment: 
+constants: []
+
+full_name: BlockHelpers::Base
+includes: []
+
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: display
+  - !ruby/object:RI::MethodSummary 
+    name: helper
+  - !ruby/object:RI::MethodSummary 
+    name: method_missing
+  - !ruby/object:RI::MethodSummary 
+    name: parent
+  - !ruby/object:RI::MethodSummary 
+    name: respond_to?
+name: Base
+superclass: Object

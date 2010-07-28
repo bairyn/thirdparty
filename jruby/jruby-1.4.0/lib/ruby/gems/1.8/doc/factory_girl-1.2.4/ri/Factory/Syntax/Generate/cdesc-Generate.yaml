@@ -1,0 +1,23 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Extends ActiveRecord::Base to provide generation methods for factories.
+  - !ruby/struct:SM::Flow::P 
+    body: "Usage:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  require 'factory_girl/syntax/generate'\n\n  Factory.define :user do |factory|\n    factory.name 'Billy Bob'\n    factory.email 'billy@bob.example.com'\n  end\n\n  # Creates a saved instance without raising (same as saving the result\n  # of Factory.build)\n  User.generate(:name =&gt; 'Johnny')\n\n  # Creates a saved instance and raises when invalid (same as\n  # Factory.create)\n  User.generate!\n\n  # Creates an unsaved instance (same as Factory.build)\n  User.spawn\n\n  # Creates an instance and yields it to the passed block\n  User.generate do |user|\n    # ...do something with user...\n  end\n"
+  - !ruby/struct:SM::Flow::P 
+    body: This syntax was derived from Rick Bradley and Yossef Mendelssohn's object_daddy.
+constants: []
+
+full_name: Factory::Syntax::Generate
+includes: []
+
+instance_methods: []
+
+name: Generate
+superclass: 

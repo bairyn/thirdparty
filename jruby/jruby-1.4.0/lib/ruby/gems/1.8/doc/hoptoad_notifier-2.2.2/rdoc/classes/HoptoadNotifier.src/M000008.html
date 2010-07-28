@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>new (HoptoadNotifier)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>     <span class="ruby-comment cmt"># File lib/hoptoad_notifier/configuration.rb, line 115</span>
+115:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
+116:       <span class="ruby-ivar">@secure</span>                   = <span class="ruby-keyword kw">false</span>
+117:       <span class="ruby-ivar">@host</span>                     = <span class="ruby-value str">'hoptoadapp.com'</span>
+118:       <span class="ruby-ivar">@http_open_timeout</span>        = <span class="ruby-value">2</span>
+119:       <span class="ruby-ivar">@http_read_timeout</span>        = <span class="ruby-value">5</span>
+120:       <span class="ruby-ivar">@params_filters</span>           = <span class="ruby-constant">DEFAULT_PARAMS_FILTERS</span>.<span class="ruby-identifier">dup</span>
+121:       <span class="ruby-ivar">@backtrace_filters</span>        = <span class="ruby-constant">DEFAULT_BACKTRACE_FILTERS</span>.<span class="ruby-identifier">dup</span>
+122:       <span class="ruby-ivar">@ignore_by_filters</span>        = []
+123:       <span class="ruby-ivar">@ignore</span>                   = <span class="ruby-constant">IGNORE_DEFAULT</span>.<span class="ruby-identifier">dup</span>
+124:       <span class="ruby-ivar">@ignore_user_agent</span>        = []
+125:       <span class="ruby-ivar">@development_environments</span> = <span class="ruby-node">%w(development test cucumber)</span>
+126:       <span class="ruby-ivar">@development_lookup</span>       = <span class="ruby-keyword kw">true</span>
+127:       <span class="ruby-ivar">@notifier_name</span>            = <span class="ruby-value str">'Hoptoad Notifier'</span>
+128:       <span class="ruby-ivar">@notifier_version</span>         = <span class="ruby-constant">VERSION</span>
+129:       <span class="ruby-ivar">@notifier_url</span>             = <span class="ruby-value str">'http://hoptoadapp.com'</span>
+130:       <span class="ruby-ivar">@framework</span>                = <span class="ruby-value str">'Standalone'</span>
+131:     <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

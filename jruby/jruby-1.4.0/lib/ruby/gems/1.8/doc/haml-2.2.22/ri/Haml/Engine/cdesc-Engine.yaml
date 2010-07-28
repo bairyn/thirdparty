@@ -1,0 +1,55 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The indentation used in the Haml document, or `nil` if the indentation is ambiguous (for example, for a single-level document).
+      - !ruby/struct:SM::Flow::P 
+        body: "@return [String]"
+    name: indentation
+    rw: RW
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The options hash. See {file:HAML_REFERENCE.md#haml_options the Haml options documentation}.
+      - !ruby/struct:SM::Flow::P 
+        body: "@return [{Symbol =&gt; Object}]"
+    name: options
+    rw: RW
+class_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: new
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "This is the frontend for using Haml programmatically. It can be directly used by the user by creating a new instance and calling \\{#render} to render the template. For example:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    template = File.read('templates/really_cool_template.haml')\n    haml_engine = Haml::Engine.new(template)\n    output = haml_engine.render\n    puts output\n"
+constants: []
+
+full_name: Haml::Engine
+includes: 
+  - !ruby/object:RI::IncludedModule 
+    name: Precompiler
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: def_method
+  - !ruby/object:RI::MethodSummary 
+    name: html4?
+  - !ruby/object:RI::MethodSummary 
+    name: html5?
+  - !ruby/object:RI::MethodSummary 
+    name: html?
+  - !ruby/object:RI::MethodSummary 
+    name: options_for_buffer
+  - !ruby/object:RI::MethodSummary 
+    name: precompiled
+  - !ruby/object:RI::MethodSummary 
+    name: render
+  - !ruby/object:RI::MethodSummary 
+    name: render_proc
+  - !ruby/object:RI::MethodSummary 
+    name: to_html
+  - !ruby/object:RI::MethodSummary 
+    name: xhtml?
+name: Engine
+superclass: Object

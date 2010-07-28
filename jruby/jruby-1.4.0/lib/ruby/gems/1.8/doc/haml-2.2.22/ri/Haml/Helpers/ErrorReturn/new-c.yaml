@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "@param message [String] The error message to raise when \\{#to_s} is called"
+full_name: Haml::Helpers::ErrorReturn::new
+is_singleton: true
+name: new
+params: (method)
+visibility: public

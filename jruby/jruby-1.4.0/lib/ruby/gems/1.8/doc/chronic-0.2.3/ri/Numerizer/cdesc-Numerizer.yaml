@@ -1,0 +1,27 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: numerize
+comment: 
+constants: 
+  - !ruby/object:RI::Constant 
+    comment: 
+    name: DIRECT_NUMS
+    value: "[                   ['eleven', '11'],                   ['twelve', '12'],                   ['thirteen', '13'],                   ['fourteen', '14'],                   ['fifteen', '15'],                   ['sixteen', '16'],                   ['seventeen', '17'],                   ['eighteen', '18'],                   ['nineteen', '19'],                   ['ninteen', '19'], # Common mis-spelling                   ['zero', '0'],                   ['one', '1'],                   ['two', '2'],                   ['three', '3'],                   ['four(\\W|$)', '4\\1'],  # The weird regex is so that it matches four but not fourty                   ['five', '5'],                   ['six(\\W|$)', '6\\1'],                   ['seven(\\W|$)', '7\\1'],                   ['eight(\\W|$)', '8\\1'],                   ['nine(\\W|$)', '9\\1'],                   ['ten', '10'],                   ['\\ba[\\b^$]', '1']"
+  - !ruby/object:RI::Constant 
+    comment: 
+    name: TEN_PREFIXES
+    value: "[ ['twenty', 20],                     ['thirty', 30],                     ['fourty', 40],                     ['fifty', 50],                     ['sixty', 60],                     ['seventy', 70],                     ['eighty', 80],                     ['ninety', 90]"
+  - !ruby/object:RI::Constant 
+    comment: 
+    name: BIG_PREFIXES
+    value: "[ ['hundred', 100],                     ['thousand', 1000],                     ['million', 1_000_000],                     ['billion', 1_000_000_000],                     ['trillion', 1_000_000_000_000],                   ]"
+full_name: Numerizer
+includes: []
+
+instance_methods: []
+
+name: Numerizer
+superclass: Object

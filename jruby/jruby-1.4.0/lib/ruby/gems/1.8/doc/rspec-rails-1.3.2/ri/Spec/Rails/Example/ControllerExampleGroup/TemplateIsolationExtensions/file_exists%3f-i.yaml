@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Spec::Rails::Example::ControllerExampleGroup::TemplateIsolationExtensions#file_exists?
+is_singleton: false
+name: file_exists?
+params: (ignore)
+visibility: public

@@ -1,0 +1,15 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+  - !ruby/object:RI::AliasName 
+    name: to_css
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Render the template to CSS.
+  - !ruby/struct:SM::Flow::P 
+    body: "@return [String] The CSS @raise [Sass::SyntaxError] if there's an error in the document"
+full_name: Sass::Engine#render
+is_singleton: false
+name: render
+params: ()
+visibility: public

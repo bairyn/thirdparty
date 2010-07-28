@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: "::MySQL#show_variable"
+is_singleton: false
+name: show_variable
+params: (var)
+visibility: public

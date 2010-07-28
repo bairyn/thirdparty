@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Outputs text directly to the Haml buffer, with the proper indentation.
+  - !ruby/struct:SM::Flow::P 
+    body: "@param text [#to_s] The text to output"
+full_name: Haml::Helpers#haml_concat
+is_singleton: false
+name: haml_concat
+params: (text = "")
+visibility: public

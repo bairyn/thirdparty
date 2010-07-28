@@ -1,0 +1,20 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Increments the number of tabs the buffer automatically adds to the lines of the template. For example:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    %h1 foo\n    - tab_up\n    %p bar\n    - tab_down\n    %strong baz\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "Produces:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    &lt;h1&gt;foo&lt;/h1&gt;\n      &lt;p&gt;bar&lt;/p&gt;\n    &lt;strong&gt;baz&lt;/strong&gt;\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "@param i [Fixnum] The number of tabs by which to increase the indentation @see #tab_down"
+full_name: Haml::Helpers#tab_up
+is_singleton: false
+name: tab_up
+params: (i = 1)
+visibility: public

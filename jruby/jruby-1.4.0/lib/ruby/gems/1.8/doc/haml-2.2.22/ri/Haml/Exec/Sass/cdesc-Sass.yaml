@@ -1,0 +1,21 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: new
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The `sass` executable.
+constants: []
+
+full_name: Haml::Exec::Sass
+includes: []
+
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: process_result
+  - !ruby/object:RI::MethodSummary 
+    name: set_opts
+name: Sass
+superclass: HamlSass

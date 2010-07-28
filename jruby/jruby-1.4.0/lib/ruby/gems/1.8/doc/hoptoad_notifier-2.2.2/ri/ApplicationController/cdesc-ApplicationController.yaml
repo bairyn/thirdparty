@@ -1,0 +1,28 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: ApplicationController
+includes: []
+
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: consider_all_requests_local
+  - !ruby/object:RI::MethodSummary 
+    name: exception_class
+  - !ruby/object:RI::MethodSummary 
+    name: local_request?
+  - !ruby/object:RI::MethodSummary 
+    name: logger
+  - !ruby/object:RI::MethodSummary 
+    name: rescue_action
+  - !ruby/object:RI::MethodSummary 
+    name: test_hoptoad
+  - !ruby/object:RI::MethodSummary 
+    name: verify
+name: ApplicationController
+superclass: Object

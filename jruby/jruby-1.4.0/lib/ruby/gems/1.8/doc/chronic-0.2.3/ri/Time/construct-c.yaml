@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Time::construct
+is_singleton: true
+name: construct
+params: (year, month = 1, day = 1, hour = 0, minute = 0, second = 0)
+visibility: public

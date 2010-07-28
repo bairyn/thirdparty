@@ -1,0 +1,27 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Generates, saves, and returns an instance from this factory. Attributes can be individually overridden by passing in a Hash of attribute =&gt; value pairs.
+  - !ruby/struct:SM::Flow::P 
+    body: Instances are saved using the +save!+ method, so ActiveRecord models will raise ActiveRecord::RecordInvalid exceptions for invalid attribute sets.
+  - !ruby/struct:SM::Flow::P 
+    body: "Arguments:"
+  - !ruby/object:SM::Flow::LIST 
+    contents: 
+      - !ruby/struct:SM::Flow::LI 
+        label: "*"
+        body: "name: <tt>Symbol</tt> or <tt>String</tt> The name of the factory that should be used."
+      - !ruby/struct:SM::Flow::LI 
+        label: "*"
+        body: "overrides: <tt>Hash</tt> Attributes to overwrite for this instance."
+    type: :BULLET
+  - !ruby/struct:SM::Flow::P 
+    body: "Returns: <tt>Object</tt> A saved instance of the class this factory generates, with generated attributes assigned."
+full_name: Factory::create
+is_singleton: true
+name: create
+params: (name, overrides = {})
+visibility: public

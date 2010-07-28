@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>new (HoptoadNotifier::Notice)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>    <span class="ruby-comment cmt"># File lib/hoptoad_notifier/notice.rb, line 66</span>
+66:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">args</span>)
+67:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">args</span>         = <span class="ruby-identifier">args</span>
+68:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">exception</span>    = <span class="ruby-identifier">args</span>[<span class="ruby-identifier">:exception</span>]
+69:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">api_key</span>      = <span class="ruby-identifier">args</span>[<span class="ruby-identifier">:api_key</span>]
+70:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">project_root</span> = <span class="ruby-identifier">args</span>[<span class="ruby-identifier">:project_root</span>]
+71:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">url</span>          = <span class="ruby-identifier">args</span>[<span class="ruby-identifier">:url</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">rack_env</span>(<span class="ruby-identifier">:url</span>)
+72: 
+73:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">notifier_name</span>    = <span class="ruby-identifier">args</span>[<span class="ruby-identifier">:notifier_name</span>]
+74:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">notifier_version</span> = <span class="ruby-identifier">args</span>[<span class="ruby-identifier">:notifier_version</span>]
+75:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">notifier_url</span>     = <span class="ruby-identifier">args</span>[<span class="ruby-identifier">:notifier_url</span>]
+76: 
+77:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">ignore</span>              = <span class="ruby-identifier">args</span>[<span class="ruby-identifier">:ignore</span>]              <span class="ruby-operator">||</span> []
+78:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">ignore_by_filters</span>   = <span class="ruby-identifier">args</span>[<span class="ruby-identifier">:ignore_by_filters</span>]   <span class="ruby-operator">||</span> []
+79:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">backtrace_filters</span>   = <span class="ruby-identifier">args</span>[<span class="ruby-identifier">:backtrace_filters</span>]   <span class="ruby-operator">||</span> []
+80:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">params_filters</span>      = <span class="ruby-identifier">args</span>[<span class="ruby-identifier">:params_filters</span>]      <span class="ruby-operator">||</span> []
+81:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">parameters</span>          = <span class="ruby-identifier">args</span>[<span class="ruby-identifier">:parameters</span>]          <span class="ruby-operator">||</span> <span class="ruby-identifier">rack_env</span>(<span class="ruby-identifier">:params</span>) <span class="ruby-operator">||</span> {}
+82:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">component</span>           = <span class="ruby-identifier">args</span>[<span class="ruby-identifier">:component</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">args</span>[<span class="ruby-identifier">:controller</span>]
+83:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">action</span>              = <span class="ruby-identifier">args</span>[<span class="ruby-identifier">:action</span>]
+84: 
+85:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">environment_name</span> = <span class="ruby-identifier">args</span>[<span class="ruby-identifier">:environment_name</span>]
+86:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">cgi_data</span>         = <span class="ruby-identifier">args</span>[<span class="ruby-identifier">:cgi_data</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">args</span>[<span class="ruby-identifier">:rack_env</span>]
+87:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">backtrace</span>        = <span class="ruby-constant">Backtrace</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">exception_attribute</span>(<span class="ruby-identifier">:backtrace</span>, <span class="ruby-identifier">caller</span>), <span class="ruby-identifier">:filters</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">backtrace_filters</span>)
+88:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">error_class</span>      = <span class="ruby-identifier">exception_attribute</span>(<span class="ruby-identifier">:error_class</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">exception</span><span class="ruby-operator">|</span> <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">name</span> }
+89:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">error_message</span>    = <span class="ruby-identifier">exception_attribute</span>(<span class="ruby-identifier">:error_message</span>, <span class="ruby-value str">'Notification'</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">exception</span><span class="ruby-operator">|</span>
+90:         <span class="ruby-node">&quot;#{exception.class.name}: #{exception.message}&quot;</span>
+91:       <span class="ruby-keyword kw">end</span>
+92: 
+93:       <span class="ruby-identifier">find_session_data</span>
+94:       <span class="ruby-identifier">clean_params</span>
+95:     <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

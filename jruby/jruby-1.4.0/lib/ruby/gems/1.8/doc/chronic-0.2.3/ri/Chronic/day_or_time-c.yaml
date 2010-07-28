@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Chronic::day_or_time
+is_singleton: true
+name: day_or_time
+params: (day_start, time_tokens, options)
+visibility: public

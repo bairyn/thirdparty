@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The source code that is evaluated to produce the Haml document.
+  - !ruby/struct:SM::Flow::P 
+    body: In Ruby 1.9, this is automatically converted to the correct encoding (see {file:HAML_REFERENCE.md#encoding-option the `:encoding` option}).
+  - !ruby/struct:SM::Flow::P 
+    body: "@return [String]"
+full_name: Haml::Engine#precompiled
+is_singleton: false
+name: precompiled
+params: ()
+visibility: public

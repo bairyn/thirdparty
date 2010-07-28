@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Factory::Syntax</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Factory::Syntax</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/factory_girl/syntax/blueprint_rb.html">
+                lib/factory_girl/syntax/blueprint.rb
+                </a>
+        <br />
+                <a href="../../files/lib/factory_girl/syntax/generate_rb.html">
+                lib/factory_girl/syntax/generate.rb
+                </a>
+        <br />
+                <a href="../../files/lib/factory_girl/syntax/make_rb.html">
+                lib/factory_girl/syntax/make.rb
+                </a>
+        <br />
+                <a href="../../files/lib/factory_girl/syntax/sham_rb.html">
+                lib/factory_girl/syntax/sham.rb
+                </a>
+        <br />
+                <a href="../../files/lib/factory_girl/syntax_rb.html">
+                lib/factory_girl/syntax.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Provides alternate syntaxes for factory_girl. If you don&#8216;t like the
+default syntax for defining or using factories, look at one of the <a
+href="Syntax.html">Factory::Syntax</a> modules:
+</p>
+<ul>
+<li><a href="Syntax/Blueprint.html">Factory::Syntax::Blueprint</a>: definition
+syntax similar to Machinist
+
+</li>
+<li><a href="Syntax/Generate.html">Factory::Syntax::Generate</a>: usage syntax
+similar to Object Daddy
+
+</li>
+<li><a href="Syntax/Make.html">Factory::Syntax::Make</a>: usage syntax similar
+to Machinist
+
+</li>
+<li><a href="Syntax/Sham.html">Factory::Syntax::Sham</a>: sequence syntax
+similar to Machinist
+
+</li>
+</ul>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Module <a href="Syntax/Blueprint.html" class="link">Factory::Syntax::Blueprint</a><br />
+Module <a href="Syntax/Generate.html" class="link">Factory::Syntax::Generate</a><br />
+Module <a href="Syntax/Make.html" class="link">Factory::Syntax::Make</a><br />
+Module <a href="Syntax/Sham.html" class="link">Factory::Syntax::Sham</a><br />
+
+    </div>
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

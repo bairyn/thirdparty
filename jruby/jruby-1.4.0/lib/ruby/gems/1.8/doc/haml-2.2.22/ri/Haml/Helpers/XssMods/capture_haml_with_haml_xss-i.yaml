@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Output is always HTML safe
+full_name: Haml::Helpers::XssMods#capture_haml_with_haml_xss
+is_singleton: false
+name: capture_haml_with_haml_xss
+params: (*args, &block)
+visibility: public

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: securerandom.rb</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>securerandom.rb</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>lib/compat/securerandom.rb
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Thu Apr 29 22:03:14 -0700 2010</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <h1>Secure random number generator interface.</h1>
+<p>
+This library is an interface for secure random number generator which is
+suitable for generating session key in HTTP cookies, etc.
+</p>
+<p>
+It supports following secure random number generators.
+</p>
+<ul>
+<li>openssl
+
+</li>
+<li>/dev/urandom
+
+</li>
+<li>Win32
+
+</li>
+</ul>
+<h2>Example</h2>
+<p>
+# random hexadecimal string. p <a
+href="../../../classes/SecureRandom.html#M000002">SecureRandom.hex(10)</a>
+#=&gt; &quot;52750b30ffbc7de3b362&quot; p <a
+href="../../../classes/SecureRandom.html#M000002">SecureRandom.hex(10)</a>
+#=&gt; &quot;92b15d6c8dc4beb5f559&quot; p <a
+href="../../../classes/SecureRandom.html#M000002">SecureRandom.hex(11)</a>
+#=&gt; &quot;6aca1b5c58e4863e6b81b8&quot; p <a
+href="../../../classes/SecureRandom.html#M000002">SecureRandom.hex(12)</a>
+#=&gt; &quot;94b2fff3e7fd9b9c391a2306&quot; p <a
+href="../../../classes/SecureRandom.html#M000002">SecureRandom.hex(13)</a>
+#=&gt; &quot;39b290146bea6ce975c37cfc23&quot; &#8230;
+</p>
+<p>
+# random base64 string. p <a
+href="../../../classes/SecureRandom.html#M000003">SecureRandom.base64(10)</a>
+#=&gt; &quot;EcmTPZwWRAozdA==&quot; p <a
+href="../../../classes/SecureRandom.html#M000003">SecureRandom.base64(10)</a>
+#=&gt; &quot;9b0nsevdwNuM/w==&quot; p <a
+href="../../../classes/SecureRandom.html#M000003">SecureRandom.base64(10)</a>
+#=&gt; &quot;KO1nIU+p9DKxGg==&quot; p <a
+href="../../../classes/SecureRandom.html#M000003">SecureRandom.base64(11)</a>
+#=&gt; &quot;l7XEiFja+8EKEtY=&quot; p <a
+href="../../../classes/SecureRandom.html#M000003">SecureRandom.base64(12)</a>
+#=&gt; &quot;7kJSM/MzBJI+75j8&quot; p <a
+href="../../../classes/SecureRandom.html#M000003">SecureRandom.base64(13)</a>
+#=&gt; &quot;vKLJ0tXBHqQOuIcSIg==&quot; &#8230;
+</p>
+<p>
+# random binary string. p <a
+href="../../../classes/SecureRandom.html#M000001">SecureRandom.random_bytes(10)</a>
+#=&gt; &quot;\016\t{\370g\310pbr\301&quot; p <a
+href="../../../classes/SecureRandom.html#M000001">SecureRandom.random_bytes(10)</a>
+#=&gt; &quot;\323U\030TO\234\357\020\a\337&quot; &#8230;
+</p>
+
+    </div>
+
+    <div id="requires-list">
+      <h3 class="section-bar">Required files</h3>
+
+      <div class="name-list">
+      openssl&nbsp;&nbsp;
+      Win32API&nbsp;&nbsp;
+      </div>
+    </div>
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

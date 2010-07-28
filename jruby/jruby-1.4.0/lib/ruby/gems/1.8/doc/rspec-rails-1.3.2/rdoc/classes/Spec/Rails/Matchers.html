@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Spec::Rails::Matchers</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Spec::Rails::Matchers</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/spec/rails/matchers/ar_be_valid_rb.html">
+                lib/spec/rails/matchers/ar_be_valid.rb
+                </a>
+        <br />
+                <a href="../../../files/lib/spec/rails/matchers/assert_select_rb.html">
+                lib/spec/rails/matchers/assert_select.rb
+                </a>
+        <br />
+                <a href="../../../files/lib/spec/rails/matchers/have_text_rb.html">
+                lib/spec/rails/matchers/have_text.rb
+                </a>
+        <br />
+                <a href="../../../files/lib/spec/rails/matchers/include_text_rb.html">
+                lib/spec/rails/matchers/include_text.rb
+                </a>
+        <br />
+                <a href="../../../files/lib/spec/rails/matchers/redirect_to_rb.html">
+                lib/spec/rails/matchers/redirect_to.rb
+                </a>
+        <br />
+                <a href="../../../files/lib/spec/rails/matchers/render_template_rb.html">
+                lib/spec/rails/matchers/render_template.rb
+                </a>
+        <br />
+                <a href="../../../files/lib/spec/rails/matchers/route_to_rb.html">
+                lib/spec/rails/matchers/route_to.rb
+                </a>
+        <br />
+                <a href="../../../files/lib/spec/rails/matchers_rb.html">
+                lib/spec/rails/matchers.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Spec::Rails::Expectations::Matchers provides several expectation matchers
+intended to work with Rails components like models and responses. For
+example:
+</p>
+<pre>
+  response.should redirect_to(&quot;some/url&quot;) #redirect_to(url) is the matcher.
+</pre>
+<p>
+In addition to those you see below, the arbitrary predicate feature of
+RSpec makes the following available as well:
+</p>
+<pre>
+  response.should be_success #passes if response.success?
+  response.should be_redirect #passes if response.redirect?
+</pre>
+<p>
+Note that many of these matchers are part of a wrapper of
+<tt>assert_select</tt>, so the documentation comes straight from that with
+some slight modifications. <tt>assert_select</tt> is a <a
+href="../../Test/Unit.html">Test::Unit</a> extension originally contributed
+to the Rails community as a plugin by Assaf Arkin and eventually shipped as
+part of Rails.
+</p>
+<p>
+For more info on <tt>assert_select</tt>, see the relevant Rails
+documentation.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000928">be_routable</a>&nbsp;&nbsp;
+      <a href="#M000929">be_routeable</a>&nbsp;&nbsp;
+      <a href="#M000916">be_valid</a>&nbsp;&nbsp;
+      <a href="#M000920">have_rjs</a>&nbsp;&nbsp;
+      <a href="#M000917">have_tag</a>&nbsp;&nbsp;
+      <a href="#M000923">have_text</a>&nbsp;&nbsp;
+      <a href="#M000924">include_text</a>&nbsp;&nbsp;
+      <a href="#M000925">redirect_to</a>&nbsp;&nbsp;
+      <a href="#M000926">render_template</a>&nbsp;&nbsp;
+      <a href="#M000927">route_to</a>&nbsp;&nbsp;
+      <a href="#M000921">send_email</a>&nbsp;&nbsp;
+      <a href="#M000922">with_encoded</a>&nbsp;&nbsp;
+      <a href="#M000918">with_tag</a>&nbsp;&nbsp;
+      <a href="#M000919">without_tag</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Class <a href="Matchers/BeRoutable.html" class="link">Spec::Rails::Matchers::BeRoutable</a><br />
+Class <a href="Matchers/PathDecomposer.html" class="link">Spec::Rails::Matchers::PathDecomposer</a><br />
+
+    </div>
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">USAGE</td>
+          <td>=</td>
+          <td class="context-item-value">ArgumentError.new( 'usage: { :method =&gt; &quot;path&quot; }.should route_to( :controller =&gt; &quot;controller&quot;, :action =&gt; &quot;action&quot;, [ args ] )' )</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000928" class="method-detail">
+        <a name="M000928"></a>
+
+        <div class="method-heading">
+          <a href="Matchers.src/M000928.html" target="Code" class="method-signature"
+            onclick="popupCode('Matchers.src/M000928.html');return false;">
+          <span class="method-name">{ "path" }.should_not be_routable # assumes GET<br />
+{ :get => "path" }.should_not be_routable<br />
+{ :put => "path" }.should_not be_routable<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Uses ActionController::Routing::Routes to verify that the path-and-method
+cannot be routed to a controller. Since url_for() will always generate a
+path, even if that path is not routable, the negative test only needs to be
+performed on the route recognition.
+</p>
+<p>
+Don&#8216;t use this matcher for testing expected routability - use .should
+<a href="Matchers.html#M000927">route_to</a>( :controller =&gt;
+&quot;controller&quot;, :action =&gt; &quot;action&quot; ) instead
+</p>
+<h2>Examples</h2>
+<p>
+{ :get =&gt; &#8217;/registrations/1/attendees/3/edit&#8217; }.should_not
+<a href="Matchers.html#M000928">be_routable</a> { :get =&gt;
+&#8217;/attendees/3/edit&#8217; }.should <a
+href="Matchers.html#M000927">route_to</a>(
+&#8230;&lt;controller/action&gt;&#8230; )
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000929" class="method-detail">
+        <a name="M000929"></a>
+
+        <div class="method-heading">
+          <span class="method-name">be_routeable</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Matchers.html#M000928">be_routable</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000916" class="method-detail">
+        <a name="M000916"></a>
+
+        <div class="method-heading">
+          <a href="Matchers.src/M000916.html" target="Code" class="method-signature"
+            onclick="popupCode('Matchers.src/M000916.html');return false;">
+          <span class="method-name">be_valid</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+:call-seq:
+</p>
+<pre>
+  response.should be_valid
+  response.should_not be_valid
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000920" class="method-detail">
+        <a name="M000920"></a>
+
+        <div class="method-heading">
+          <a href="Matchers.src/M000920.html" target="Code" class="method-signature"
+            onclick="popupCode('Matchers.src/M000920.html');return false;">
+          <span class="method-name">response.should have_rjs(*args, &block)<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+wrapper for assert_select_rjs
+</p>
+<p>
+see documentation for assert_select_rjs at <a
+href="http://api.rubyonrails.org">api.rubyonrails.org</a>/
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000917" class="method-detail">
+        <a name="M000917"></a>
+
+        <div class="method-heading">
+          <a href="Matchers.src/M000917.html" target="Code" class="method-signature"
+            onclick="popupCode('Matchers.src/M000917.html');return false;">
+          <span class="method-name">response.should have_tag(*args, &block)<br />
+string.should have_tag(*args, &block)<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+wrapper for assert_select with additional support for using css selectors
+to set expectation on Strings. Use this in helper specs, for example, to
+set expectations on the results of helper methods. Also allow specification
+of how the response is parsed using the options :xml and :strict options.
+By default, these options are set to false.
+</p>
+<h2>Examples</h2>
+<pre>
+  # in a controller spec
+  response.should have_tag(&quot;div&quot;, &quot;some text&quot;)
+
+  # to force xml and/or strict parsing of the response
+  response.should have_tag(&quot;div&quot;, &quot;some text&quot;, :xml =&gt; true)
+  response.should have_tag(&quot;div&quot;, &quot;some text&quot;, :strict =&gt; true)
+  response.should have_tag(&quot;div&quot;, &quot;some text&quot;, :xml =&gt; true, :strict =&gt; false)
+
+  # in a helper spec (person_address_tag is a method in the helper)
+  person_address_tag.should have_tag(&quot;input#person_address&quot;)
+</pre>
+<p>
+see documentation for assert_select at <a
+href="http://api.rubyonrails.org">api.rubyonrails.org</a>/
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000923" class="method-detail">
+        <a name="M000923"></a>
+
+        <div class="method-heading">
+          <a href="Matchers.src/M000923.html" target="Code" class="method-signature"
+            onclick="popupCode('Matchers.src/M000923.html');return false;">
+          <span class="method-name">response.should have_text(expected)<br />
+response.should_not have_text(expected)<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Accepts a String or a Regexp, matching a String using == and a Regexp using
+=~.
+</p>
+<p>
+If response_or_text has a body, then that is used as to match against else
+it uses response_or_text
+</p>
+<p>
+Use this instead of <tt>response.should <a
+href="Matchers.html#M000917">have_tag</a>()</tt> when you want to match the
+whole string or whole body
+</p>
+<h2>Examples</h2>
+<pre>
+  response.should have_text(&quot;This is the expected text&quot;)
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000924" class="method-detail">
+        <a name="M000924"></a>
+
+        <div class="method-heading">
+          <a href="Matchers.src/M000924.html" target="Code" class="method-signature"
+            onclick="popupCode('Matchers.src/M000924.html');return false;">
+          <span class="method-name">response.should include_text(expected)<br />
+response.should_not include_text(expected)<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Accepts a String, matching using include?
+</p>
+<p>
+Use this instead of <tt>response.should <a
+href="Matchers.html#M000923">have_text</a>()</tt> when you either
+don&#8216;t know or don&#8216;t care where on the page this text appears.
+</p>
+<h2>Examples</h2>
+<pre>
+  response.should include_text(&quot;This text will be in the actual string&quot;)
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000925" class="method-detail">
+        <a name="M000925"></a>
+
+        <div class="method-heading">
+          <a href="Matchers.src/M000925.html" target="Code" class="method-signature"
+            onclick="popupCode('Matchers.src/M000925.html');return false;">
+          <span class="method-name">response.should redirect_to(url)<br />
+response.should redirect_to(:action => action_name)<br />
+response.should redirect_to(:controller => controller_name, :action => action_name)<br />
+response.should_not redirect_to(url)<br />
+response.should_not redirect_to(:action => action_name)<br />
+response.should_not redirect_to(:controller => controller_name, :action => action_name)<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Passes if the response is a redirect to the url, action or
+controller/action. Useful in controller specs (integration or isolation
+mode).
+</p>
+<h2>Examples</h2>
+<pre>
+  response.should redirect_to(&quot;path/to/action&quot;)
+  response.should redirect_to(&quot;http://test.host/path/to/action&quot;)
+  response.should redirect_to(:action =&gt; 'list')
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000926" class="method-detail">
+        <a name="M000926"></a>
+
+        <div class="method-heading">
+          <a href="Matchers.src/M000926.html" target="Code" class="method-signature"
+            onclick="popupCode('Matchers.src/M000926.html');return false;">
+          <span class="method-name">response.should render_template(template)<br />
+response.should_not render_template(template)<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+For use in controller code examples (integration or isolation mode).
+</p>
+<p>
+Passes if the specified template (view file) is rendered by the response.
+This file can be any view file, including a partial. However if it is a
+partial it must be rendered directly i.e. you can&#8216;t detect that a
+partial has been rendered as part of a view using <a
+href="Matchers.html#M000926">render_template</a>. For that you should use a
+message expectation (mock) instead:
+</p>
+<pre>
+  controller.should_receive(:render).with(:partial =&gt; 'path/to/partial')
+</pre>
+<p>
+<tt>template</tt> can include the controller path. It can also include an
+optional extension, which you only need to use when there is ambiguity.
+</p>
+<p>
+Note that partials must be spelled with the preceding underscore.
+</p>
+<h2>Examples</h2>
+<pre>
+  response.should render_template('list')
+  response.should render_template('same_controller/list')
+  response.should render_template('other_controller/list')
+
+  # with extensions
+  response.should render_template('list.rjs')
+  response.should render_template('list.haml')
+  response.should render_template('same_controller/list.rjs')
+  response.should render_template('other_controller/list.rjs')
+
+  # partials
+  response.should render_template('_a_partial')
+  response.should render_template('same_controller/_a_partial')
+  response.should render_template('other_controller/_a_partial')
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000927" class="method-detail">
+        <a name="M000927"></a>
+
+        <div class="method-heading">
+          <a href="Matchers.src/M000927.html" target="Code" class="method-signature"
+            onclick="popupCode('Matchers.src/M000927.html');return false;">
+          <span class="method-name">"path".should route_to(expected)  # assumes GET<br />
+{ :get => "path" }.should route_to(expected)<br />
+{ :put => "path" }.should route_to(expected)<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Uses ActionController::Routing::Routes to verify that the path-and-method
+routes to a given set of options. Also verifies route-generation, so that
+the expected options do generate a pathname consisten with the indicated
+path/method.
+</p>
+<p>
+For negative tests, only the route recognition failure can be tested; since
+route generation via path_to() will always generate a path as requested.
+Use .should_not <a href="Matchers.html#M000928">be_routable</a>() in this
+case.
+</p>
+<h2>Examples</h2>
+<p>
+{ :get =&gt; &#8217;/registrations/1/edit&#8217; }.
+</p>
+<pre>
+  should route_to(:controller =&gt; 'registrations', :action =&gt; 'edit', :id =&gt; '1')
+</pre>
+<p>
+{ :put =&gt; &quot;/registrations/1&quot; }.should
+</p>
+<pre>
+  route_to(:controller =&gt; 'registrations', :action =&gt; 'update', :id =&gt; 1)
+</pre>
+<p>
+{ :post =&gt; &quot;/registrations/&quot; }.should
+</p>
+<pre>
+  route_to(:controller =&gt; 'registrations', :action =&gt; 'create')
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000921" class="method-detail">
+        <a name="M000921"></a>
+
+        <div class="method-heading">
+          <a href="Matchers.src/M000921.html" target="Code" class="method-signature"
+            onclick="popupCode('Matchers.src/M000921.html');return false;">
+          <span class="method-name">response.should send_email(*args, &block)<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+wrapper for assert_select_email
+</p>
+<p>
+see documentation for assert_select_email at <a
+href="http://api.rubyonrails.org">api.rubyonrails.org</a>/
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000922" class="method-detail">
+        <a name="M000922"></a>
+
+        <div class="method-heading">
+          <a href="Matchers.src/M000922.html" target="Code" class="method-signature"
+            onclick="popupCode('Matchers.src/M000922.html');return false;">
+          <span class="method-name">with_encoded</span><span class="method-args">(*args, &amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+wrapper for assert_select_encoded
+</p>
+<p>
+see documentation for assert_select_encoded at <a
+href="http://api.rubyonrails.org">api.rubyonrails.org</a>/
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000918" class="method-detail">
+        <a name="M000918"></a>
+
+        <div class="method-heading">
+          <a href="Matchers.src/M000918.html" target="Code" class="method-signature"
+            onclick="popupCode('Matchers.src/M000918.html');return false;">
+          <span class="method-name">with_tag</span><span class="method-args">(*args, &amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+wrapper for a nested assert_select
+</p>
+<pre>
+  response.should have_tag(&quot;div#form&quot;) do
+    with_tag(&quot;input#person_name[name=?]&quot;, &quot;person[name]&quot;)
+  end
+</pre>
+<p>
+see documentation for assert_select at <a
+href="http://api.rubyonrails.org">api.rubyonrails.org</a>/
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000919" class="method-detail">
+        <a name="M000919"></a>
+
+        <div class="method-heading">
+          <a href="Matchers.src/M000919.html" target="Code" class="method-signature"
+            onclick="popupCode('Matchers.src/M000919.html');return false;">
+          <span class="method-name">without_tag</span><span class="method-args">(*args, &amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+wrapper for a nested assert_select with false
+</p>
+<pre>
+  response.should have_tag(&quot;div#1&quot;) do
+    without_tag(&quot;span&quot;, &quot;some text that shouldn't be there&quot;)
+  end
+</pre>
+<p>
+see documentation for assert_select at <a
+href="http://api.rubyonrails.org">api.rubyonrails.org</a>/
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

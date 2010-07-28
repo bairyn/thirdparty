@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "@param expr [Script::Expr] The conditional expression."
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  If this is nil, this is an `@else` node, not an `@else if`\n"
+full_name: Sass::Tree::IfNode::new
+is_singleton: true
+name: new
+params: (expr)
+visibility: public

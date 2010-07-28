@@ -1,0 +1,34 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Creates an HTML tag with the given name and optionally text and attributes. Can take a block that will run between the opening and closing tags. If the block is a Haml block or outputs text using \{#haml_concat}, the text will be properly indented.
+  - !ruby/struct:SM::Flow::P 
+    body: "`flags` is a list of symbol flags like those that can be put at the end of a Haml tag (`:/`, `:&lt;`, and `:&gt;`). Currently, only `:/` and `:&lt;` are supported."
+  - !ruby/struct:SM::Flow::P 
+    body: "`haml_tag` outputs directly to the buffer; its return value should not be used. If you need to get the results as a string, use \\{#capture_haml\\}."
+  - !ruby/struct:SM::Flow::P 
+    body: For example,
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    haml_tag :table do\n      haml_tag :tr do\n        haml_tag :td, {:class =&gt; 'cell'} do\n          haml_tag :strong, &quot;strong!&quot;\n          haml_concat &quot;data&quot;\n        end\n        haml_tag :td do\n          haml_concat &quot;more_data&quot;\n        end\n      end\n    end\n"
+  - !ruby/struct:SM::Flow::P 
+    body: outputs
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    &lt;table&gt;\n      &lt;tr&gt;\n        &lt;td class='cell'&gt;\n          &lt;strong&gt;\n            strong!\n          &lt;/strong&gt;\n          data\n        &lt;/td&gt;\n        &lt;td&gt;\n          more_data\n        &lt;/td&gt;\n      &lt;/tr&gt;\n    &lt;/table&gt;\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "@param name [#to_s] The name of the tag @param flags [Array&lt;Symbol&gt;] Haml end-of-tag flags"
+  - !ruby/struct:SM::Flow::P 
+    body: "@overload haml_tag(name, *flags, attributes = {})"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  @yield The block of Haml code within the tag\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "@overload haml_tag(name, text, *flags, attributes = {})"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  @param text [#to_s] The text within the tag\n"
+full_name: Haml::Helpers#haml_tag
+is_singleton: false
+name: haml_tag
+params: (name, *rest, &block)
+visibility: public

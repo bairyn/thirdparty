@@ -1,0 +1,28 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Surrounds a block of Haml code with strings, with no whitespace in between. For example:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    = surround '(', ')' do\n      %a{:href =&gt; &quot;food&quot;} chicken\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "Produces:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    (&lt;a href='food'&gt;chicken&lt;/a&gt;)\n"
+  - !ruby/struct:SM::Flow::P 
+    body: and
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    = surround '*' do\n      %strong angry\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "Produces:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    *&lt;strong&gt;angry&lt;/strong&gt;*\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "@param front [String] The string to add before the Haml @param back [String] The string to add after the Haml @yield A block of Haml to surround"
+full_name: Haml::Helpers#surround
+is_singleton: false
+name: surround
+params: (front, back = front, &block)
+visibility: public

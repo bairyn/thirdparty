@@ -1,0 +1,26 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Find the full filename of a Sass or CSS file to import. This follows Sass's import rules: if the filename given ends in `&quot;.sass&quot;` or `&quot;.css&quot;`, it will try to find that type of file; otherwise, it will try to find the corresponding Sass file and fall back on CSS if it's not available."
+  - !ruby/struct:SM::Flow::P 
+    body: Any Sass filename returned will correspond to an actual Sass file on the filesystem. CSS filenames, however, may not; they're expected to be put through directly to the stylesheet as CSS `@import` statements.
+  - !ruby/struct:SM::Flow::P 
+    body: "@param filename [String] The filename to search for @param load_paths [Array&lt;String&gt;] The set of filesystem paths"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  to search for Sass files.\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "@return [String] The filename of the imported file."
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  This is an absolute path if the file is a `&quot;.sass&quot;` file.\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "@raise [Sass::SyntaxError] if `filename` ends in ``&quot;.sass&quot;``"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  and no corresponding Sass file could be found.\n"
+full_name: Sass::Files#find_file_to_import
+is_singleton: false
+name: find_file_to_import
+params: (filename, load_paths)
+visibility: public

@@ -1,0 +1,20 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: This becomes a class method of modules that include {Base}. It allows the module to specify one or more Ruby files that Haml should try to require when compiling the filter.
+  - !ruby/struct:SM::Flow::P 
+    body: The first file specified is tried first, then the second, etc. If none are found, the compilation throws an exception.
+  - !ruby/struct:SM::Flow::P 
+    body: "For example:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    module Haml::Filters::Markdown\n      lazy_require 'rdiscount', 'peg_markdown', 'maruku', 'bluecloth'\n\n      ...\n    end\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "@param reqs [Array&lt;String&gt;] The requires to run"
+full_name: Haml::Filters::Base#lazy_require
+is_singleton: false
+name: lazy_require
+params: (*reqs)
+visibility: public

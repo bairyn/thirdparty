@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Returns a proc that, when called, renders the template and returns the result as a string.
+  - !ruby/struct:SM::Flow::P 
+    body: "`scope` works the same as it does for render."
+  - !ruby/struct:SM::Flow::P 
+    body: "The first argument of the returned proc is a hash of local variable names to values. However, due to an unfortunate Ruby quirk, the local variables which can be assigned must be pre-declared. This is done with the `local_names` argument. For example:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    # This works\n    Haml::Engine.new(&quot;%p= foo&quot;).render_proc(Object.new, :foo).call :foo =&gt; &quot;Hello!&quot;\n      #=&gt; &quot;&lt;p&gt;Hello!&lt;/p&gt;&quot;\n\n    # This doesn't\n    Haml::Engine.new(&quot;%p= foo&quot;).render_proc.call :foo =&gt; &quot;Hello!&quot;\n      #=&gt; NameError: undefined local variable or method `foo'\n"
+  - !ruby/struct:SM::Flow::P 
+    body: The proc doesn't take a block; any yields in the template will fail.
+  - !ruby/struct:SM::Flow::P 
+    body: "@param scope [Binding, Proc, Object] The context in which the template is evaluated @param local_names [Array&lt;Symbol&gt;] The names of the locals that can be passed to the proc @return [Proc] The proc that will run the template"
+full_name: Haml::Engine#render_proc
+is_singleton: false
+name: render_proc
+params: (scope = Object.new, *local_names)
+visibility: public

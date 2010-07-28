@@ -1,0 +1,20 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Runs the dynamic Sass code: mixins, variables, control directives, and so forth. This doesn't modify this node or any of its children."
+  - !ruby/struct:SM::Flow::P 
+    body: \{#perform} shouldn't be overridden directly; if you want to return a new node (or list of nodes), override \{#_perform}; if you want to destructively modify this node, override \{#perform!}.
+  - !ruby/struct:SM::Flow::P 
+    body: "@param environment [Sass::Environment] The lexical environment containing"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  variable and mixin values\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "@return [Tree::Node] The resulting tree of static nodes @raise [Sass::SyntaxError] if some element of the tree is invalid @see Sass::Tree"
+full_name: Sass::Tree::Node#perform
+is_singleton: false
+name: perform
+params: (environment)
+visibility: public

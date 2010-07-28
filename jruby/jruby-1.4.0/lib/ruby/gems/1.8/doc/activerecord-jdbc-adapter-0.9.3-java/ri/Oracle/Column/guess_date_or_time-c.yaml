@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: "::Oracle::Column::guess_date_or_time"
+is_singleton: true
+name: guess_date_or_time
+params: (value)
+visibility: public

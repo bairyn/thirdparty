@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: This method is automatically called when {Base} is included in a module. It automatically defines a filter with the downcased name of that module. For example, if the module is named `FooBar`, the filter will be `:foobar`.
+  - !ruby/struct:SM::Flow::P 
+    body: "@param base [Module, Class] The module that this is included in"
+full_name: Haml::Filters::Base::included
+is_singleton: true
+name: included
+params: (base)
+visibility: public

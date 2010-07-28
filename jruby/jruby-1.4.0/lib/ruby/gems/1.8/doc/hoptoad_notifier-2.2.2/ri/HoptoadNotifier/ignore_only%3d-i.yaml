@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Overrides the list of default ignored errors.
+  - !ruby/struct:SM::Flow::P 
+    body: "@param [Array&lt;Exception&gt;] names A list of exceptions to ignore."
+full_name: HoptoadNotifier#ignore_only=
+is_singleton: false
+name: ignore_only=
+params: (names)
+visibility: public

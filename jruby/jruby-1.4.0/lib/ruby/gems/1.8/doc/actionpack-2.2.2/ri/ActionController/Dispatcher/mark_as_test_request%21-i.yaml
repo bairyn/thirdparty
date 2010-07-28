@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: ActionController::Dispatcher#mark_as_test_request!
+is_singleton: false
+name: mark_as_test_request!
+params: ()
+visibility: public

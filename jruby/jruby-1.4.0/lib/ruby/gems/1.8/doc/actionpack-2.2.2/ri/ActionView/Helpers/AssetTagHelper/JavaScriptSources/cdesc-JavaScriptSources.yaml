@@ -1,0 +1,29 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: expansions
+comment: 
+constants: 
+  - !ruby/object:RI::Constant 
+    comment: 
+    name: EXPANSIONS
+    value: "{ :defaults => JAVASCRIPT_DEFAULT_SOURCES.dup }"
+  - !ruby/object:RI::Constant 
+    comment: 
+    name: APPLICATION_JS
+    value: "\"application\".freeze"
+  - !ruby/object:RI::Constant 
+    comment: 
+    name: APPLICATION_FILE
+    value: "\"application.js\".freeze"
+full_name: ActionView::Helpers::AssetTagHelper::JavaScriptSources
+includes: 
+  - !ruby/object:RI::IncludedModule 
+    name: JavaScriptAsset
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: expand_sources
+name: JavaScriptSources
+superclass: AssetCollection

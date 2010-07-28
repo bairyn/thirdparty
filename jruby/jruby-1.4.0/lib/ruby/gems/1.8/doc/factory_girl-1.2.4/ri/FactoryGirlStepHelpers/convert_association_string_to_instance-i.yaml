@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: FactoryGirlStepHelpers#convert_association_string_to_instance
+is_singleton: false
+name: convert_association_string_to_instance
+params: (factory_name, assignment)
+visibility: public

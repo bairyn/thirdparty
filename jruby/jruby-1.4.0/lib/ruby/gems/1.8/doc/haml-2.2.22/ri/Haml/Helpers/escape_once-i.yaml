@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Escapes HTML entities in `text`, but without escaping an ampersand that is already part of an escaped entity.
+  - !ruby/struct:SM::Flow::P 
+    body: "@param text [String] The string to sanitize @return [String] The sanitized string"
+full_name: Haml::Helpers#escape_once
+is_singleton: false
+name: escape_once
+params: (text)
+visibility: public

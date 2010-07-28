@@ -1,0 +1,21 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: new
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: An abstrac class that encapsulates the code specific to the `haml` and `sass` executables.
+constants: []
+
+full_name: Haml::Exec::HamlSass
+includes: []
+
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: process_result
+  - !ruby/object:RI::MethodSummary 
+    name: set_opts
+name: HamlSass
+superclass: Generic

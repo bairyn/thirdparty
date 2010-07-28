@@ -1,0 +1,34 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: new
+comment: 
+constants: 
+  - !ruby/object:RI::Constant 
+    comment: 
+    name: Cache
+    value: "{}"
+  - !ruby/object:RI::Constant 
+    comment: 
+    name: CacheGuard
+    value: Mutex.new
+  - !ruby/object:RI::Constant 
+    comment: 
+    name: ProtocolRegexp
+    value: "%r{^[-a-z]+://}.freeze"
+full_name: ActionView::Helpers::AssetTagHelper::AssetTag
+includes: []
+
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: asset_file_path
+  - !ruby/object:RI::MethodSummary 
+    name: contents
+  - !ruby/object:RI::MethodSummary 
+    name: mtime
+  - !ruby/object:RI::MethodSummary 
+    name: public_path
+name: AssetTag
+superclass: Object

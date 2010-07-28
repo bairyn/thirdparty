@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Haml::Precompiler::Line#tabs
+is_singleton: false
+name: tabs
+params: ()
+visibility: public

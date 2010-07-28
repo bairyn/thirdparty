@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: This should be overridden when a filter needs to have access to the Haml evaluation context. Rather than applying a filter to a string at compile-time, \{#compile} uses the {Haml::Precompiler} instance to compile the string to Ruby code that will be executed in the context of the active Haml template.
+  - !ruby/struct:SM::Flow::P 
+    body: "Warning: the {Haml::Precompiler} interface is neither well-documented nor guaranteed to be stable. If you want to make use of it, you'll probably need to look at the source code and should test your filter when upgrading to new Haml versions."
+  - !ruby/struct:SM::Flow::P 
+    body: "@param precompiler [Haml::Precompiler] The precompiler instance @param text [String] The text of the filter @raise [Haml::Error] if none of \\{#compile}, \\{#render}, and \\{#render_with_options} are overridden"
+full_name: Haml::Filters::Base#compile
+is_singleton: false
+name: compile
+params: (precompiler, text)
+visibility: public

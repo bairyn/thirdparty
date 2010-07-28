@@ -1,0 +1,43 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: init_rails
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "The module that contains everything Haml-related:"
+  - !ruby/object:SM::Flow::LIST 
+    contents: 
+      - !ruby/struct:SM::Flow::LI 
+        label: "*"
+        body: "{Haml::Engine} is the class used to render Haml within Ruby code."
+      - !ruby/struct:SM::Flow::LI 
+        label: "*"
+        body: "{Haml::Helpers} contains Ruby helpers available within Haml templates."
+      - !ruby/struct:SM::Flow::LI 
+        label: "*"
+        body: "{Haml::Template} interfaces with web frameworks (Rails in particular)."
+      - !ruby/struct:SM::Flow::LI 
+        label: "*"
+        body: "{Haml::Error} is raised when Haml encounters an error."
+      - !ruby/struct:SM::Flow::LI 
+        label: "*"
+        body: "{Haml::HTML} handles conversion of HTML to Haml."
+    type: :BULLET
+  - !ruby/struct:SM::Flow::P 
+    body: Also see the {file:HAML_REFERENCE.md full Haml reference}.
+constants: 
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: A string representing the version of Haml. A more fine-grained representation is available from Haml.version.
+    name: VERSION
+    value: version[:string] unless defined?(Haml::VERSION)
+full_name: Haml
+includes: []
+
+instance_methods: []
+
+name: Haml
+superclass: 

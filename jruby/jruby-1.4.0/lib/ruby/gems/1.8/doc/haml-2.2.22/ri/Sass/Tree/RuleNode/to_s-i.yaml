@@ -1,0 +1,18 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Computes the CSS for the rule.
+  - !ruby/struct:SM::Flow::P 
+    body: "@param tabs [Fixnum] The level of indentation for the CSS @param super_rules [Array&lt;Array&lt;String&gt;&gt;] The rules for the parent node"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  (see \\{#rules}), or `nil` if there are no parents\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "@return [String] The resulting CSS @raise [Sass::SyntaxError] if the rule has no parents but uses `&amp;`"
+full_name: Sass::Tree::RuleNode#to_s
+is_singleton: false
+name: to_s
+params: (tabs, super_rules = nil)
+visibility: public

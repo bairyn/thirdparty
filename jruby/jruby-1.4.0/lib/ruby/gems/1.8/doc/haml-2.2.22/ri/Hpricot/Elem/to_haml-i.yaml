@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "@see Haml::HTML::Node#to_haml"
+full_name: Hpricot::Elem#to_haml
+is_singleton: false
+name: to_haml
+params: (tabs, options)
+visibility: public

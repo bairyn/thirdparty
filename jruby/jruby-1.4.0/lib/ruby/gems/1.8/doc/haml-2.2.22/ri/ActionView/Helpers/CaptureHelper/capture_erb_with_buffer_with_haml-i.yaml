@@ -1,0 +1,11 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+  - !ruby/object:RI::AliasName 
+    name: capture_erb_with_buffer
+block_params: 
+comment: 
+full_name: ActionView::Helpers::CaptureHelper#capture_erb_with_buffer_with_haml
+is_singleton: false
+name: capture_erb_with_buffer_with_haml
+params: (buffer, *args, &block)
+visibility: public

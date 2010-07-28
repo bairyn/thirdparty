@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Rails 2.2
+full_name: Spec::Rails::Example::ControllerExampleGroup::TemplateIsolationExtensions#_pick_template
+is_singleton: false
+name: _pick_template
+params: (*args)
+visibility: public

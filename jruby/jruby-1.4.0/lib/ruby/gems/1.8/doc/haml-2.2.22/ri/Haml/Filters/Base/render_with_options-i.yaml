@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Same as \{#render}, but takes a {Haml::Engine} options hash as well. It's only safe to rely on options made available in {Haml::Engine#options_for_buffer}.
+  - !ruby/struct:SM::Flow::P 
+    body: "@see #render @param text [String] The source text for the filter to process @return [String] The filtered result @raise [Haml::Error] if it or \\{#render} isn't overridden"
+full_name: Haml::Filters::Base#render_with_options
+is_singleton: false
+name: render_with_options
+params: (text, options)
+visibility: public

@@ -1,0 +1,31 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Defines a new alias for attributes.
+  - !ruby/struct:SM::Flow::P 
+    body: "Arguments:"
+  - !ruby/object:SM::Flow::LIST 
+    contents: 
+      - !ruby/struct:SM::Flow::LI 
+        label: "*"
+        body: "pattern: <tt>Regexp</tt> A pattern that will be matched against attributes when looking for aliases. Contents captured in the pattern can be used in the alias."
+      - !ruby/struct:SM::Flow::LI 
+        label: "*"
+        body: "replace: <tt>String</tt> The alias that results from the matched pattern. Captured strings can be substituded like with +String#sub+."
+    type: :BULLET
+  - !ruby/struct:SM::Flow::P 
+    body: "Example:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  Factory.alias /(.*)_confirmation/, '\\1'\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "factory_girl starts with aliases for foreign keys, so that a :user association can be overridden by a :user_id parameter:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  Factory.define :post do |p|\n    p.association :user\n  end\n\n  # The user association will not be built in this example. The user_id\n  # will be used instead.\n  Factory(:post, :user_id =&gt; 1)\n"
+full_name: Factory::alias
+is_singleton: true
+name: alias
+params: (pattern, replace)
+visibility: public

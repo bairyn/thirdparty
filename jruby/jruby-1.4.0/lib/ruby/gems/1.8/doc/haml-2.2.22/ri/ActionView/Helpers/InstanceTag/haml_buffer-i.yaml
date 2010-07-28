@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Includes TagHelper
+full_name: ActionView::Helpers::InstanceTag#haml_buffer
+is_singleton: false
+name: haml_buffer
+params: ()
+visibility: public

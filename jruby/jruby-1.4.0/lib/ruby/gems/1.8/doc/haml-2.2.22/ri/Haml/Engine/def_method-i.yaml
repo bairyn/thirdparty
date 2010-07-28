@@ -1,0 +1,24 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Defines a method on `object` with the given name that renders the template and returns the result as a string.
+  - !ruby/struct:SM::Flow::P 
+    body: "If `object` is a class or module, the method will instead by defined as an instance method. For example:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    t = Time.now\n    Haml::Engine.new(&quot;%p\\n  Today's date is\\n  .date= self.to_s&quot;).def_method(t, :render)\n    t.render #=&gt; &quot;&lt;p&gt;\\n  Today's date is\\n  &lt;div class='date'&gt;Fri Nov 23 18:28:29 -0800 2007&lt;/div&gt;\\n&lt;/p&gt;\\n&quot;\n\n    Haml::Engine.new(&quot;.upcased= upcase&quot;).def_method(String, :upcased_div)\n    &quot;foobar&quot;.upcased_div #=&gt; &quot;&lt;div class='upcased'&gt;FOOBAR&lt;/div&gt;\\n&quot;\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "The first argument of the defined method is a hash of local variable names to values. However, due to an unfortunate Ruby quirk, the local variables which can be assigned must be pre-declared. This is done with the `local_names` argument. For example:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    # This works\n    obj = Object.new\n    Haml::Engine.new(&quot;%p= foo&quot;).def_method(obj, :render, :foo)\n    obj.render(:foo =&gt; &quot;Hello!&quot;) #=&gt; &quot;&lt;p&gt;Hello!&lt;/p&gt;&quot;\n\n    # This doesn't\n    obj = Object.new\n    Haml::Engine.new(&quot;%p= foo&quot;).def_method(obj, :render)\n    obj.render(:foo =&gt; &quot;Hello!&quot;) #=&gt; NameError: undefined local variable or method `foo'\n"
+  - !ruby/struct:SM::Flow::P 
+    body: Note that Haml modifies the evaluation context (either the scope object or the `self` object of the scope binding). It extends {Haml::Helpers}, and various instance variables are set (all prefixed with `haml_`).
+  - !ruby/struct:SM::Flow::P 
+    body: "@param object [Object, Module] The object on which to define the method @param name [String, Symbol] The name of the method to define @param local_names [Array&lt;Symbol&gt;] The names of the locals that can be passed to the proc"
+full_name: Haml::Engine#def_method
+is_singleton: false
+name: def_method
+params: (object, name, *local_names)
+visibility: public

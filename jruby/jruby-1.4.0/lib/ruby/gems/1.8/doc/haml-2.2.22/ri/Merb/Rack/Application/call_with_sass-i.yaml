@@ -1,0 +1,11 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+  - !ruby/object:RI::AliasName 
+    name: call
+block_params: 
+comment: 
+full_name: Merb::Rack::Application#call_with_sass
+is_singleton: false
+name: call_with_sass
+params: (env)
+visibility: public

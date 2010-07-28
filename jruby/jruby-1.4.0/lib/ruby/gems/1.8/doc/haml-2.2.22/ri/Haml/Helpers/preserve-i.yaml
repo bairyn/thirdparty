@@ -1,0 +1,21 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+  - !ruby/object:RI::AliasName 
+    name: flatten
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Takes any string, finds all the newlines, and converts them to HTML entities so they'll render correctly in whitespace-sensitive tags without screwing up the indentation.
+  - !ruby/struct:SM::Flow::P 
+    body: "@overload perserve(input)"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  Escapes newlines within a string.\n\n  @param input [String] The string within which to escape all newlines\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "@overload perserve"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  Escapes newlines within a block of Haml code.\n\n  @yield The block within which to escape newlines\n"
+full_name: Haml::Helpers#preserve
+is_singleton: false
+name: preserve
+params: (input = nil, &block)
+visibility: public

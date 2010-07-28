@@ -1,0 +1,26 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: create
+  - !ruby/object:RI::MethodSummary 
+    name: new
+comment: 
+constants: 
+  - !ruby/object:RI::Constant 
+    comment: 
+    name: Cache
+    value: "{}"
+  - !ruby/object:RI::Constant 
+    comment: 
+    name: CacheGuard
+    value: Mutex.new
+full_name: ActionView::Helpers::AssetTagHelper::AssetCollection
+includes: []
+
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: write_asset_file_contents
+name: AssetCollection
+superclass: Object

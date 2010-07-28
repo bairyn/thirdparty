@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Converts the CSS template into Sass code.
+  - !ruby/struct:SM::Flow::P 
+    body: "@return [String] The resulting Sass code"
+full_name: Sass::CSS#render
+is_singleton: false
+name: render
+params: ()
+visibility: public

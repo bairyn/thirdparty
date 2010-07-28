@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: "::Derby#reinstate_auto_increment"
+is_singleton: false
+name: reinstate_auto_increment
+params: (name, refid, coldef)
+visibility: public

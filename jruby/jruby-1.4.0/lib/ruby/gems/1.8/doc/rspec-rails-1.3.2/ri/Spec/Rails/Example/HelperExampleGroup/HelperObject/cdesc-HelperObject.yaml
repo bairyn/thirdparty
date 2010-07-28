@@ -1,0 +1,56 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: controller
+    rw: W
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: controller
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: flash
+    rw: W
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: flash
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: params
+    rw: W
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: params
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: request
+    rw: W
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: request
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: session
+    rw: W
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: session
+    rw: R
+class_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: new
+comment: 
+constants: []
+
+full_name: Spec::Rails::Example::HelperExampleGroup::HelperObject
+includes: []
+
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: protect_against_forgery?
+name: HelperObject
+superclass: ActionView::Base

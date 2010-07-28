@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Loads the new variable value into the environment.
+  - !ruby/struct:SM::Flow::P 
+    body: "@param environment [Sass::Environment] The lexical environment containing"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  variable and mixin values\n"
+full_name: Sass::Tree::VariableNode#_perform
+is_singleton: false
+name: _perform
+params: (environment)
+visibility: protected

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Creates a UUID using the SHA1 hash. (Version 5)
+full_name: UUIDTools::UUID::sha1_create
+is_singleton: true
+name: sha1_create
+params: (namespace, name)
+visibility: public

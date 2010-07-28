@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Returns the Haml representation of the given node.
+  - !ruby/struct:SM::Flow::P 
+    body: "@param tabs [Fixnum] The indentation level of the resulting Haml. @option options (see Haml::HTML#initialize)"
+full_name: Haml::HTML::Node#to_haml
+is_singleton: false
+name: to_haml
+params: (tabs, options)
+visibility: public

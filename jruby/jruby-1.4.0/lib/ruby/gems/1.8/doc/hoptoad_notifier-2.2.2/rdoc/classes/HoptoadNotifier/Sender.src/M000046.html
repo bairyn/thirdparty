@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>new (HoptoadNotifier::Sender)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>    <span class="ruby-comment cmt"># File lib/hoptoad_notifier/sender.rb, line 7</span>
+ 7:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">options</span> = {})
+ 8:       [<span class="ruby-identifier">:proxy_host</span>, <span class="ruby-identifier">:proxy_port</span>, <span class="ruby-identifier">:proxy_user</span>, <span class="ruby-identifier">:proxy_pass</span>, <span class="ruby-identifier">:protocol</span>,
+ 9:         <span class="ruby-identifier">:host</span>, <span class="ruby-identifier">:port</span>, <span class="ruby-identifier">:secure</span>, <span class="ruby-identifier">:http_open_timeout</span>, <span class="ruby-identifier">:http_read_timeout</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">option</span><span class="ruby-operator">|</span>
+10:         <span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-node">&quot;@#{option}&quot;</span>, <span class="ruby-identifier">options</span>[<span class="ruby-identifier">option</span>])
+11:       <span class="ruby-keyword kw">end</span>
+12:     <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

@@ -1,0 +1,19 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Works the same as {Plain}, but HTML-escapes the text before placing it in the document.
+constants: []
+
+full_name: Haml::Filters::Escaped
+includes: 
+  - !ruby/object:RI::IncludedModule 
+    name: Base
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: render
+name: Escaped
+superclass: 

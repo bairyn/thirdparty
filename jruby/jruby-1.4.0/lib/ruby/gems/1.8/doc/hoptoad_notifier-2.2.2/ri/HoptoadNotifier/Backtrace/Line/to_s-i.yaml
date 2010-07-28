@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Reconstructs the line in a readable fashion
+full_name: HoptoadNotifier::Backtrace::Line#to_s
+is_singleton: false
+name: to_s
+params: ()
+visibility: public

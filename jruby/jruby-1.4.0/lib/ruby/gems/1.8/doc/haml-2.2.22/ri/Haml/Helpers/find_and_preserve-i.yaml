@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Uses \{#preserve} to convert any newlines inside whitespace-sensitive tags into the HTML entities for endlines.
+  - !ruby/struct:SM::Flow::P 
+    body: "@param tags [Array&lt;String&gt;] Tags that should have newlines escaped"
+  - !ruby/struct:SM::Flow::P 
+    body: "@overload find_and_preserve(input, tags = haml_buffer.options[:preserve])"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  Escapes newlines within a string.\n\n  @param input [String] The string within which to escape newlines\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "@overload find_and_preserve(tags = haml_buffer.options[:preserve])"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  Escapes newlines within a block of Haml code.\n\n  @yield The block within which to escape newlines\n"
+full_name: Haml::Helpers#find_and_preserve
+is_singleton: false
+name: find_and_preserve
+params: (input = nil, tags = haml_buffer.options[:preserve], &block)
+visibility: public

@@ -1,0 +1,103 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: new
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "This class handles the parsing and compilation of the Sass template. Example usage:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    template = File.load('stylesheets/sassy.sass')\n    sass_engine = Sass::Engine.new(template)\n    output = sass_engine.render\n    puts output\n"
+constants: 
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The character that begins a CSS property. @private
+    name: PROPERTY_CHAR
+    value: "?:"
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The character that designates that a property should be assigned to a SassScript expression. @private
+    name: SCRIPT_CHAR
+    value: ?=
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The character that designates the beginning of a comment, either Sass or CSS. @private
+    name: COMMENT_CHAR
+    value: ?/
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The character that follows the general COMMENT_CHAR and designates a Sass comment, which is not output as a CSS comment. @private
+    name: SASS_COMMENT_CHAR
+    value: ?/
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The character that follows the general COMMENT_CHAR and designates a CSS comment, which is embedded in the CSS document. @private
+    name: CSS_COMMENT_CHAR
+    value: ?*
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The character used to denote a compiler directive. @private
+    name: DIRECTIVE_CHAR
+    value: ?@
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: Designates a non-parsed rule. @private
+    name: ESCAPE_CHAR
+    value: ?\\
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: Designates block as mixin definition rather than CSS rules to output @private
+    name: MIXIN_DEFINITION_CHAR
+    value: ?=
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: Includes named mixin declared using MIXIN_DEFINITION_CHAR @private
+    name: MIXIN_INCLUDE_CHAR
+    value: ?+
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: "The regex that matches properties of the form `name: prop`. @private"
+    name: PROPERTY_NEW_MATCHER
+    value: /^[^\s:"\[]+\s*[=:](\s|$)/
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: "The regex that matches and extracts data from properties of the form `name: prop`. @private"
+    name: PROPERTY_NEW
+    value: /^([^\s=:"]+)(\s*=|:)(?:\s+|$)(.*)/
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The regex that matches and extracts data from properties of the form `:name prop`. @private
+    name: PROPERTY_OLD
+    value: /^:([^\s=:"]+)\s*(=?)(?:\s+|$)(.*)/
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The default options for Sass::Engine.
+    name: DEFAULT_OPTIONS
+    value: "{       :style => :nested,       :load_paths => ['.'],       :cache => true,       :cache_location => './.sass-cache',     }.freeze"
+full_name: Sass::Engine
+includes: 
+  - !ruby/object:RI::IncludedModule 
+    name: Haml::Util
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: render
+  - !ruby/object:RI::MethodSummary 
+    name: to_css
+  - !ruby/object:RI::MethodSummary 
+    name: to_tree
+name: Engine
+superclass: Object

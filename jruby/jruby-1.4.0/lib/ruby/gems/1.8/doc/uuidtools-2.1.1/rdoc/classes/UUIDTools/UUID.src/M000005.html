@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>new (UUIDTools::UUID)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/uuidtools.rb, line 65</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">time_low</span>, <span class="ruby-identifier">time_mid</span>, <span class="ruby-identifier">time_hi_and_version</span>,
+        <span class="ruby-identifier">clock_seq_hi_and_reserved</span>, <span class="ruby-identifier">clock_seq_low</span>, <span class="ruby-identifier">nodes</span>)
+      <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">time_low</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">0</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">time_low</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">4294967296</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>,
+          <span class="ruby-node">&quot;Expected unsigned 32-bit number for time_low, got #{time_low}.&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">time_mid</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">0</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">time_mid</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">65536</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>,
+          <span class="ruby-node">&quot;Expected unsigned 16-bit number for time_mid, got #{time_mid}.&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">time_hi_and_version</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">0</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">time_hi_and_version</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">65536</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>,
+          <span class="ruby-value str">&quot;Expected unsigned 16-bit number for time_hi_and_version, &quot;</span> <span class="ruby-operator">+</span>
+          <span class="ruby-node">&quot;got #{time_hi_and_version}.&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">clock_seq_hi_and_reserved</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">0</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">clock_seq_hi_and_reserved</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">256</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>,
+          <span class="ruby-value str">&quot;Expected unsigned 8-bit number for clock_seq_hi_and_reserved, &quot;</span> <span class="ruby-operator">+</span>
+          <span class="ruby-node">&quot;got #{clock_seq_hi_and_reserved}.&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">clock_seq_low</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">0</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">clock_seq_low</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">256</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>,
+          <span class="ruby-value str">&quot;Expected unsigned 8-bit number for clock_seq_low, &quot;</span> <span class="ruby-operator">+</span>
+          <span class="ruby-node">&quot;got #{clock_seq_low}.&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">nodes</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Enumerable</span>)
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>,
+          <span class="ruby-node">&quot;Expected Enumerable, got #{nodes.class.name}.&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">nodes</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">6</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>,
+          <span class="ruby-value str">&quot;Expected nodes to have size of 6.&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">node</span> <span class="ruby-keyword kw">in</span> <span class="ruby-identifier">nodes</span>
+        <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">node</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">0</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">node</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">256</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>,
+            <span class="ruby-value str">&quot;Expected unsigned 8-bit number for each node, &quot;</span> <span class="ruby-operator">+</span>
+            <span class="ruby-node">&quot;got #{node}.&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-ivar">@time_low</span> = <span class="ruby-identifier">time_low</span>
+      <span class="ruby-ivar">@time_mid</span> = <span class="ruby-identifier">time_mid</span>
+      <span class="ruby-ivar">@time_hi_and_version</span> = <span class="ruby-identifier">time_hi_and_version</span>
+      <span class="ruby-ivar">@clock_seq_hi_and_reserved</span> = <span class="ruby-identifier">clock_seq_hi_and_reserved</span>
+      <span class="ruby-ivar">@clock_seq_low</span> = <span class="ruby-identifier">clock_seq_low</span>
+      <span class="ruby-ivar">@nodes</span> = <span class="ruby-identifier">nodes</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

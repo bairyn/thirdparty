@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: This exception is raised if an invalid argument is provided to any of Chronic's methods
+constants: []
+
+full_name: Chronic::InvalidArgumentException
+includes: []
+
+instance_methods: []
+
+name: InvalidArgumentException
+superclass: Exception

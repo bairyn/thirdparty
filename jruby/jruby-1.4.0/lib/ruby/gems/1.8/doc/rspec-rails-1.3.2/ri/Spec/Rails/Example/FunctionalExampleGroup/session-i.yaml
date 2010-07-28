@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Provides access to the session hash. Use this before or after rendering a view, calling a helper or calling a controller action.
+full_name: Spec::Rails::Example::FunctionalExampleGroup#session
+is_singleton: false
+name: session
+params: ()
+visibility: public

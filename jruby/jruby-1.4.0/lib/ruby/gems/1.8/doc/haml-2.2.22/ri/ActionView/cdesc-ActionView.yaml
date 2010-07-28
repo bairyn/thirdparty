@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: This module refers to the ActionView module that's part of Ruby on Rails. Haml can be used as an alternate templating engine for it, and includes several modifications to make it more Haml-friendly. The documentation can be found here[http://rubyonrails.org/api/classes/ActionView/Base.html].
+constants: []
+
+full_name: ActionView
+includes: []
+
+instance_methods: []
+
+name: ActionView
+superclass: 

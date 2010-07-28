@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Alias for #concat"
+full_name: ActionView::Helpers::TextHelper#concat_without_haml_xss
+is_singleton: false
+name: concat_without_haml_xss
+params: (string, binding = nil)
+visibility: public

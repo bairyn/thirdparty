@@ -1,0 +1,33 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+  - !ruby/object:RI::AliasName 
+    name: to_html
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Processes the template and returns the result as a string.
+  - !ruby/struct:SM::Flow::P 
+    body: "`scope` is the context in which the template is evaluated. If it's a `Binding` or `Proc` object, Haml uses it as the second argument to `Kernel#eval`; otherwise, Haml just uses its `#instance_eval` context."
+  - !ruby/struct:SM::Flow::P 
+    body: "Note that Haml modifies the evaluation context (either the scope object or the `self` object of the scope binding). It extends {Haml::Helpers}, and various instance variables are set (all prefixed with `haml_`). For example:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    s = &quot;foobar&quot;\n    Haml::Engine.new(&quot;%p= upcase&quot;).render(s) #=&gt; &quot;&lt;p&gt;FOOBAR&lt;/p&gt;&quot;\n\n    # s now extends Haml::Helpers\n    s.respond_to?(:html_attrs) #=&gt; true\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "`locals` is a hash of local variables to make available to the template. For example:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    Haml::Engine.new(&quot;%p= foo&quot;).render(Object.new, :foo =&gt; &quot;Hello, world!&quot;) #=&gt; &quot;&lt;p&gt;Hello, world!&lt;/p&gt;&quot;\n"
+  - !ruby/struct:SM::Flow::P 
+    body: If a block is passed to render, that block is run when `yield` is called within the template.
+  - !ruby/struct:SM::Flow::P 
+    body: Due to some Ruby quirks, if `scope` is a `Binding` or `Proc` object and a block is given, the evaluation context may not be quite what the user expects. In particular, it's equivalent to passing `eval(&quot;self&quot;, scope)` as `scope`. This won't have an effect in most cases, but if you're relying on local variables defined in the context of `scope`, they won't work.
+  - !ruby/struct:SM::Flow::P 
+    body: "@param scope [Binding, Proc, Object] The context in which the template is evaluated @param locals [{Symbol =&gt; Object}] Local variables that will be made available"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  to the template\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "@param block [#to_proc] A block that can be yielded to within the template @return [String] The rendered template"
+full_name: Haml::Engine#render
+is_singleton: false
+name: render
+params: (scope = Object.new, locals = {}, &block)
+visibility: public

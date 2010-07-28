@@ -1,0 +1,33 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Uses ActionController::Routing::Routes to verify that the path-and-method routes to a given set of options. Also verifies route-generation, so that the expected options do generate a pathname consisten with the indicated path/method.
+  - !ruby/struct:SM::Flow::P 
+    body: For negative tests, only the route recognition failure can be tested; since route generation via path_to() will always generate a path as requested. Use .should_not be_routable() in this case.
+  - !ruby/struct:SM::Flow::H 
+    level: 2
+    text: Examples
+  - !ruby/struct:SM::Flow::P 
+    body: "{ :get =&gt; '/registrations/1/edit' }."
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  should route_to(:controller =&gt; 'registrations', :action =&gt; 'edit', :id =&gt; '1')\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "{ :put =&gt; &quot;/registrations/1&quot; }.should"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  route_to(:controller =&gt; 'registrations', :action =&gt; 'update', :id =&gt; 1)\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "{ :post =&gt; &quot;/registrations/&quot; }.should"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  route_to(:controller =&gt; 'registrations', :action =&gt; 'create')\n"
+full_name: Spec::Rails::Matchers#route_to
+is_singleton: false
+name: route_to
+params: |
+  "path".should route_to(expected)  # assumes GET
+  { :get => "path" }.should route_to(expected)
+  { :put => "path" }.should route_to(expected)
+
+visibility: public

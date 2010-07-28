@@ -1,0 +1,19 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Parses the filtered text with ERB, like an RHTML template. Not available if the {file:HAML_REFERENCE.md#suppress_eval-option `:suppress_eval`} option is set to true. Embedded Ruby code is evaluated in the same context as the Haml template.
+constants: []
+
+full_name: Haml::Filters::ERB
+includes: 
+  - !ruby/object:RI::IncludedModule 
+    name: Base
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: compile
+name: ERB
+superclass: 

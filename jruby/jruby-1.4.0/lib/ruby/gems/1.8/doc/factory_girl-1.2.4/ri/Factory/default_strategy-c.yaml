@@ -1,0 +1,25 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Executes the default strategy for the given factory. This is usually create, but it can be overridden for each factory.
+  - !ruby/struct:SM::Flow::P 
+    body: "Arguments:"
+  - !ruby/object:SM::Flow::LIST 
+    contents: 
+      - !ruby/struct:SM::Flow::LI 
+        label: "*"
+        body: "name: <tt>Symbol</tt> or <tt>String</tt> The name of the factory that should be used."
+      - !ruby/struct:SM::Flow::LI 
+        label: "*"
+        body: "overrides: <tt>Hash</tt> Attributes to overwrite for this instance."
+    type: :BULLET
+  - !ruby/struct:SM::Flow::P 
+    body: "Returns: <tt>Object</tt> The result of the default strategy."
+full_name: Factory::default_strategy
+is_singleton: true
+name: default_strategy
+params: (name, overrides = {})
+visibility: public

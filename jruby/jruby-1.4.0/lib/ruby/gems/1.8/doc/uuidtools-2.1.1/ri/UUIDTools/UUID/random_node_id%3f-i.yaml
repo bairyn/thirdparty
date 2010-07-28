@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: This method applies only to version 1 UUIDs. Checks if the node ID was generated from a random number or from an IEEE 802 address (MAC address). Always returns false for UUIDs that aren't version 1. This should not be confused with version 4 UUIDs where more than just the node id is random.
+full_name: UUIDTools::UUID#random_node_id?
+is_singleton: false
+name: random_node_id?
+params: ()
+visibility: public

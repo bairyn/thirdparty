@@ -1,0 +1,18 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Captures the result of a block of Haml code, gets rid of the excess indentation, and returns it as a string. For example, after the following,
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    .foo\n      - foo = capture_haml(13) do |a|\n        %p= a\n"
+  - !ruby/struct:SM::Flow::P 
+    body: the local variable `foo` would be assigned to `&quot;&lt;p&gt;13&lt;/p&gt;\n&quot;`.
+  - !ruby/struct:SM::Flow::P 
+    body: "@param args [Array] Arguments to pass into the block @yield [args] A block of Haml code that will be converted to a string @yieldparam args [Array] `args`"
+full_name: Haml::Helpers#capture_haml
+is_singleton: false
+name: capture_haml
+params: (*args, &block)
+visibility: public

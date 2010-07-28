@@ -1,0 +1,27 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: new
+  - !ruby/object:RI::MethodSummary 
+    name: parse
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The parser for SassScript. It parses a string of code into a tree of {Script::Node}s.
+constants: []
+
+full_name: Sass::Script::Parser
+includes: []
+
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: parse
+  - !ruby/object:RI::MethodSummary 
+    name: parse_interpolated
+  - !ruby/object:RI::MethodSummary 
+    name: parse_mixin_definition_arglist
+  - !ruby/object:RI::MethodSummary 
+    name: parse_mixin_include_arglist
+name: Parser
+superclass: Object

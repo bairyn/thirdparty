@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "@deprecated This will be removed in version 3.0. @see #haml_concat"
+full_name: Haml::Helpers#puts
+is_singleton: false
+name: puts
+params: (*args)
+visibility: public

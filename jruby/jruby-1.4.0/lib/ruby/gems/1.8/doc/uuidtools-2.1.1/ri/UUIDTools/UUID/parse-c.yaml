@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Parses a UUID from a string.
+full_name: UUIDTools::UUID::parse
+is_singleton: true
+name: parse
+params: (uuid_string)
+visibility: public

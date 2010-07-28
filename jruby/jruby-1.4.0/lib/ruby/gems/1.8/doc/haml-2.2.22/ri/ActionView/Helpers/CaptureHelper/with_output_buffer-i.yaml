@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Alias for #with_output_buffer_with_haml_xss"
+full_name: ActionView::Helpers::CaptureHelper#with_output_buffer
+is_singleton: false
+name: with_output_buffer
+params: (*args, &block)
+visibility: public

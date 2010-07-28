@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sass::Script::Number#sans_common_units
+is_singleton: false
+name: sans_common_units
+params: (units1, units2)
+visibility: protected

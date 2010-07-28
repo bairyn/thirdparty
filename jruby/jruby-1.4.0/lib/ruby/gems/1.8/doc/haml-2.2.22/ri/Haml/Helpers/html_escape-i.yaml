@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Returns a copy of `text` with ampersands, angle brackets and quotes escaped into HTML entities.
+  - !ruby/struct:SM::Flow::P 
+    body: Note that if ActionView is loaded and XSS protection is enabled (as is the default for Rails 3.0+, and optional for version 2.3.5+), this won't escape text declared as &quot;safe&quot;.
+  - !ruby/struct:SM::Flow::P 
+    body: "@param text [String] The string to sanitize @return [String] The sanitized string"
+full_name: Haml::Helpers#html_escape
+is_singleton: false
+name: html_escape
+params: (text)
+visibility: public

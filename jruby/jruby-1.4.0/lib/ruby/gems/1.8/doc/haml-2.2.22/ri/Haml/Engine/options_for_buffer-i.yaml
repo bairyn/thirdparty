@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Returns a subset of \\{#options}: those that {Haml::Buffer} cares about. All of the values here are such that when `#inspect` is called on the hash, it can be `Kernel#eval`ed to get the same result back."
+  - !ruby/struct:SM::Flow::P 
+    body: See {file:HAML_REFERENCE.md#haml_options the Haml options documentation}.
+  - !ruby/struct:SM::Flow::P 
+    body: "@return [{Symbol =&gt; Object}] The options hash"
+full_name: Haml::Engine#options_for_buffer
+is_singleton: false
+name: options_for_buffer
+params: ()
+visibility: protected

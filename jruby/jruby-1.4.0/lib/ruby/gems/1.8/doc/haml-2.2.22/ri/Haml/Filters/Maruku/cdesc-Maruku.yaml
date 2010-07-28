@@ -1,0 +1,19 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Parses the filtered text with [Maruku](http://maruku.rubyforge.org), which has some non-standard extensions to Markdown.
+constants: []
+
+full_name: Haml::Filters::Maruku
+includes: 
+  - !ruby/object:RI::IncludedModule 
+    name: Base
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: render
+name: Maruku
+superclass: 

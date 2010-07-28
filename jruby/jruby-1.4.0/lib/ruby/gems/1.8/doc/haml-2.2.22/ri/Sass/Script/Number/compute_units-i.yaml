@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sass::Script::Number#compute_units
+is_singleton: false
+name: compute_units
+params: (this, other, operation)
+visibility: protected

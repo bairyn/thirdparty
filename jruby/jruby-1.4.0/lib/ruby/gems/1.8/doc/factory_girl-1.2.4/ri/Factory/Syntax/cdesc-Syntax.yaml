@@ -1,0 +1,32 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Provides alternate syntaxes for factory_girl. If you don't like the default syntax for defining or using factories, look at one of the Factory::Syntax modules:"
+  - !ruby/object:SM::Flow::LIST 
+    contents: 
+      - !ruby/struct:SM::Flow::LI 
+        label: "*"
+        body: "Factory::Syntax::Blueprint: definition syntax similar to Machinist"
+      - !ruby/struct:SM::Flow::LI 
+        label: "*"
+        body: "Factory::Syntax::Generate: usage syntax similar to Object Daddy"
+      - !ruby/struct:SM::Flow::LI 
+        label: "*"
+        body: "Factory::Syntax::Make: usage syntax similar to Machinist"
+      - !ruby/struct:SM::Flow::LI 
+        label: "*"
+        body: "Factory::Syntax::Sham: sequence syntax similar to Machinist"
+    type: :BULLET
+constants: []
+
+full_name: Factory::Syntax
+includes: []
+
+instance_methods: []
+
+name: Syntax
+superclass: 

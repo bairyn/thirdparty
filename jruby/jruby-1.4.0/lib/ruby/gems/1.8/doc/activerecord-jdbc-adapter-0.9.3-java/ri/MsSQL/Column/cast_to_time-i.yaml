@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: "::MsSQL::Column#cast_to_time"
+is_singleton: false
+name: cast_to_time
+params: (value)
+visibility: public

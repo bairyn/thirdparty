@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "@param str [String, StringScanner] The source text to parse @param line [Fixnum] The line on which the SassScript appears."
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  Used for error reporting\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "@param offset [Fixnum] The number of characters in on which the SassScript appears."
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  Used for error reporting\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "@param filename [String] The name of the file in which the SassScript appears."
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  Used for error reporting\n"
+full_name: Sass::Script::Parser::new
+is_singleton: true
+name: new
+params: (str, line, offset, filename = nil)
+visibility: public

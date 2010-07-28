@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Haml::Exec::HamlSass</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Haml::Exec::HamlSass</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/haml/exec_rb.html">
+                lib/haml/exec.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                <a href="Generic.html">
+                Generic
+               </a>
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+An abstrac class that encapsulates the code specific to the `haml` and
+`sass` executables.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000011">new</a>&nbsp;&nbsp;
+      <a href="#M000013">process_result</a>&nbsp;&nbsp;
+      <a href="#M000012">set_opts</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000011" class="method-detail">
+        <a name="M000011"></a>
+
+        <div class="method-heading">
+          <a href="#M000011" class="method-signature">
+          <span class="method-name">new</span><span class="method-args">(args)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@param args [Array&lt;String&gt;] The command-line arguments
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000011-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000011-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/haml/exec.rb, line 124</span>
+124:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">args</span>)
+125:         <span class="ruby-keyword kw">super</span>
+126:         <span class="ruby-ivar">@options</span>[<span class="ruby-identifier">:for_engine</span>] = {}
+127:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Protected Instance methods</h3>
+
+      <div id="method-M000013" class="method-detail">
+        <a name="M000013"></a>
+
+        <div class="method-heading">
+          <a href="#M000013" class="method-signature">
+          <span class="method-name">process_result</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Processes the options set by the command-line arguments. In particular,
+sets `@options[:for_engine][:filename]` to the input filename and requires
+the appropriate file.
+</p>
+<p>
+This is meant to be overridden by subclasses so they can run their
+respective programs.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000013-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000013-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/haml/exec.rb, line 198</span>
+198:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">process_result</span>
+199:         <span class="ruby-keyword kw">super</span>
+200:         <span class="ruby-ivar">@options</span>[<span class="ruby-identifier">:for_engine</span>][<span class="ruby-identifier">:filename</span>] = <span class="ruby-ivar">@options</span>[<span class="ruby-identifier">:filename</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@options</span>[<span class="ruby-identifier">:filename</span>]
+201:         <span class="ruby-identifier">require</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword kw">__FILE__</span>) <span class="ruby-operator">+</span> <span class="ruby-node">&quot;/../#{@name.downcase}&quot;</span>
+202:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000012" class="method-detail">
+        <a name="M000012"></a>
+
+        <div class="method-heading">
+          <a href="#M000012" class="method-signature">
+          <span class="method-name">set_opts</span><span class="method-args">(opts)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Tells optparse how to parse the arguments available for the `haml` and
+`sass` executables.
+</p>
+<p>
+This is meant to be overridden by subclasses so they can add their own
+options.
+</p>
+<p>
+@param opts [OptionParser]
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000012-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000012-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/haml/exec.rb, line 138</span>
+138:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">set_opts</span>(<span class="ruby-identifier">opts</span>)
+139:         <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">banner</span> = <span class="ruby-value str">&quot;Usage: \#{@name.downcase} [options] [INPUT] [OUTPUT]\n\nDescription:\n  Uses the \#{@name} engine to parse the specified template\n  and outputs the result to the specified file.\n\nOptions:\n&quot;</span>
+140: 
+141:         <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">'--rails RAILS_DIR'</span>, <span class="ruby-value str">&quot;Install Haml and Sass from the Gem to a Rails project&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span>
+142:           <span class="ruby-identifier">original_dir</span> = <span class="ruby-identifier">dir</span>
+143: 
+144:           <span class="ruby-identifier">dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">dir</span>, <span class="ruby-value str">'vendor'</span>, <span class="ruby-value str">'plugins'</span>)
+145: 
+146:           <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">dir</span>)
+147:             <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Directory #{dir} doesn't exist&quot;</span>
+148:             <span class="ruby-identifier">exit</span>
+149:           <span class="ruby-keyword kw">end</span>
+150: 
+151:           <span class="ruby-identifier">dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">dir</span>, <span class="ruby-value str">'haml'</span>)
+152: 
+153:           <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">dir</span>)
+154:             <span class="ruby-identifier">print</span> <span class="ruby-node">&quot;Directory #{dir} already exists, overwrite [y/N]? &quot;</span>
+155:             <span class="ruby-identifier">exit</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">gets</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp re">/y/i</span>
+156:             <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_rf</span>(<span class="ruby-identifier">dir</span>)
+157:           <span class="ruby-keyword kw">end</span>
+158: 
+159:           <span class="ruby-keyword kw">begin</span>
+160:             <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">mkdir</span>(<span class="ruby-identifier">dir</span>)
+161:           <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">SystemCallError</span>
+162:             <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Cannot create #{dir}&quot;</span>
+163:             <span class="ruby-identifier">exit</span>
+164:           <span class="ruby-keyword kw">end</span>
+165: 
+166:           <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">dir</span>, <span class="ruby-value str">'init.rb'</span>), <span class="ruby-value str">'w'</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+167:             <span class="ruby-identifier">file</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword kw">__FILE__</span>) <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;/../../init.rb&quot;</span>)
+168:           <span class="ruby-keyword kw">end</span>
+169: 
+170:           <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Haml plugin added to #{original_dir}&quot;</span>
+171:           <span class="ruby-identifier">exit</span>
+172:         <span class="ruby-keyword kw">end</span>
+173: 
+174:         <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">'-c'</span>, <span class="ruby-value str">'--check'</span>, <span class="ruby-value str">&quot;Just check syntax, don't evaluate.&quot;</span>) <span class="ruby-keyword kw">do</span>
+175:           <span class="ruby-identifier">require</span> <span class="ruby-value str">'stringio'</span>
+176:           <span class="ruby-ivar">@options</span>[<span class="ruby-identifier">:check_syntax</span>] = <span class="ruby-keyword kw">true</span>
+177:           <span class="ruby-ivar">@options</span>[<span class="ruby-identifier">:output</span>] = <span class="ruby-constant">StringIO</span>.<span class="ruby-identifier">new</span>
+178:         <span class="ruby-keyword kw">end</span>
+179: 
+180:         <span class="ruby-keyword kw">super</span>
+181:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

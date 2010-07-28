@@ -1,0 +1,27 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+  - !ruby/object:RI::Constant 
+    comment: 
+    name: DIRECTORY
+    value: "'javascripts'.freeze"
+  - !ruby/object:RI::Constant 
+    comment: 
+    name: EXTENSION
+    value: "'js'.freeze"
+full_name: ActionView::Helpers::AssetTagHelper::JavaScriptAsset
+includes: []
+
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: directory
+  - !ruby/object:RI::MethodSummary 
+    name: extension
+  - !ruby/object:RI::MethodSummary 
+    name: public_directory
+name: JavaScriptAsset
+superclass: 

@@ -1,0 +1,18 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: FactoryGirlStepHelpers
+includes: []
+
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: convert_association_string_to_instance
+  - !ruby/object:RI::MethodSummary 
+    name: convert_human_hash_to_attribute_hash
+name: FactoryGirlStepHelpers
+superclass: 

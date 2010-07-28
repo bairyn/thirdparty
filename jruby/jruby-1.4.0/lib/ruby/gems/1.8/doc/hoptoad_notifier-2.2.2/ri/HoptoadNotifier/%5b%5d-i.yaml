@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Allows config options to be read like a hash
+  - !ruby/struct:SM::Flow::P 
+    body: "@param [Symbol] option Key for a given attribute"
+full_name: HoptoadNotifier#[]
+is_singleton: false
+name: "[]"
+params: (option)
+visibility: public

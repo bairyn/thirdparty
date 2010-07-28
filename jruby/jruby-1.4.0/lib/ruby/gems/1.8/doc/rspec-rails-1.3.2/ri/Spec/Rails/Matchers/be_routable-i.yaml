@@ -1,0 +1,24 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+  - !ruby/object:RI::AliasName 
+    name: be_routeable
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Uses ActionController::Routing::Routes to verify that the path-and-method cannot be routed to a controller. Since url_for() will always generate a path, even if that path is not routable, the negative test only needs to be performed on the route recognition.
+  - !ruby/struct:SM::Flow::P 
+    body: Don't use this matcher for testing expected routability - use .should route_to( :controller =&gt; &quot;controller&quot;, :action =&gt; &quot;action&quot; ) instead
+  - !ruby/struct:SM::Flow::H 
+    level: 2
+    text: Examples
+  - !ruby/struct:SM::Flow::P 
+    body: "{ :get =&gt; '/registrations/1/attendees/3/edit' }.should_not be_routable { :get =&gt; '/attendees/3/edit' }.should route_to( ...&lt;controller/action&gt;... )"
+full_name: Spec::Rails::Matchers#be_routable
+is_singleton: false
+name: be_routable
+params: |
+  { "path" }.should_not be_routable # assumes GET
+  { :get => "path" }.should_not be_routable
+  { :put => "path" }.should_not be_routable
+
+visibility: public

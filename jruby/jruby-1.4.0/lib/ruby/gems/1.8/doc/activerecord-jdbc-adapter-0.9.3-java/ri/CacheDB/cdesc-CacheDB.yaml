@@ -1,0 +1,20 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: adapter_matcher
+  - !ruby/object:RI::MethodSummary 
+    name: column_selector
+comment: 
+constants: []
+
+full_name: "::CacheDB"
+includes: 
+  - !ruby/object:RI::IncludedModule 
+    name: TSqlMethods
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: create_table
+name: CacheDB
+superclass: 

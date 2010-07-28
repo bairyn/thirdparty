@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: "::MsSQL#_execute"
+is_singleton: false
+name: _execute
+params: (sql, name = nil)
+visibility: public

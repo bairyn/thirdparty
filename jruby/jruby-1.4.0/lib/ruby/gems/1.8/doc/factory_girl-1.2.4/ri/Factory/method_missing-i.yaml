@@ -1,0 +1,20 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Calls add_attribute using the missing method name as the name of the attribute, so that:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  Factory.define :user do |f|\n    f.name 'Billy Idol'\n  end\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "and:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  Factory.define :user do |f|\n    f.add_attribute :name, 'Billy Idol'\n  end\n"
+  - !ruby/struct:SM::Flow::P 
+    body: are equivilent.
+full_name: Factory#method_missing
+is_singleton: false
+name: method_missing
+params: (name, *args, &block)
+visibility: public

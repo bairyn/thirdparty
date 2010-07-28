@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: ActionView::Helpers::AssetTagHelper::AssetTag::new
+is_singleton: true
+name: new
+params: (template, controller, source, include_host = true)
+visibility: public

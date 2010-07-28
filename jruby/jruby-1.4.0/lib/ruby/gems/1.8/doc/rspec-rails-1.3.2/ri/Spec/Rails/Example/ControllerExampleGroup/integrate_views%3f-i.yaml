@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Spec::Rails::Example::ControllerExampleGroup#integrate_views?
+is_singleton: false
+name: integrate_views?
+params: ()
+visibility: public

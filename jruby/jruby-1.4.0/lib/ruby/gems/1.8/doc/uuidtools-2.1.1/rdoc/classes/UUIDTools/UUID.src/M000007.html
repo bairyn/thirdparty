@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>parse_raw (UUIDTools::UUID)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/uuidtools.rb, line 144</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">parse_raw</span>(<span class="ruby-identifier">raw_string</span>)
+      <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">raw_string</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">String</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>,
+          <span class="ruby-node">&quot;Expected String, got #{raw_string.class.name} instead.&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">integer</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">convert_byte_string_to_int</span>(<span class="ruby-identifier">raw_string</span>)
+
+      <span class="ruby-identifier">time_low</span> = (<span class="ruby-identifier">integer</span> <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-value">96</span>) <span class="ruby-operator">&amp;</span> <span class="ruby-value">0x</span><span class="ruby-constant">FFFFFFFF</span>
+      <span class="ruby-identifier">time_mid</span> = (<span class="ruby-identifier">integer</span> <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-value">80</span>) <span class="ruby-operator">&amp;</span> <span class="ruby-value">0x</span><span class="ruby-constant">FFFF</span>
+      <span class="ruby-identifier">time_hi_and_version</span> = (<span class="ruby-identifier">integer</span> <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-value">64</span>) <span class="ruby-operator">&amp;</span> <span class="ruby-value">0x</span><span class="ruby-constant">FFFF</span>
+      <span class="ruby-identifier">clock_seq_hi_and_reserved</span> = (<span class="ruby-identifier">integer</span> <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-value">56</span>) <span class="ruby-operator">&amp;</span> <span class="ruby-value">0x</span><span class="ruby-constant">FF</span>
+      <span class="ruby-identifier">clock_seq_low</span> = (<span class="ruby-identifier">integer</span> <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-value">48</span>) <span class="ruby-operator">&amp;</span> <span class="ruby-value">0x</span><span class="ruby-constant">FF</span>
+      <span class="ruby-identifier">nodes</span> = []
+      <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword kw">in</span> <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">5</span>
+        <span class="ruby-identifier">nodes</span> <span class="ruby-operator">&lt;&lt;</span> ((<span class="ruby-identifier">integer</span> <span class="ruby-operator">&gt;&gt;</span> (<span class="ruby-value">40</span> <span class="ruby-operator">-</span> (<span class="ruby-identifier">i</span> <span class="ruby-operator">*</span> <span class="ruby-value">8</span>))) <span class="ruby-operator">&amp;</span> <span class="ruby-value">0x</span><span class="ruby-constant">FF</span>)
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">time_low</span>, <span class="ruby-identifier">time_mid</span>, <span class="ruby-identifier">time_hi_and_version</span>,
+        <span class="ruby-identifier">clock_seq_hi_and_reserved</span>, <span class="ruby-identifier">clock_seq_low</span>, <span class="ruby-identifier">nodes</span>)
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

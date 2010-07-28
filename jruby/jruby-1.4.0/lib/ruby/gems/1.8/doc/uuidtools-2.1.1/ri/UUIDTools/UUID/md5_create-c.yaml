@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Creates a UUID using the MD5 hash. (Version 3)
+full_name: UUIDTools::UUID::md5_create
+is_singleton: true
+name: md5_create
+params: (namespace, name)
+visibility: public

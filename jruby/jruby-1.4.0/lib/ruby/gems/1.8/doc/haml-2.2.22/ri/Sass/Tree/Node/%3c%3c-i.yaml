@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Appends a child to the node.
+  - !ruby/struct:SM::Flow::P 
+    body: "@param child [Tree::Node] The child node @raise [Sass::SyntaxError] if `child` is invalid @see #invalid_child?"
+full_name: Sass::Tree::Node#<<
+is_singleton: false
+name: "<<"
+params: (child)
+visibility: public

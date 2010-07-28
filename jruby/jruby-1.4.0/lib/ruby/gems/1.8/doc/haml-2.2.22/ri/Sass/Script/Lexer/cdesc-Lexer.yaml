@@ -1,0 +1,54 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: new
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The lexical analyzer for SassScript. It takes a raw string and converts it to individual tokens that are easier to parse.
+constants: 
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: A struct containing information about an individual token.
+      - !ruby/struct:SM::Flow::P 
+        body: "`type`: \\[`Symbol`\\] : The type of token."
+      - !ruby/struct:SM::Flow::P 
+        body: "`value`: \\[`Object`\\] : The Ruby object corresponding to the value of the token."
+      - !ruby/struct:SM::Flow::P 
+        body: "`line`: \\[`Fixnum`\\] : The line of the source file on which the token appears."
+      - !ruby/struct:SM::Flow::P 
+        body: "`offset`: \\[`Fixnum`\\] : The number of bytes into the line the SassScript token appeared."
+    name: Token
+    value: Struct.new(:type, :value, :line, :offset)
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: A hash from operator strings to the corresponding token types. @private
+    name: OPERATORS
+    value: "{         '+' => :plus,         '-' => :minus,         '*' => :times,         '/' => :div,         '%' => :mod,         '=' => :single_eq,         '(' => :lparen,         ')' => :rparen,         ',' => :comma,         'and' => :and,         'or' => :or,         'not' => :not,         '==' => :eq,         '!=' => :neq,         '>=' => :gte,         '<=' => :lte,         '>' => :gt,         '<' => :lt,         '#{' => :begin_interpolation,         '}' => :end_interpolation,       }"
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: A list of operator strings ordered with longer names first so that `&gt;` and `&lt;` don't clobber `&gt;=` and `&lt;=`. @private
+    name: OP_NAMES
+    value: OPERATORS.keys.sort_by {|o| -o.size}
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: A hash of regular expressions that are used for tokenizing. @private
+    name: REGULAR_EXPRESSIONS
+    value: "{         :whitespace => /\\s*/,         :variable => /!(\\w+)/,         :ident => /(\\\\.|[^\\s\\\\+\\-*\\/%(),=!])+/,         :string_end => /((?:\\\\.|\\#(?!\\{)|[^\"\\\\#])*)(?:\"|(?=#\\{))/,         :number => /(-)?(?:(\\d*\\.\\d+)|(\\d+))([a-zA-Z%]+)?/,         :color => /\\##{\"([0-9a-fA-F]{1,2})\" * 3}|(#{Color::HTML4_COLORS.keys.join(\"|\")})/,         :bool => /(true|false)\\b/,         :op => %r{(#{Regexp.union(*OP_NAMES.map{|s| Regexp.new(Regexp.escape(s) + (s =~ /\\w$/ ? '(?:\\b|$)' : ''))})})}"
+full_name: Sass::Script::Lexer
+includes: []
+
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: done?
+  - !ruby/object:RI::MethodSummary 
+    name: next
+  - !ruby/object:RI::MethodSummary 
+    name: peek
+name: Lexer
+superclass: Object

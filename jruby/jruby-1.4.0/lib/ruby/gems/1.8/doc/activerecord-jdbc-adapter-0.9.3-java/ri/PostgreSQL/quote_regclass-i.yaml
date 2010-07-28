@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: "::PostgreSQL#quote_regclass"
+is_singleton: false
+name: quote_regclass
+params: (table_name)
+visibility: public

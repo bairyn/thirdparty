@@ -1,0 +1,134 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Handles the internal pre-compilation from Haml into Ruby code, which then runs the final creation of the HTML string.
+constants: 
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: Designates an XHTML/XML element. @private
+    name: ELEMENT
+    value: ?%
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: Designates a `&lt;div&gt;` element with the given class. @private
+    name: DIV_CLASS
+    value: ?.
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: Designates a `&lt;div&gt;` element with the given id. @private
+    name: DIV_ID
+    value: ?#
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: Designates an XHTML/XML comment. @private
+    name: COMMENT
+    value: ?/
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: Designates an XHTML doctype or script that is never HTML-escaped. @private
+    name: DOCTYPE
+    value: ?!
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: Designates script, the result of which is output. @private
+    name: SCRIPT
+    value: ?=
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: Designates script that is always HTML-escaped. @private
+    name: SANITIZE
+    value: ?&
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: Designates script, the result of which is flattened and output. @private
+    name: FLAT_SCRIPT
+    value: ?~
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: Designates script which is run but not output. @private
+    name: SILENT_SCRIPT
+    value: ?-
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: When following SILENT_SCRIPT, designates a comment that is not output. @private
+    name: SILENT_COMMENT
+    value: ?#
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: Designates a non-parsed line. @private
+    name: ESCAPE
+    value: ?\\
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: Designates a block of filtered text. @private
+    name: FILTER
+    value: "?:"
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: Designates a non-parsed line. Not actually a character. @private
+    name: PLAIN_TEXT
+    value: "-1"
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: Keeps track of the ASCII values of the characters that begin a specially-interpreted line. @private
+    name: SPECIAL_CHARACTERS
+    value: "[       ELEMENT,       DIV_CLASS,       DIV_ID,       COMMENT,       DOCTYPE,       SCRIPT,       SANITIZE,       FLAT_SCRIPT,       SILENT_SCRIPT,       ESCAPE,       FILTER"
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The value of the character that designates that a line is part of a multiline string. @private
+    name: MULTILINE_CHAR_VALUE
+    value: ?|
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: "Regex to match keywords that appear in the middle of a Ruby block with lowered indentation. If a block has been started using indentation, lowering the indentation with one of these won't end the block. For example:"
+      - !ruby/struct:SM::Flow::VERB 
+        body: "  - if foo\n    %p yes!\n  - else\n    %p no!\n"
+      - !ruby/struct:SM::Flow::P 
+        body: The block is ended after `%p no!`, because `else` is a member of this array. @private
+    name: MID_BLOCK_KEYWORD_REGEX
+    value: /^-\s*(#{%w[else elsif rescue ensure when end].join('|')})\b/
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The Regex that matches a Doctype command. @private
+    name: DOCTYPE_REGEX
+    value: /(\d(?:\.\d)?)?[\s]*([a-z]*)/i
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The Regex that matches a literal string or symbol value @private
+    name: LITERAL_VALUE_REGEX
+    value: /:(\w*)|(["'])((?![\\#]|\2).|\\.)*\2/
+full_name: Haml::Precompiler
+includes: 
+  - !ruby/object:RI::IncludedModule 
+    name: Haml::Util
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: push_silent
+  - !ruby/object:RI::MethodSummary 
+    name: push_silent_with_haml_block_deprecation
+  - !ruby/object:RI::MethodSummary 
+    name: push_silent_without_haml_block_deprecation
+name: Precompiler
+superclass: 

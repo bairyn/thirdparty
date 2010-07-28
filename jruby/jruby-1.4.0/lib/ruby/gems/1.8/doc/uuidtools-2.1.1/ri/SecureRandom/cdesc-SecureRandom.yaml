@@ -1,0 +1,22 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: base64
+  - !ruby/object:RI::MethodSummary 
+    name: hex
+  - !ruby/object:RI::MethodSummary 
+    name: random_bytes
+  - !ruby/object:RI::MethodSummary 
+    name: random_number
+comment: 
+constants: []
+
+full_name: SecureRandom
+includes: []
+
+instance_methods: []
+
+name: SecureRandom
+superclass: 

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>parse (HoptoadNotifier::Backtrace)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>    <span class="ruby-comment cmt"># File lib/hoptoad_notifier/backtrace.rb, line 54</span>
+54:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">ruby_backtrace</span>, <span class="ruby-identifier">opts</span> = {})
+55:       <span class="ruby-identifier">ruby_lines</span> = <span class="ruby-identifier">split_multiline_backtrace</span>(<span class="ruby-identifier">ruby_backtrace</span>)
+56: 
+57:       <span class="ruby-identifier">filters</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:filters</span>] <span class="ruby-operator">||</span> []
+58:       <span class="ruby-identifier">filtered_lines</span> = <span class="ruby-identifier">ruby_lines</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+59:         <span class="ruby-identifier">filters</span>.<span class="ruby-identifier">inject</span>(<span class="ruby-identifier">line</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span>, <span class="ruby-identifier">proc</span><span class="ruby-operator">|</span>
+60:           <span class="ruby-identifier">proc</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">line</span>)
+61:         <span class="ruby-keyword kw">end</span>
+62:       <span class="ruby-keyword kw">end</span>.<span class="ruby-identifier">compact</span>
+63: 
+64:       <span class="ruby-identifier">lines</span> = <span class="ruby-identifier">filtered_lines</span>.<span class="ruby-identifier">collect</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">unparsed_line</span><span class="ruby-operator">|</span>
+65:         <span class="ruby-constant">Line</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">unparsed_line</span>)
+66:       <span class="ruby-keyword kw">end</span>
+67: 
+68:       <span class="ruby-identifier">instance</span> = <span class="ruby-identifier">new</span>(<span class="ruby-identifier">lines</span>)
+69:     <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

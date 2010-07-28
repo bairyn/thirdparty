@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: "::H2#h2_adapter"
+is_singleton: false
+name: h2_adapter
+params: ()
+visibility: public

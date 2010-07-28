@@ -1,0 +1,20 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Sets the number of tabs the buffer automatically adds to the lines of the template, but only for the duration of the block. For example:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    %h1 foo\n    - with_tabs(2) do\n      %p bar\n    %strong baz\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "Produces:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    &lt;h1&gt;foo&lt;/h1&gt;\n        &lt;p&gt;bar&lt;/p&gt;\n    &lt;strong&gt;baz&lt;/strong&gt;\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "@param i [Fixnum] The number of tabs to use @yield A block in which the indentation will be `i` spaces"
+full_name: Haml::Helpers#with_tabs
+is_singleton: false
+name: with_tabs
+params: (i) {|| ...}
+visibility: public

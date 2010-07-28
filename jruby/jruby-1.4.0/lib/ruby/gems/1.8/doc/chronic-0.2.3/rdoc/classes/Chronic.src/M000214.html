@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>parse (Chronic)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/chronic/chronic.rb, line 41</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">text</span>, <span class="ruby-identifier">specified_options</span> = {})
+      <span class="ruby-comment cmt"># get options and set defaults if necessary</span>
+      <span class="ruby-identifier">default_options</span> = {<span class="ruby-identifier">:context</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">:future</span>,
+                         <span class="ruby-identifier">:now</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>,
+                         <span class="ruby-identifier">:guess</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span>,
+                         <span class="ruby-identifier">:ambiguous_time_range</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">6</span>}
+      <span class="ruby-identifier">options</span> = <span class="ruby-identifier">default_options</span>.<span class="ruby-identifier">merge</span> <span class="ruby-identifier">specified_options</span>
+            
+      <span class="ruby-comment cmt"># ensure the specified options are valid</span>
+      <span class="ruby-identifier">specified_options</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">default_options</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">key</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">raise</span>(<span class="ruby-constant">InvalidArgumentException</span>, <span class="ruby-node">&quot;#{key} is not a valid option key.&quot;</span>)
+      <span class="ruby-keyword kw">end</span>
+      [<span class="ruby-identifier">:past</span>, <span class="ruby-identifier">:future</span>, <span class="ruby-identifier">:none</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">options</span>[<span class="ruby-identifier">:context</span>]) <span class="ruby-operator">||</span> <span class="ruby-identifier">raise</span>(<span class="ruby-constant">InvalidArgumentException</span>, <span class="ruby-node">&quot;Invalid value ':#{options[:context]}' for :context specified. Valid values are :past and :future.&quot;</span>)
+      
+      <span class="ruby-comment cmt"># store now for later =)</span>
+      <span class="ruby-ivar">@now</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:now</span>]
+      
+      <span class="ruby-comment cmt"># put the text into a normal format to ease scanning</span>
+      <span class="ruby-identifier">text</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">pre_normalize</span>(<span class="ruby-identifier">text</span>)
+          
+      <span class="ruby-comment cmt"># get base tokens for each word</span>
+      <span class="ruby-ivar">@tokens</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">base_tokenize</span>(<span class="ruby-identifier">text</span>)
+    
+      <span class="ruby-comment cmt"># scan the tokens with each token scanner</span>
+      [<span class="ruby-constant">Repeater</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">tokenizer</span><span class="ruby-operator">|</span>
+        <span class="ruby-ivar">@tokens</span> = <span class="ruby-identifier">tokenizer</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-ivar">@tokens</span>, <span class="ruby-identifier">options</span>)
+      <span class="ruby-keyword kw">end</span>
+      
+      [<span class="ruby-constant">Grabber</span>, <span class="ruby-constant">Pointer</span>, <span class="ruby-constant">Scalar</span>, <span class="ruby-constant">Ordinal</span>, <span class="ruby-constant">Separator</span>, <span class="ruby-constant">TimeZone</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">tokenizer</span><span class="ruby-operator">|</span>
+        <span class="ruby-ivar">@tokens</span> = <span class="ruby-identifier">tokenizer</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-ivar">@tokens</span>)
+      <span class="ruby-keyword kw">end</span>
+      
+      <span class="ruby-comment cmt"># strip any non-tagged tokens</span>
+      <span class="ruby-ivar">@tokens</span> = <span class="ruby-ivar">@tokens</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">token</span><span class="ruby-operator">|</span> <span class="ruby-identifier">token</span>.<span class="ruby-identifier">tagged?</span> }
+      
+      <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">debug</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;+---------------------------------------------------&quot;</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;| &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@tokens</span>.<span class="ruby-identifier">to_s</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;+---------------------------------------------------&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+      
+      <span class="ruby-comment cmt"># do the heavy lifting</span>
+      <span class="ruby-keyword kw">begin</span>
+        <span class="ruby-identifier">span</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">tokens_to_span</span>(<span class="ruby-ivar">@tokens</span>, <span class="ruby-identifier">options</span>)
+      <span class="ruby-keyword kw">rescue</span>
+        <span class="ruby-identifier">raise</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-keyword kw">end</span>
+      
+      <span class="ruby-comment cmt"># guess a time within a span if required</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:guess</span>]
+        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">guess</span>(<span class="ruby-identifier">span</span>)
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">span</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

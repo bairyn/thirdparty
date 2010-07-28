@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: HoptoadNotifier#protocol
+is_singleton: false
+name: protocol
+params: ()
+visibility: public

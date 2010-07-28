@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sass::Script::Number#coercion_factor
+is_singleton: false
+name: coercion_factor
+params: (from_units, to_units)
+visibility: protected

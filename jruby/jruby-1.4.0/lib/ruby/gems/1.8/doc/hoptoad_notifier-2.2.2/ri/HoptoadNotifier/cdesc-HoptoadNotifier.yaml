@@ -1,0 +1,89 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: A Hoptoad configuration object. Must act like a hash and return sensible values for all Hoptoad configuration options. See HoptoadNotifier::Configuration.
+    name: configuration
+    rw: RW
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: "The sender object is responsible for delivering formatted data to the Hoptoad server. Must respond to #send_to_hoptoad. See HoptoadNotifier::Sender."
+    name: sender
+    rw: RW
+class_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: build_lookup_hash_for
+  - !ruby/object:RI::MethodSummary 
+    name: configure
+  - !ruby/object:RI::MethodSummary 
+    name: environment_info
+  - !ruby/object:RI::MethodSummary 
+    name: logger
+  - !ruby/object:RI::MethodSummary 
+    name: new
+  - !ruby/object:RI::MethodSummary 
+    name: notify
+  - !ruby/object:RI::MethodSummary 
+    name: notify_or_ignore
+  - !ruby/object:RI::MethodSummary 
+    name: report_environment_info
+  - !ruby/object:RI::MethodSummary 
+    name: report_ready
+  - !ruby/object:RI::MethodSummary 
+    name: report_response_body
+  - !ruby/object:RI::MethodSummary 
+    name: write_verbose_log
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Gem for applications to automatically post errors to the Hoptoad of their choice.
+constants: 
+  - !ruby/object:RI::Constant 
+    comment: 
+    name: IGNORE_DEFAULT
+    value: "['ActiveRecord::RecordNotFound',                       'ActionController::RoutingError',                       'ActionController::InvalidAuthenticityToken',                       'CGI::Session::CookieStore::TamperedWithCookie',                       'ActionController::UnknownAction']"
+  - !ruby/object:RI::Constant 
+    comment: 
+    name: VERSION
+    value: "\"2.2.2\".freeze"
+  - !ruby/object:RI::Constant 
+    comment: 
+    name: API_VERSION
+    value: "\"2.0\""
+  - !ruby/object:RI::Constant 
+    comment: 
+    name: LOG_PREFIX
+    value: "\"** [Hoptoad] \""
+  - !ruby/object:RI::Constant 
+    comment: 
+    name: HEADERS
+    value: "{     'Content-type'             => 'text/xml',     'Accept'                   => 'text/xml, application/xml'"
+full_name: HoptoadNotifier
+includes: []
+
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: "[]"
+  - !ruby/object:RI::MethodSummary 
+    name: environment_filters
+  - !ruby/object:RI::MethodSummary 
+    name: filter_backtrace
+  - !ruby/object:RI::MethodSummary 
+    name: ignore_by_filter
+  - !ruby/object:RI::MethodSummary 
+    name: ignore_only=
+  - !ruby/object:RI::MethodSummary 
+    name: ignore_user_agent_only=
+  - !ruby/object:RI::MethodSummary 
+    name: merge
+  - !ruby/object:RI::MethodSummary 
+    name: port
+  - !ruby/object:RI::MethodSummary 
+    name: protocol
+  - !ruby/object:RI::MethodSummary 
+    name: public?
+  - !ruby/object:RI::MethodSummary 
+    name: to_hash
+name: HoptoadNotifier
+superclass: 

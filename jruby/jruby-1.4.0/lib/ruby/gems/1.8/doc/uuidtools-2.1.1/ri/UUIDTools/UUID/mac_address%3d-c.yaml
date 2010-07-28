@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Allows users to set the MAC address manually in cases where the MAC address cannot be obtained programatically.
+full_name: UUIDTools::UUID::mac_address=
+is_singleton: true
+name: mac_address=
+params: (new_mac_address)
+visibility: public

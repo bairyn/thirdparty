@@ -1,0 +1,23 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: adapter_matcher
+comment: 
+constants: []
+
+full_name: "::FireBird"
+includes: []
+
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: modify_types
+  - !ruby/object:RI::MethodSummary 
+    name: next_sequence_value
+  - !ruby/object:RI::MethodSummary 
+    name: prefetch_primary_key?
+  - !ruby/object:RI::MethodSummary 
+    name: rename_column
+name: FireBird
+superclass: 

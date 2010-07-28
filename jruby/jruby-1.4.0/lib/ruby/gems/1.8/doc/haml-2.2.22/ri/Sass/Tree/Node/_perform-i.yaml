@@ -1,0 +1,18 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Runs any dynamic Sass code in this particular node. This doesn't modify this node or any of its children.
+  - !ruby/struct:SM::Flow::P 
+    body: "@param environment [Sass::Environment] The lexical environment containing"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  variable and mixin values\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "@return [Tree::Node, Array&lt;Tree::Node&gt;] The resulting static nodes @see #perform @see Sass::Tree"
+full_name: Sass::Tree::Node#_perform
+is_singleton: false
+name: _perform
+params: (environment)
+visibility: protected

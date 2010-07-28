@@ -1,0 +1,68 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Methods in this module are accessible from the SassScript context. For example, you can write
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    !color = hsl(120, 100%, 50%)\n"
+  - !ruby/struct:SM::Flow::P 
+    body: and it will call {Sass::Script::Functions#hsl}.
+  - !ruby/struct:SM::Flow::P 
+    body: "The following functions are provided:"
+  - !ruby/struct:SM::Flow::P 
+    body: "\\{#hsl} : Converts an `hsl(hue, saturation, lightness)` triplet into a color."
+  - !ruby/struct:SM::Flow::P 
+    body: "\\{#rgb} : Converts an `rgb(red, green, blue)` triplet into a color."
+  - !ruby/struct:SM::Flow::P 
+    body: "\\{#percentage} : Converts a unitless number to a percentage."
+  - !ruby/struct:SM::Flow::P 
+    body: "\\{#round} : Rounds a number to the nearest whole number."
+  - !ruby/struct:SM::Flow::P 
+    body: "\\{#ceil} : Rounds a number up to the nearest whole number."
+  - !ruby/struct:SM::Flow::P 
+    body: "\\{#floor} : Rounds a number down to the nearest whole number."
+  - !ruby/struct:SM::Flow::P 
+    body: "\\{#abs} : Returns the absolute value of a number."
+  - !ruby/struct:SM::Flow::P 
+    body: These functions are described in more detail below.
+  - !ruby/struct:SM::Flow::P 
+    body: "## Adding Custom Functions"
+  - !ruby/struct:SM::Flow::P 
+    body: "New Sass functions can be added by adding Ruby methods to this module. For example:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    module Sass::Script::Functions\n      def reverse(string)\n        assert_type string, :String\n        Sass::Script::String.new(string.value.reverse)\n      end\n    end\n"
+  - !ruby/struct:SM::Flow::P 
+    body: There are a few things to keep in mind when modifying this module. First of all, the arguments passed are {Sass::Script::Literal} objects. Literal objects are also expected to be returned. This means that Ruby values must be unwrapped and wrapped.
+  - !ruby/struct:SM::Flow::P 
+    body: Most Literal objects support the {Sass::Script::Literal#value value} accessor for getting their Ruby values. Color objects, though, must be accessed using {Sass::Script::Color#rgb rgb}.
+  - !ruby/struct:SM::Flow::P 
+    body: Second, making Ruby functions accessible from Sass introduces the temptation to do things like database access within stylesheets. This is generally a bad idea; since Sass files are by default only compiled once, dynamic code is not a great fit.
+  - !ruby/struct:SM::Flow::P 
+    body: If you really, really need to compile Sass on each request, first make sure you have adequate caching set up. Then you can use {Sass::Engine} to render the code, using the {file:SASS_REFERENCE.md#custom-option `options` parameter} to pass in data that {EvaluationContext#options can be accessed} from your Sass functions.
+  - !ruby/struct:SM::Flow::P 
+    body: Within one of the functions in this module, methods of {EvaluationContext} can be used.
+constants: []
+
+full_name: Sass::Script::Functions
+includes: []
+
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: abs
+  - !ruby/object:RI::MethodSummary 
+    name: ceil
+  - !ruby/object:RI::MethodSummary 
+    name: floor
+  - !ruby/object:RI::MethodSummary 
+    name: hsl
+  - !ruby/object:RI::MethodSummary 
+    name: percentage
+  - !ruby/object:RI::MethodSummary 
+    name: rgb
+  - !ruby/object:RI::MethodSummary 
+    name: round
+name: Functions
+superclass: 

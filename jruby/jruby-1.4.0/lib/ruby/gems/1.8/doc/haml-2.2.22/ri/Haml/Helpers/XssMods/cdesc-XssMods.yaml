@@ -1,0 +1,41 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: included
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: This module overrides Haml helpers to work properly in the context of ActionView. Currently it's only used for modifying the helpers to work with Rails' XSS protection methods.
+constants: []
+
+full_name: Haml::Helpers::XssMods
+includes: []
+
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: capture_haml_with_haml_xss
+  - !ruby/object:RI::MethodSummary 
+    name: escape_once_with_haml_xss
+  - !ruby/object:RI::MethodSummary 
+    name: find_and_preserve_with_haml_xss
+  - !ruby/object:RI::MethodSummary 
+    name: haml_concat_with_haml_xss
+  - !ruby/object:RI::MethodSummary 
+    name: haml_indent_with_haml_xss
+  - !ruby/object:RI::MethodSummary 
+    name: haml_tag_with_haml_xss
+  - !ruby/object:RI::MethodSummary 
+    name: html_escape_with_haml_xss
+  - !ruby/object:RI::MethodSummary 
+    name: list_of_with_haml_xss
+  - !ruby/object:RI::MethodSummary 
+    name: precede_with_haml_xss
+  - !ruby/object:RI::MethodSummary 
+    name: preserve_with_haml_xss
+  - !ruby/object:RI::MethodSummary 
+    name: succeed_with_haml_xss
+  - !ruby/object:RI::MethodSummary 
+    name: surround_with_haml_xss
+name: XssMods
+superclass: 

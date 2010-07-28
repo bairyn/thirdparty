@@ -1,0 +1,30 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: output_cookies
+    rw: R
+class_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: new
+comment: 
+constants: []
+
+full_name: ActionController::CGIWrapper
+includes: []
+
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: args
+  - !ruby/object:RI::MethodSummary 
+    name: cookies
+  - !ruby/object:RI::MethodSummary 
+    name: env_table
+  - !ruby/object:RI::MethodSummary 
+    name: params
+  - !ruby/object:RI::MethodSummary 
+    name: query_string
+  - !ruby/object:RI::MethodSummary 
+    name: stdinput
+name: CGIWrapper
+superclass: "::CGI"

@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Returns a hash of all configurable options merged with <tt>hash</tt>
+  - !ruby/struct:SM::Flow::P 
+    body: "@param [Hash] hash A set of configuration options that will take precedence over the defaults"
+full_name: HoptoadNotifier#merge
+is_singleton: false
+name: merge
+params: (hash)
+visibility: public

@@ -1,0 +1,11 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+  - !ruby/object:RI::AliasName 
+    name: push_silent
+block_params: 
+comment: 
+full_name: Haml::Precompiler#push_silent_with_haml_block_deprecation
+is_singleton: false
+name: push_silent_with_haml_block_deprecation
+params: (text, can_suppress = false)
+visibility: public

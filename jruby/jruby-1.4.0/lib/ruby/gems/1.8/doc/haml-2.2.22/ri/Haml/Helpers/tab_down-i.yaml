@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Decrements the number of tabs the buffer automatically adds to the lines of the template.
+  - !ruby/struct:SM::Flow::P 
+    body: "@param i [Fixnum] The number of tabs by which to decrease the indentation @see #tab_up"
+full_name: Haml::Helpers#tab_down
+is_singleton: false
+name: tab_down
+params: (i = 1)
+visibility: public

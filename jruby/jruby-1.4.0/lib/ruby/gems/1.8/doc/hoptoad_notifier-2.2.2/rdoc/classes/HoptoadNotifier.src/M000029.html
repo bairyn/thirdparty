@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>build_lookup_hash_for (HoptoadNotifier)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>     <span class="ruby-comment cmt"># File lib/hoptoad_notifier.rb, line 100</span>
+100:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build_lookup_hash_for</span>(<span class="ruby-identifier">exception</span>, <span class="ruby-identifier">options</span> = {})
+101:       <span class="ruby-identifier">notice</span> = <span class="ruby-identifier">build_notice_for</span>(<span class="ruby-identifier">exception</span>, <span class="ruby-identifier">options</span>)
+102: 
+103:       <span class="ruby-identifier">result</span> = {}
+104:       <span class="ruby-identifier">result</span>[<span class="ruby-identifier">:action</span>]           = <span class="ruby-identifier">notice</span>.<span class="ruby-identifier">action</span>      <span class="ruby-keyword kw">rescue</span> <span class="ruby-keyword kw">nil</span>
+105:       <span class="ruby-identifier">result</span>[<span class="ruby-identifier">:component</span>]        = <span class="ruby-identifier">notice</span>.<span class="ruby-identifier">component</span>   <span class="ruby-keyword kw">rescue</span> <span class="ruby-keyword kw">nil</span>
+106:       <span class="ruby-identifier">result</span>[<span class="ruby-identifier">:error_class</span>]      = <span class="ruby-identifier">notice</span>.<span class="ruby-identifier">error_class</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">notice</span>.<span class="ruby-identifier">error_class</span>
+107:       <span class="ruby-identifier">result</span>[<span class="ruby-identifier">:environment_name</span>] = <span class="ruby-value str">'production'</span>
+108: 
+109:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">notice</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">lines</span>.<span class="ruby-identifier">empty?</span>
+110:         <span class="ruby-identifier">result</span>[<span class="ruby-identifier">:file</span>]        = <span class="ruby-identifier">notice</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">lines</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">file</span>
+111:         <span class="ruby-identifier">result</span>[<span class="ruby-identifier">:line_number</span>] = <span class="ruby-identifier">notice</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">lines</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">number</span>
+112:       <span class="ruby-keyword kw">end</span>
+113: 
+114:       <span class="ruby-identifier">result</span>
+115:     <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

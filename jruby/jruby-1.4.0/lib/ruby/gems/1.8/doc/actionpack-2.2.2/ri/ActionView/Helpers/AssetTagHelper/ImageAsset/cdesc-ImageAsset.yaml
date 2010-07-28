@@ -1,0 +1,21 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+  - !ruby/object:RI::Constant 
+    comment: 
+    name: DIRECTORY
+    value: "'images'.freeze"
+full_name: ActionView::Helpers::AssetTagHelper::ImageAsset
+includes: []
+
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: directory
+  - !ruby/object:RI::MethodSummary 
+    name: extension
+name: ImageAsset
+superclass: 

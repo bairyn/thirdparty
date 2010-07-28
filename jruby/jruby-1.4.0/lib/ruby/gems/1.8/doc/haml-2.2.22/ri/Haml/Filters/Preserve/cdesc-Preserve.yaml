@@ -1,0 +1,21 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Inserts the filtered text into the template with whitespace preserved. `preserve`d blocks of text aren't indented, and newlines are replaced with the HTML escape code for newlines, to preserve nice-looking output.
+  - !ruby/struct:SM::Flow::P 
+    body: "@see Haml::Helpers#preserve"
+constants: []
+
+full_name: Haml::Filters::Preserve
+includes: 
+  - !ruby/object:RI::IncludedModule 
+    name: Base
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: render
+name: Preserve
+superclass: 

@@ -1,0 +1,11 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+  - !ruby/object:RI::AliasName 
+    name: concat
+block_params: 
+comment: 
+full_name: ActionView::Helpers::TextHelper#concat_with_haml_xss
+is_singleton: false
+name: concat_with_haml_xss
+params: (string)
+visibility: public

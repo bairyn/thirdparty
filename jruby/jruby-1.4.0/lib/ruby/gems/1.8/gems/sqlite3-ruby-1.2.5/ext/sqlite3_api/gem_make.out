@@ -1,0 +1,4 @@
+/usr/local/jruby-1.4.0/bin/jruby extconf.rb
+WARNING: JRuby does not support native extensions or the `mkmf' library.
+         Check wiki.jruby.org for alternatives.
+extconf.rb:3: undefined method `dir_config' for main:Object (NoMethodError)

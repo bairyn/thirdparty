@@ -1,0 +1,27 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+  - !ruby/object:RI::Constant 
+    comment: 
+    name: DIRECTORY
+    value: "'stylesheets'.freeze"
+  - !ruby/object:RI::Constant 
+    comment: 
+    name: EXTENSION
+    value: "'css'.freeze"
+full_name: ActionView::Helpers::AssetTagHelper::StylesheetAsset
+includes: []
+
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: directory
+  - !ruby/object:RI::MethodSummary 
+    name: extension
+  - !ruby/object:RI::MethodSummary 
+    name: public_directory
+name: StylesheetAsset
+superclass: 

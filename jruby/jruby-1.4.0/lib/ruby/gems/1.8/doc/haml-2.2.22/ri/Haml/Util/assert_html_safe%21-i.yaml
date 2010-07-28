@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Assert that a given object (usually a String) is HTML safe according to Rails' XSS handling, if it's loaded.
+  - !ruby/struct:SM::Flow::P 
+    body: "@param text [Object]"
+full_name: Haml::Util#assert_html_safe!
+is_singleton: false
+name: assert_html_safe!
+params: (text)
+visibility: public

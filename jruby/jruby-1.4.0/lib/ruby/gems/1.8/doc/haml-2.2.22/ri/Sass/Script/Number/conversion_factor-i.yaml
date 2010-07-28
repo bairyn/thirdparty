@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sass::Script::Number#conversion_factor
+is_singleton: false
+name: conversion_factor
+params: (from_unit, to_unit)
+visibility: protected

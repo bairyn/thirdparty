@@ -1,0 +1,29 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The options hash for Haml when used within Rails. See {file:HAML_REFERENCE.md#haml_options the Haml options documentation}.
+      - !ruby/struct:SM::Flow::P 
+        body: "@return [{Symbol =&gt; Object}]"
+    name: options
+    rw: RW
+class_methods: []
+
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The class that keeps track of the global options for Haml within Rails.
+constants: []
+
+full_name: Haml::Template
+includes: []
+
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: precompiled_method_return_value_with_haml_xss
+  - !ruby/object:RI::MethodSummary 
+    name: rails_xss_safe?
+  - !ruby/object:RI::MethodSummary 
+    name: try_enabling_xss_integration
+name: Template
+superclass: 

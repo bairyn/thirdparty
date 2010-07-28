@@ -1,0 +1,16 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: decompose_path
+comment: 
+constants: []
+
+full_name: Spec::Rails::Matchers::PathDecomposer
+includes: []
+
+instance_methods: []
+
+name: PathDecomposer
+superclass: Object

@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "@param var [String] The name of the loop variable @param from [Script::Node] The parse tree for the initial expression @param to [Script::Node] The parse tree for the final expression @param exclusive [Boolean] Whether to include `to` in the loop"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  or stop just before\n"
+full_name: Sass::Tree::ForNode::new
+is_singleton: true
+name: new
+params: (var, from, to, exclusive)
+visibility: public

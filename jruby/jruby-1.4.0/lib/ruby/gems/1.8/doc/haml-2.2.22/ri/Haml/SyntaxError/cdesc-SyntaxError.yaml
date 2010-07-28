@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: SyntaxError is the type of exception raised when Haml encounters an ill-formatted document. It's not particularly interesting, except in that it's a subclass of {Haml::Error}.
+constants: []
+
+full_name: Haml::SyntaxError
+includes: []
+
+instance_methods: []
+
+name: SyntaxError
+superclass: Haml::Error

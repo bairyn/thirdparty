@@ -1,0 +1,230 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The action (if any) that was called in this request
+    name: action
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: action
+    rw: W
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: api_key
+    rw: W
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The API key for the project to which this notice should be sent
+    name: api_key
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: Arguments given in the initializer
+    name: args
+    rw: RW
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The backtrace from the given exception or hash.
+    name: backtrace
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: backtrace
+    rw: W
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: See Configuration#backtrace_filters
+    name: backtrace_filters
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: backtrace_filters
+    rw: W
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: cgi_data
+    rw: W
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: CGI variables such as HTTP_METHOD
+    name: cgi_data
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The component (if any) which was used in this request (usually the controller)
+    name: component
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: component
+    rw: W
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: environment_filters
+    rw: W
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The name of the server environment (such as &quot;production&quot;)
+    name: environment_name
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: environment_name
+    rw: W
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The name of the class of error (such as RuntimeError)
+    name: error_class
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: error_class
+    rw: W
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The message from the exception, or a general description of the error
+    name: error_message
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: error_message
+    rw: W
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The exception that caused this notice, if any
+    name: exception
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: exception
+    rw: W
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: ignore
+    rw: W
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: See Configuration#ignore
+    name: ignore
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: See Configuration#ignore_by_filters
+    name: ignore_by_filters
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: ignore_by_filters
+    rw: W
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: notifier_name
+    rw: W
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The name of the notifier library sending this notice, such as &quot;Hoptoad Notifier&quot;
+    name: notifier_name
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: notifier_url
+    rw: W
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: A URL for more information about the notifier library sending this notice
+    name: notifier_url
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: notifier_version
+    rw: W
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The version number of the notifier library sending this notice, such as &quot;2.1.3&quot;
+    name: notifier_version
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: parameters
+    rw: W
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: A hash of parameters from the query string or post body.
+    name: parameters
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: params_filters
+    rw: W
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: See Configuration#params_filters
+    name: params_filters
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: project_root
+    rw: W
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The path to the project that caused the error (usually RAILS_ROOT)
+    name: project_root
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: session_data
+    rw: W
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: A hash of session data from the request
+    name: session_data
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: url
+    rw: W
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The URL at which the error occurred (if any)
+    name: url
+    rw: R
+class_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: new
+comment: 
+constants: []
+
+full_name: HoptoadNotifier::Notice
+includes: []
+
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: "[]"
+  - !ruby/object:RI::MethodSummary 
+    name: ignore?
+  - !ruby/object:RI::MethodSummary 
+    name: to_xml
+name: Notice
+superclass: Object

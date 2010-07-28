@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: "::MsSQL#after_save_with_mssql_lob"
+is_singleton: false
+name: after_save_with_mssql_lob
+params: ()
+visibility: public

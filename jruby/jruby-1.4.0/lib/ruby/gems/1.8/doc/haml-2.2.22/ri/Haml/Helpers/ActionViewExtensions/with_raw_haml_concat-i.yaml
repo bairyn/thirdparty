@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Treats all input to \{Haml::Helpers#haml_concat} within the block as being HTML safe for Rails' XSS protection. This is useful for wrapping blocks of code that concatenate HTML en masse.
+  - !ruby/struct:SM::Flow::P 
+    body: This has no effect if Rails' XSS protection isn't enabled.
+  - !ruby/struct:SM::Flow::P 
+    body: "@yield A block in which all input to `#haml_concat` is treated as raw. @see Haml::Util#rails_xss_safe?"
+full_name: Haml::Helpers::ActionViewExtensions#with_raw_haml_concat
+is_singleton: false
+name: with_raw_haml_concat
+params: () {|| ...}
+visibility: public

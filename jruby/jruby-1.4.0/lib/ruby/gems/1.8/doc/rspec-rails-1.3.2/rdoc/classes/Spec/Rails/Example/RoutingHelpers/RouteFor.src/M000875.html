@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>== (Spec::Rails::Example::RoutingHelpers::RouteFor)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/spec/rails/example/routing_helpers.rb, line 13</span>
+          <span class="ruby-keyword kw">def</span> <span class="ruby-operator">==</span>(<span class="ruby-identifier">expected</span>)
+            <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Hash</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">expected</span>
+              <span class="ruby-identifier">path</span>, <span class="ruby-identifier">querystring</span> = <span class="ruby-identifier">expected</span>[<span class="ruby-identifier">:path</span>].<span class="ruby-identifier">split</span>(<span class="ruby-value str">'?'</span>)
+              <span class="ruby-identifier">path_string</span> = <span class="ruby-identifier">path</span>
+              <span class="ruby-identifier">path</span> = <span class="ruby-identifier">expected</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">path</span>)
+            <span class="ruby-keyword kw">else</span>
+              <span class="ruby-identifier">path</span>, <span class="ruby-identifier">querystring</span> = <span class="ruby-identifier">expected</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">'?'</span>)
+              <span class="ruby-identifier">path_string</span> = <span class="ruby-identifier">path</span>
+              <span class="ruby-identifier">path</span> = { <span class="ruby-identifier">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">path</span>, <span class="ruby-identifier">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">:get</span> }
+            <span class="ruby-keyword kw">end</span>
+            <span class="ruby-identifier">params</span> = <span class="ruby-identifier">querystring</span>.<span class="ruby-identifier">blank?</span> <span class="ruby-value">? </span>{} <span class="ruby-operator">:</span> <span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">Utils</span>.<span class="ruby-identifier">parse_query</span>(<span class="ruby-identifier">querystring</span>).<span class="ruby-identifier">symbolize_keys!</span>
+            <span class="ruby-keyword kw">begin</span>
+              <span class="ruby-ivar">@example</span>.<span class="ruby-identifier">assert_routing</span>(<span class="ruby-identifier">path</span>, <span class="ruby-ivar">@options</span>, {}, <span class="ruby-identifier">params</span>)
+              <span class="ruby-keyword kw">true</span>
+            <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">RoutingError</span>, <span class="ruby-operator">::</span><span class="ruby-constant">Test</span><span class="ruby-operator">::</span><span class="ruby-constant">Unit</span><span class="ruby-operator">::</span><span class="ruby-constant">AssertionFailedError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+              <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">class</span>, <span class="ruby-node">&quot;#{e}\nIf you're expecting this failure, we suggest {:#{path[:method]}=&gt;\&quot;#{path[:path]}\&quot;}.should_not be_routable&quot;</span>
+            <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

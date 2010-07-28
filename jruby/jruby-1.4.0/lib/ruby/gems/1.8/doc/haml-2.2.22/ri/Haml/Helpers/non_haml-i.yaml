@@ -1,0 +1,18 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Runs a block of code in a non-Haml context (i.e. \{#is_haml?} will return false).
+  - !ruby/struct:SM::Flow::P 
+    body: This is mainly useful for rendering sub-templates such as partials in a non-Haml language, particularly where helpers may behave differently when run from Haml.
+  - !ruby/struct:SM::Flow::P 
+    body: Note that this is automatically applied to Rails partials.
+  - !ruby/struct:SM::Flow::P 
+    body: "@yield A block which won't register as Haml"
+full_name: Haml::Helpers#non_haml
+is_singleton: false
+name: non_haml
+params: () {|| ...}
+visibility: public

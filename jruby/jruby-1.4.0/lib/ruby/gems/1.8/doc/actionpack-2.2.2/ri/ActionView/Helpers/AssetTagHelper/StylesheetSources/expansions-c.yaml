@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: ActionView::Helpers::AssetTagHelper::StylesheetSources::expansions
+is_singleton: true
+name: expansions
+params: ()
+visibility: public

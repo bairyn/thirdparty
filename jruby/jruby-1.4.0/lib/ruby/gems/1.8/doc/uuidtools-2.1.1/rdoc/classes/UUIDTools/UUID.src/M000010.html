@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>random_create (UUIDTools::UUID)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/uuidtools.rb, line 183</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">random_create</span>()
+      <span class="ruby-identifier">new_uuid</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">parse_raw</span>(<span class="ruby-constant">SecureRandom</span>.<span class="ruby-identifier">random_bytes</span>(<span class="ruby-value">16</span>))
+      <span class="ruby-identifier">new_uuid</span>.<span class="ruby-identifier">time_hi_and_version</span> <span class="ruby-operator">&amp;=</span> <span class="ruby-value">0x0</span><span class="ruby-constant">FFF</span>
+      <span class="ruby-identifier">new_uuid</span>.<span class="ruby-identifier">time_hi_and_version</span> <span class="ruby-operator">|=</span> (<span class="ruby-value">4</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">12</span>)
+      <span class="ruby-identifier">new_uuid</span>.<span class="ruby-identifier">clock_seq_hi_and_reserved</span> <span class="ruby-operator">&amp;=</span> <span class="ruby-value">0x3</span><span class="ruby-constant">F</span>
+      <span class="ruby-identifier">new_uuid</span>.<span class="ruby-identifier">clock_seq_hi_and_reserved</span> <span class="ruby-operator">|=</span> <span class="ruby-value">0x80</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">new_uuid</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

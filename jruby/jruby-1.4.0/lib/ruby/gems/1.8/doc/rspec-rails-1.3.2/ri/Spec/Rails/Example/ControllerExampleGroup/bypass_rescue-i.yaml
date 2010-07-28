@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Bypasses any error rescues defined with rescue_from. Useful in cases in which you want to specify errors coming out of actions that might be caught by a rescue_from clause that is specified separately.
+  - !ruby/struct:SM::Flow::P 
+    body: Note that this will override the effect of rescue_action_in_public
+full_name: Spec::Rails::Example::ControllerExampleGroup#bypass_rescue
+is_singleton: false
+name: bypass_rescue
+params: ()
+visibility: public

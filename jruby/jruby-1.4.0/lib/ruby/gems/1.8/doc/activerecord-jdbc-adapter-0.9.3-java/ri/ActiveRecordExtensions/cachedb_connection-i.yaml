@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: "::ActiveRecordExtensions#cachedb_connection"
+is_singleton: false
+name: cachedb_connection
+params: ( config )
+visibility: public

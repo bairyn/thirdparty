@@ -1,0 +1,17 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The params hash accessed within a view or helper. Use this before rendering a view or calling a helper to provide data used by the view or helper.
+  - !ruby/struct:SM::Flow::H 
+    level: 2
+    text: Examples
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  # in a view spec\n  params[:name] = &quot;David&quot;\n  render\n  response.should have_tag(&quot;div.name&quot;,&quot;David&quot;)\n\n  # in a helper spec\n  params[:first_name] = &quot;David&quot;\n  params[:last_name] = &quot;Chelimsky&quot;\n  helper.full_name.should == &quot;David Chelimsky&quot;\n"
+full_name: Spec::Rails::Example::FunctionalExampleGroup#params
+is_singleton: false
+name: params
+params: ()
+visibility: public

@@ -1,0 +1,11 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+  - !ruby/object:RI::AliasName 
+    name: content_tag
+block_params: 
+comment: 
+full_name: ActionView::Helpers::TagHelper#content_tag_with_haml
+is_singleton: false
+name: content_tag_with_haml
+params: (name, *args, &block)
+visibility: public

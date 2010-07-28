@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: TMail::UNIXMbox</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">TMail::UNIXMbox</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/action_mailer/vendor/tmail-1_2_3/tmail/mailbox_rb.html">
+                lib/action_mailer/vendor/tmail-1.2.3/tmail/mailbox.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M002218">close</a>&nbsp;&nbsp;
+      <a href="#M002216">create_from_line</a>&nbsp;&nbsp;
+      <a href="#M002220">each</a>&nbsp;&nbsp;
+      <a href="#M002223">each_new_port</a>&nbsp;&nbsp;
+      <a href="#M002219">each_port</a>&nbsp;&nbsp;
+      <a href="#M002217">fromaddr</a>&nbsp;&nbsp;
+      <a href="#M002212">lock</a>&nbsp;&nbsp;
+      <a href="#M002215">mkfinal</a>&nbsp;&nbsp;
+      <a href="#M002211">new</a>&nbsp;&nbsp;
+      <a href="#M002214">new</a>&nbsp;&nbsp;
+      <a href="#M002224">new_port</a>&nbsp;&nbsp;
+      <a href="#M002222">reverse_each</a>&nbsp;&nbsp;
+      <a href="#M002221">reverse_each_port</a>&nbsp;&nbsp;
+      <a href="#M002213">static_new</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+    <div id="aliases-list">
+      <h3 class="section-bar">External Aliases</h3>
+
+      <div class="name-list">
+                        <table summary="aliases">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">new</td>
+          <td>-&gt;</td>
+          <td class="context-item-value">newobj</td>
+        </tr>
+                        </table>
+      </div>
+    </div>
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M002216" class="method-detail">
+        <a name="M002216"></a>
+
+        <div class="method-heading">
+          <a href="UNIXMbox.src/M002216.html" target="Code" class="method-signature"
+            onclick="popupCode('UNIXMbox.src/M002216.html');return false;">
+          <span class="method-name">create_from_line</span><span class="method-args">( port )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+make _From line
+</p>
+        </div>
+      </div>
+
+      <div id="method-M002217" class="method-detail">
+        <a name="M002217"></a>
+
+        <div class="method-heading">
+          <a href="UNIXMbox.src/M002217.html" target="Code" class="method-signature"
+            onclick="popupCode('UNIXMbox.src/M002217.html');return false;">
+          <span class="method-name">fromaddr</span><span class="method-args">(port)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M002212" class="method-detail">
+        <a name="M002212"></a>
+
+        <div class="method-heading">
+          <a href="UNIXMbox.src/M002212.html" target="Code" class="method-signature"
+            onclick="popupCode('UNIXMbox.src/M002212.html');return false;">
+          <span class="method-name">lock</span><span class="method-args">( fname ) {|f| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M002215" class="method-detail">
+        <a name="M002215"></a>
+
+        <div class="method-heading">
+          <a href="UNIXMbox.src/M002215.html" target="Code" class="method-signature"
+            onclick="popupCode('UNIXMbox.src/M002215.html');return false;">
+          <span class="method-name">mkfinal</span><span class="method-args">( mh, mboxfile, writeback_p, cleanup_p )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M002211" class="method-detail">
+        <a name="M002211"></a>
+
+        <div class="method-heading">
+          <a href="UNIXMbox.src/M002211.html" target="Code" class="method-signature"
+            onclick="popupCode('UNIXMbox.src/M002211.html');return false;">
+          <span class="method-name">new</span><span class="method-args">( filename, tmpdir = nil, readonly = false )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Creates a <a href="UNIXMbox.html#M002211">new</a> mailbox object that you
+can iterate through to collect the emails from with &quot;<a
+href="UNIXMbox.html#M002219">each_port</a>&quot;.
+</p>
+<p>
+You need to pass it a filename of a unix mailbox format file, the format of
+this file can be researched at this page at <a
+href="../../http:/en.wikipedia.org/wiki/Mbox">wikipedia</a>
+</p>
+<h4>Parameters</h4>
+<p>
+<tt>filename</tt>: The filename of the mailbox you want to open
+</p>
+<p>
+<tt>tmpdir</tt>: Can be set to override <a href="../TMail.html">TMail</a>
+using the system environment&#8216;s temp dir. <a
+href="../TMail.html">TMail</a> will first use the temp dir specified by you
+(if any) or then the temp dir specified in the Environment&#8216;s TEMP
+value then the value in the Environment&#8216;s TMP value or failing all of
+the above, &#8217;/tmp&#8216;
+</p>
+<p>
+<tt>readonly</tt>: If set to false, <a
+href="UNIXMbox.html#M002220">each</a> email you take from the mail box will
+be removed from the mailbox. default is <b>false</b> - ie, it <b>WILL</b>
+truncate your mailbox file to ZERO once it has read the emails out.
+</p>
+<h4>Options:</h4>
+<p>
+None
+</p>
+<h4>Examples:</h4>
+<pre>
+ # First show using readonly true:
+
+ require 'ftools'
+ File.size(&quot;../test/fixtures/mailbox&quot;)
+ #=&gt; 20426
+
+ mailbox = TMail::UNIXMbox.new(&quot;../test/fixtures/mailbox&quot;, nil, true)
+ #=&gt; #&lt;TMail::UNIXMbox:0x14a2aa8 @readonly=true.....&gt;
+
+ mailbox.each_port do |port|
+   mail = TMail::Mail.new(port)
+   puts mail.subject
+ end
+ #Testing mailbox 1
+ #Testing mailbox 2
+ #Testing mailbox 3
+ #Testing mailbox 4
+ require 'ftools'
+ File.size?(&quot;../test/fixtures/mailbox&quot;)
+ #=&gt; 20426
+
+ # Now show with readonly set to the default false
+
+ mailbox = TMail::UNIXMbox.new(&quot;../test/fixtures/mailbox&quot;)
+ #=&gt; #&lt;TMail::UNIXMbox:0x14a2aa8 @readonly=false.....&gt;
+
+ mailbox.each_port do |port|
+   mail = TMail::Mail.new(port)
+   puts mail.subject
+ end
+ #Testing mailbox 1
+ #Testing mailbox 2
+ #Testing mailbox 3
+ #Testing mailbox 4
+
+ File.size?(&quot;../test/fixtures/mailbox&quot;)
+ #=&gt; nil
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M002214" class="method-detail">
+        <a name="M002214"></a>
+
+        <div class="method-heading">
+          <a href="UNIXMbox.src/M002214.html" target="Code" class="method-signature"
+            onclick="popupCode('UNIXMbox.src/M002214.html');return false;">
+          <span class="method-name">new</span><span class="method-args">( fname, mhdir, readonly, static )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M002213" class="method-detail">
+        <a name="M002213"></a>
+
+        <div class="method-heading">
+          <a href="UNIXMbox.src/M002213.html" target="Code" class="method-signature"
+            onclick="popupCode('UNIXMbox.src/M002213.html');return false;">
+          <span class="method-name">static_new</span><span class="method-args">( fname, dir, readonly = false )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M002218" class="method-detail">
+        <a name="M002218"></a>
+
+        <div class="method-heading">
+          <a href="UNIXMbox.src/M002218.html" target="Code" class="method-signature"
+            onclick="popupCode('UNIXMbox.src/M002218.html');return false;">
+          <span class="method-name">close</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M002220" class="method-detail">
+        <a name="M002220"></a>
+
+        <div class="method-heading">
+          <span class="method-name">each</span><span class="method-args">( &amp;block )</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="UNIXMbox.html#M002219">each_port</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M002223" class="method-detail">
+        <a name="M002223"></a>
+
+        <div class="method-heading">
+          <a href="UNIXMbox.src/M002223.html" target="Code" class="method-signature"
+            onclick="popupCode('UNIXMbox.src/M002223.html');return false;">
+          <span class="method-name">each_new_port</span><span class="method-args">( mtime = nil ) {|p| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <pre>
+ old #each_mail returns Port
+</pre>
+<p>
+def each_mail( &amp;block )
+</p>
+<pre>
+  each_port do |port|
+    yield Mail.new(port)
+  end
+</pre>
+<p>
+end
+</p>
+        </div>
+      </div>
+
+      <div id="method-M002219" class="method-detail">
+        <a name="M002219"></a>
+
+        <div class="method-heading">
+          <a href="UNIXMbox.src/M002219.html" target="Code" class="method-signature"
+            onclick="popupCode('UNIXMbox.src/M002219.html');return false;">
+          <span class="method-name">each_port</span><span class="method-args">( &amp;block )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M002224" class="method-detail">
+        <a name="M002224"></a>
+
+        <div class="method-heading">
+          <a href="UNIXMbox.src/M002224.html" target="Code" class="method-signature"
+            onclick="popupCode('UNIXMbox.src/M002224.html');return false;">
+          <span class="method-name">new_port</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M002222" class="method-detail">
+        <a name="M002222"></a>
+
+        <div class="method-heading">
+          <span class="method-name">reverse_each</span><span class="method-args">( &amp;block )</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="UNIXMbox.html#M002221">reverse_each_port</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M002221" class="method-detail">
+        <a name="M002221"></a>
+
+        <div class="method-heading">
+          <a href="UNIXMbox.src/M002221.html" target="Code" class="method-signature"
+            onclick="popupCode('UNIXMbox.src/M002221.html');return false;">
+          <span class="method-name">reverse_each_port</span><span class="method-args">( &amp;block )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

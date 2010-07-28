@@ -1,0 +1,19 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Haml::Plugin
+includes: 
+  - !ruby/object:RI::IncludedModule 
+    name: Haml::Util
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: cache_fragment
+  - !ruby/object:RI::MethodSummary 
+    name: compile
+name: Plugin
+superclass: Haml::Util.av_template_class(:Handler)

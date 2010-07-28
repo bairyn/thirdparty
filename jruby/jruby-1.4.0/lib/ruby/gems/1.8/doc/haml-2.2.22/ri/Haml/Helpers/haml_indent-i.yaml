@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "@return [String] The indentation string for the current line"
+full_name: Haml::Helpers#haml_indent
+is_singleton: false
+name: haml_indent
+params: ()
+visibility: public

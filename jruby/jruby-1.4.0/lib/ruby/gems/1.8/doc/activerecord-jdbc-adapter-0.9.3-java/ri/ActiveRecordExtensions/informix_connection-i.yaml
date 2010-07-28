@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: "::ActiveRecordExtensions#informix_connection"
+is_singleton: false
+name: informix_connection
+params: (config)
+visibility: public

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: "::Derby::included"
+is_singleton: true
+name: included
+params: (*args)
+visibility: public

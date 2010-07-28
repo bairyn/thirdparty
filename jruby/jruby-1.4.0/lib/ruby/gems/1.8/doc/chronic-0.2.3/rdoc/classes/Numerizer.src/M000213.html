@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>numerize (Numerizer)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/numerizer/numerizer.rb, line 48</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">numerize</span>(<span class="ruby-identifier">string</span>)
+    <span class="ruby-identifier">string</span> = <span class="ruby-identifier">string</span>.<span class="ruby-identifier">dup</span>
+  
+    <span class="ruby-comment cmt"># preprocess</span>
+    <span class="ruby-identifier">string</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/ +|([^\d])-([^d])/</span>, <span class="ruby-value str">'\1 \2'</span>) <span class="ruby-comment cmt"># will mutilate hyphenated-words but shouldn't matter for date extraction</span>
+    <span class="ruby-identifier">string</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/a half/</span>, <span class="ruby-value str">'haAlf'</span>) <span class="ruby-comment cmt"># take the 'a' out so it doesn't turn into a 1, save the half for the end</span>
+
+    <span class="ruby-comment cmt"># easy/direct replacements</span>
+  
+    <span class="ruby-constant">DIRECT_NUMS</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dn</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">string</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-node">/#{dn[0]}/i</span>, <span class="ruby-identifier">dn</span>[<span class="ruby-value">1</span>])
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-comment cmt"># ten, twenty, etc.</span>
+
+    <span class="ruby-constant">TEN_PREFIXES</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">tp</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">string</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-node">/(?:#{tp[0]})( *\d(?=[^\d]|$))*/i</span>) { (<span class="ruby-identifier">tp</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">$1</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span> }
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-comment cmt"># hundreds, thousands, millions, etc.</span>
+
+    <span class="ruby-constant">BIG_PREFIXES</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">bp</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">string</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-node">/(\d*) *#{bp[0]}/i</span>) { (<span class="ruby-identifier">bp</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">*</span> <span class="ruby-identifier">$1</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>}
+      <span class="ruby-identifier">andition</span>(<span class="ruby-identifier">string</span>)
+      <span class="ruby-comment cmt">#combine_numbers(string) # Should to be more efficient way to do this</span>
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-comment cmt"># fractional addition</span>
+    <span class="ruby-comment cmt"># I'm not combining this with the previous block as using float addition complicates the strings</span>
+    <span class="ruby-comment cmt"># (with extraneous .0's and such )</span>
+    <span class="ruby-identifier">string</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/(\d+)(?: | and |-)*haAlf/i</span>) { (<span class="ruby-identifier">$1</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">+</span> <span class="ruby-value">0</span><span class="ruby-value">.5</span>).<span class="ruby-identifier">to_s</span> }
+
+    <span class="ruby-identifier">string</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

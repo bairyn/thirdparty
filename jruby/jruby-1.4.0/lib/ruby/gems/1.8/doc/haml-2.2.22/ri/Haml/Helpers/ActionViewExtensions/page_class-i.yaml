@@ -1,0 +1,29 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+  - !ruby/object:RI::AliasName 
+    name: generate_content_class_names
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Returns a value for the &quot;class&quot; attribute unique to this controller/action pair. This can be used to target styles specifically at this action or controller. For example, if the current action were `EntryController#show`,
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    %div{:class =&gt; page_class} My Div\n"
+  - !ruby/struct:SM::Flow::P 
+    body: would become
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    &lt;div class=&quot;entry show&quot;&gt;My Div&lt;/div&gt;\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "Then, in a stylesheet (shown here as {Sass}), you could refer to this specific action:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    .entry.show\n      font-weight: bold\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "or to all actions in the entry controller:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    .entry\n      color: #00f\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "@return [String] The class name for the current page"
+full_name: Haml::Helpers::ActionViewExtensions#page_class
+is_singleton: false
+name: page_class
+params: ()
+visibility: public

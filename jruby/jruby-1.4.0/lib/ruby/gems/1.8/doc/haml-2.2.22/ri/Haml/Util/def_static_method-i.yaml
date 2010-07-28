@@ -1,0 +1,28 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: This is used for methods in {Haml::Buffer} that need to be very fast, and take a lot of boolean parameters that are known at compile-time. Instead of passing the parameters in normally, a separate method is defined for every possible combination of those parameters; these are then called using \{#static_method_name}.
+  - !ruby/struct:SM::Flow::P 
+    body: "To define a static method, an ERB template for the method is provided. All conditionals based on the static parameters are done as embedded Ruby within this template. For example:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    def_static_method(Foo, :my_static_method, [:foo, :bar], :baz, :bang, &lt;&lt;RUBY)\n      &lt;% if baz &amp;&amp; bang %&gt;\n        return foo + bar\n      &lt;% elsif baz || bang %&gt;\n        return foo - bar\n      &lt;% else %&gt;\n        return 17\n      &lt;% end %&gt;\n    RUBY\n"
+  - !ruby/struct:SM::Flow::P 
+    body: \{#static_method_name} can be used to call static methods.
+  - !ruby/struct:SM::Flow::P 
+    body: "@overload def_static_method(klass, name, args, *vars, erb) @param klass [Module] The class on which to define the static method @param name [#to_s] The (base) name of the static method @param args [Array&lt;Symbol&gt;] The names of the arguments to the defined methods"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  (*<b>not</b>* to the ERB template)\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "@param vars [Array&lt;Symbol&gt;] The names of the static boolean variables"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  to be made available to the ERB template\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "@param erb [String] The template for the method code"
+full_name: Haml::Util#def_static_method
+is_singleton: false
+name: def_static_method
+params: (klass, name, args, *vars)
+visibility: public

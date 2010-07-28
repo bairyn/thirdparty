@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Same as \{#compile}, but requires the necessary files first. *This is used by {Haml::Engine} and is not intended to be overridden or used elsewhere.*
+  - !ruby/struct:SM::Flow::P 
+    body: "@see #compile"
+full_name: Haml::Filters::Base#internal_compile
+is_singleton: false
+name: internal_compile
+params: (*args)
+visibility: public

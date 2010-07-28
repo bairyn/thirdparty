@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: I don't think this method is ever called ??? (stepheneb)
+full_name: "::Derby#create_column"
+is_singleton: false
+name: create_column
+params: (name, refid, colno)
+visibility: public

@@ -1,0 +1,11 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+  - !ruby/object:RI::AliasName 
+    name: form_tag
+block_params: 
+comment: 
+full_name: ActionView::Helpers::FormTagHelper#form_tag_with_haml_xss
+is_singleton: false
+name: form_tag_with_haml_xss
+params: (*args, &block)
+visibility: public

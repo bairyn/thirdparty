@@ -1,0 +1,61 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: host
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: http_open_timeout
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: http_read_timeout
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: port
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: protocol
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: proxy_host
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: proxy_pass
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: proxy_port
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: proxy_user
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: secure
+    rw: R
+class_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: new
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Sends out the notice to Hoptoad
+constants: 
+  - !ruby/object:RI::Constant 
+    comment: 
+    name: NOTICES_URI
+    value: "'/notifier_api/v2/notices/'.freeze"
+full_name: HoptoadNotifier::Sender
+includes: []
+
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: send_to_hoptoad
+name: Sender
+superclass: Object

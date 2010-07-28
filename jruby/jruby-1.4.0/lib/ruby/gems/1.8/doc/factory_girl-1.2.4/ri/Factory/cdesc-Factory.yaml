@@ -1,0 +1,58 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: An Array of strings specifying locations that should be searched for factory definitions. By default, factory_girl will attempt to require &quot;factories,&quot; &quot;test/factories,&quot; and &quot;spec/factories.&quot; Only the first existing file will be loaded.
+    name: definition_file_paths
+    rw: RW
+class_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: alias
+  - !ruby/object:RI::MethodSummary 
+    name: attributes_for
+  - !ruby/object:RI::MethodSummary 
+    name: build
+  - !ruby/object:RI::MethodSummary 
+    name: create
+  - !ruby/object:RI::MethodSummary 
+    name: default_strategy
+  - !ruby/object:RI::MethodSummary 
+    name: define
+  - !ruby/object:RI::MethodSummary 
+    name: factory_by_name
+  - !ruby/object:RI::MethodSummary 
+    name: next
+  - !ruby/object:RI::MethodSummary 
+    name: sequence
+  - !ruby/object:RI::MethodSummary 
+    name: stub
+comment: 
+constants: []
+
+full_name: Factory
+includes: []
+
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: add_attribute
+  - !ruby/object:RI::MethodSummary 
+    name: after_build
+  - !ruby/object:RI::MethodSummary 
+    name: after_create
+  - !ruby/object:RI::MethodSummary 
+    name: after_stub
+  - !ruby/object:RI::MethodSummary 
+    name: association
+  - !ruby/object:RI::MethodSummary 
+    name: associations
+  - !ruby/object:RI::MethodSummary 
+    name: callback
+  - !ruby/object:RI::MethodSummary 
+    name: human_name
+  - !ruby/object:RI::MethodSummary 
+    name: method_missing
+  - !ruby/object:RI::MethodSummary 
+    name: sequence
+name: Factory
+superclass: Object

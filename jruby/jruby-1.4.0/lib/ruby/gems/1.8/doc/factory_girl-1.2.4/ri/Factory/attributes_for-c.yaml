@@ -1,0 +1,25 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Generates and returns a Hash of attributes from this factory. Attributes can be individually overridden by passing in a Hash of attribute =&gt; value pairs.
+  - !ruby/struct:SM::Flow::P 
+    body: "Arguments:"
+  - !ruby/object:SM::Flow::LIST 
+    contents: 
+      - !ruby/struct:SM::Flow::LI 
+        label: "*"
+        body: "name: <tt>Symbol</tt> or <tt>String</tt> The name of the factory that should be used."
+      - !ruby/struct:SM::Flow::LI 
+        label: "*"
+        body: "overrides: <tt>Hash</tt> Attributes to overwrite for this set."
+    type: :BULLET
+  - !ruby/struct:SM::Flow::P 
+    body: "Returns: <tt>Hash</tt> A set of attributes that can be used to build an instance of the class this factory generates."
+full_name: Factory::attributes_for
+is_singleton: true
+name: attributes_for
+params: (name, overrides = {})
+visibility: public

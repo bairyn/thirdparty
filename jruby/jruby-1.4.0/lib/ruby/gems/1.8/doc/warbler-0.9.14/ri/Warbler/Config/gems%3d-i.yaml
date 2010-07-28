@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Warbler::Config#gems=
+is_singleton: false
+name: gems=
+params: (value)
+visibility: public

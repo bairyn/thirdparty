@@ -1,0 +1,11 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+  - !ruby/object:RI::AliasName 
+    name: referer
+block_params: 
+comment: 
+full_name: ActionController::AbstractRequest#referrer
+is_singleton: false
+name: referrer
+params: ()
+visibility: public

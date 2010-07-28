@@ -1,0 +1,22 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: construct
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: class Time
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  def self.construct(year, month = 1, day = 1, hour = 0, minute = 0, second = 0)\n    # extra_seconds = second &gt; 60 ? second - 60 : 0\n    # extra_minutes = minute &gt; 59 ? minute - 59 : 0\n    # extra_hours = hour &gt; 23 ? hour - 23 : 0\n    # extra_days = day &gt;\n\n    if month &gt; 12\n      if month % 12 == 0\n        year += (month - 12) / 12\n        month = 12\n      else\n        year += month / 12\n        month = month % 12\n      end\n    end\n\n    base = Time.local(year, month)\n    puts base\n    offset = ((day - 1) * 24 * 60 * 60) + (hour * 60 * 60) + (minute * 60) + second\n    puts offset.to_s\n    date = base + offset\n    puts date\n    date\n  end\n"
+  - !ruby/struct:SM::Flow::P 
+    body: end
+constants: []
+
+full_name: Time
+includes: []
+
+instance_methods: []
+
+name: Time
+superclass: Object

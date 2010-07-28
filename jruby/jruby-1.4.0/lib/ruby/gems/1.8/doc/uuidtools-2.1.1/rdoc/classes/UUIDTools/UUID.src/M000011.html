@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>timestamp_create (UUIDTools::UUID)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/uuidtools.rb, line 193</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">timestamp_create</span>(<span class="ruby-identifier">timestamp</span>=<span class="ruby-keyword kw">nil</span>)
+      <span class="ruby-comment cmt"># We need a lock here to prevent two threads from ever</span>
+      <span class="ruby-comment cmt"># getting the same timestamp.</span>
+      <span class="ruby-ivar">@@mutex</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword kw">do</span>
+        <span class="ruby-comment cmt"># Always use GMT to generate UUIDs.</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">timestamp</span>.<span class="ruby-identifier">nil?</span>
+          <span class="ruby-identifier">gmt_timestamp</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">gmtime</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">gmt_timestamp</span> = <span class="ruby-identifier">timestamp</span>.<span class="ruby-identifier">gmtime</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-comment cmt"># Convert to 100 nanosecond blocks</span>
+        <span class="ruby-identifier">gmt_timestamp_100_nanoseconds</span> = (<span class="ruby-identifier">gmt_timestamp</span>.<span class="ruby-identifier">tv_sec</span> <span class="ruby-operator">*</span> <span class="ruby-value">10000000</span>) <span class="ruby-operator">+</span>
+          (<span class="ruby-identifier">gmt_timestamp</span>.<span class="ruby-identifier">tv_usec</span> <span class="ruby-operator">*</span> <span class="ruby-value">10</span>) <span class="ruby-operator">+</span> <span class="ruby-value">0x01</span><span class="ruby-constant">B21DD213814000</span>
+        <span class="ruby-identifier">mac_address</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">mac_address</span>
+        <span class="ruby-identifier">node_id</span> = <span class="ruby-value">0</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">mac_address</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword kw">nil</span>
+          <span class="ruby-identifier">nodes</span> = <span class="ruby-identifier">mac_address</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;:&quot;</span>).<span class="ruby-identifier">collect</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">octet</span><span class="ruby-operator">|</span>
+            <span class="ruby-identifier">octet</span>.<span class="ruby-identifier">to_i</span>(<span class="ruby-value">16</span>)
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">nodes</span> = <span class="ruby-constant">SecureRandom</span>.<span class="ruby-identifier">random_bytes</span>(<span class="ruby-value">6</span>).<span class="ruby-identifier">unpack</span>(<span class="ruby-value str">&quot;C*&quot;</span>)
+          <span class="ruby-identifier">nodes</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">|=</span> <span class="ruby-value">0</span><span class="ruby-identifier">b00000001</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword kw">in</span> <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">5</span>
+          <span class="ruby-identifier">node_id</span> <span class="ruby-operator">+=</span> (<span class="ruby-identifier">nodes</span>[<span class="ruby-identifier">i</span>] <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-value">40</span> <span class="ruby-operator">-</span> (<span class="ruby-identifier">i</span> <span class="ruby-operator">*</span> <span class="ruby-value">8</span>)))
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-identifier">clock_sequence</span> = <span class="ruby-ivar">@@last_clock_sequence</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">clock_sequence</span>.<span class="ruby-identifier">nil?</span>
+          <span class="ruby-identifier">clock_sequence</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">convert_byte_string_to_int</span>(
+            <span class="ruby-constant">SecureRandom</span>.<span class="ruby-identifier">random_bytes</span>(<span class="ruby-value">16</span>)
+          )
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@@last_node_id</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@@last_node_id</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">node_id</span>
+          <span class="ruby-comment cmt"># The node id has changed.  Change the clock id.</span>
+          <span class="ruby-identifier">clock_sequence</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">convert_byte_string_to_int</span>(
+            <span class="ruby-constant">SecureRandom</span>.<span class="ruby-identifier">random_bytes</span>(<span class="ruby-value">16</span>)
+          )
+        <span class="ruby-keyword kw">elsif</span> <span class="ruby-ivar">@@last_timestamp</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-operator">&amp;&amp;</span>
+            <span class="ruby-identifier">gmt_timestamp_100_nanoseconds</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-ivar">@@last_timestamp</span>
+          <span class="ruby-identifier">clock_sequence</span> = <span class="ruby-identifier">clock_sequence</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-ivar">@@last_timestamp</span> = <span class="ruby-identifier">gmt_timestamp_100_nanoseconds</span>
+        <span class="ruby-ivar">@@last_node_id</span> = <span class="ruby-identifier">node_id</span>
+        <span class="ruby-ivar">@@last_clock_sequence</span> = <span class="ruby-identifier">clock_sequence</span>
+
+        <span class="ruby-identifier">time_low</span> = <span class="ruby-identifier">gmt_timestamp_100_nanoseconds</span> <span class="ruby-operator">&amp;</span> <span class="ruby-value">0x</span><span class="ruby-constant">FFFFFFFF</span>
+        <span class="ruby-identifier">time_mid</span> = ((<span class="ruby-identifier">gmt_timestamp_100_nanoseconds</span> <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-value">32</span>) <span class="ruby-operator">&amp;</span> <span class="ruby-value">0x</span><span class="ruby-constant">FFFF</span>)
+        <span class="ruby-identifier">time_hi_and_version</span> = ((<span class="ruby-identifier">gmt_timestamp_100_nanoseconds</span> <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-value">48</span>) <span class="ruby-operator">&amp;</span> <span class="ruby-value">0x0</span><span class="ruby-constant">FFF</span>)
+        <span class="ruby-identifier">time_hi_and_version</span> <span class="ruby-operator">|=</span> (<span class="ruby-value">1</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">12</span>)
+        <span class="ruby-identifier">clock_seq_low</span> = <span class="ruby-identifier">clock_sequence</span> <span class="ruby-operator">&amp;</span> <span class="ruby-value">0x</span><span class="ruby-constant">FF</span>;
+        <span class="ruby-identifier">clock_seq_hi_and_reserved</span> = (<span class="ruby-identifier">clock_sequence</span> <span class="ruby-operator">&amp;</span> <span class="ruby-value">0x3</span><span class="ruby-constant">F00</span>) <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-value">8</span>
+        <span class="ruby-identifier">clock_seq_hi_and_reserved</span> <span class="ruby-operator">|=</span> <span class="ruby-value">0x80</span>
+
+        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">time_low</span>, <span class="ruby-identifier">time_mid</span>, <span class="ruby-identifier">time_hi_and_version</span>,
+          <span class="ruby-identifier">clock_seq_hi_and_reserved</span>, <span class="ruby-identifier">clock_seq_low</span>, <span class="ruby-identifier">nodes</span>)
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>deploy (HoptoadTasks)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>    <span class="ruby-comment cmt"># File lib/hoptoad_tasks.rb, line 16</span>
+16:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">deploy</span>(<span class="ruby-identifier">opts</span> = {})
+17:     <span class="ruby-keyword kw">if</span> <span class="ruby-constant">HoptoadNotifier</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">api_key</span>.<span class="ruby-identifier">blank?</span>
+18:       <span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;I don't seem to be configured with an API key.  Please check your configuration.&quot;</span>
+19:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span>
+20:     <span class="ruby-keyword kw">end</span>
+21: 
+22:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:rails_env</span>].<span class="ruby-identifier">blank?</span>
+23:       <span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;I don't know to which Rails environment you are deploying (use the TO=production option).&quot;</span>
+24:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span>
+25:     <span class="ruby-keyword kw">end</span>
+26: 
+27:     <span class="ruby-identifier">params</span> = {<span class="ruby-value str">'api_key'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:api_key</span>) <span class="ruby-operator">||</span>
+28:                              <span class="ruby-constant">HoptoadNotifier</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">api_key</span>}
+29:     <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">params</span>[<span class="ruby-node">&quot;deploy[#{k}]&quot;</span>] = <span class="ruby-identifier">v</span> }
+30: 
+31:     <span class="ruby-identifier">url</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-node">&quot;http://#{HoptoadNotifier.configuration.host || 'hoptoadapp.com'}/deploys.txt&quot;</span>)
+32:     <span class="ruby-identifier">response</span> = <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">post_form</span>(<span class="ruby-identifier">url</span>, <span class="ruby-identifier">params</span>)
+33:     <span class="ruby-identifier">puts</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">body</span>
+34:     <span class="ruby-keyword kw">return</span> <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTPSuccess</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">response</span>
+35:   <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

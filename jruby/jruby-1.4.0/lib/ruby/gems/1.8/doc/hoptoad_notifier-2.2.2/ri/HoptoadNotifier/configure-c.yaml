@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: (configuration)
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Call this method to modify defaults in your initializers.
+  - !ruby/struct:SM::Flow::P 
+    body: "@example"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  HoptoadNotifier.configure do |config|\n    config.api_key = '1234567890abcdef'\n    config.secure  = false\n  end\n"
+full_name: HoptoadNotifier::configure
+is_singleton: true
+name: configure
+params: (silent = false) {|configuration| ...}
+visibility: public

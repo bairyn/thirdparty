@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: ActionMailer::Base::register_template_extension
+is_singleton: true
+name: register_template_extension
+params: (extension)
+visibility: public

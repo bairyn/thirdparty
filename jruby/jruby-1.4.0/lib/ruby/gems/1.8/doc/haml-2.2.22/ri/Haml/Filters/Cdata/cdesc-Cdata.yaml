@@ -1,0 +1,19 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Surrounds the filtered text with CDATA tags.
+constants: []
+
+full_name: Haml::Filters::Cdata
+includes: 
+  - !ruby/object:RI::IncludedModule 
+    name: Base
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: render
+name: Cdata
+superclass: 

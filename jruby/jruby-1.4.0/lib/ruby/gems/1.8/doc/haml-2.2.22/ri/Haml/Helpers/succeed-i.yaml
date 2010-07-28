@@ -1,0 +1,20 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Appends a string to the end of a Haml block, with no whitespace between. For example:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    click\n    = succeed '.' do\n      %a{:href=&gt;&quot;thing&quot;} here\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "Produces:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    click\n    &lt;a href='thing'&gt;here&lt;/a&gt;.\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "@param str [String] The string to add after the Haml @yield A block of Haml to append to"
+full_name: Haml::Helpers#succeed
+is_singleton: false
+name: succeed
+params: (str, &block)
+visibility: public

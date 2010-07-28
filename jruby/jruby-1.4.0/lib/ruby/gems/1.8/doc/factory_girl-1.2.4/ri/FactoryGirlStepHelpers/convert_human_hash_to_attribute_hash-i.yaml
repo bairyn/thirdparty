@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: FactoryGirlStepHelpers#convert_human_hash_to_attribute_hash
+is_singleton: false
+name: convert_human_hash_to_attribute_hash
+params: (human_hash, associations = [])
+visibility: public

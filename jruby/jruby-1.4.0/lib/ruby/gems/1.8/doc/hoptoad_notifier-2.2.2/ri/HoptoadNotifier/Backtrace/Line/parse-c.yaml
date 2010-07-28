@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Parses a single line of a given backtrace @param [String] unparsed_line The raw line from <tt>caller</tt> or some backtrace @return [Line] The parsed backtrace line
+full_name: HoptoadNotifier::Backtrace::Line::parse
+is_singleton: true
+name: parse
+params: (unparsed_line)
+visibility: public

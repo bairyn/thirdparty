@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "@return [Boolean] Whether or not the format is any flavor of HTML."
+full_name: Haml::Engine#html?
+is_singleton: false
+name: html?
+params: ()
+visibility: public

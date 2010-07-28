@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+  - !ruby/object:RI::AliasName 
+    name: to_haml
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Processes the document and returns the result as a string containing the Haml template.
+full_name: Haml::HTML#render
+is_singleton: false
+name: render
+params: ()
+visibility: public

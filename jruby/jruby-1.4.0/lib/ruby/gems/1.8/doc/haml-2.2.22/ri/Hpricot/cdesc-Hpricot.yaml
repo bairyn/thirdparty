@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Haml monkeypatches various Hpricot classes to add methods for conversion to Haml. @private
+constants: []
+
+full_name: Hpricot
+includes: []
+
+instance_methods: []
+
+name: Hpricot
+superclass: 

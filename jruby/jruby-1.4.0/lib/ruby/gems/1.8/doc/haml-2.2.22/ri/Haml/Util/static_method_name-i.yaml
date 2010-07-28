@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Computes the name for a method defined via \{#def_static_method}.
+  - !ruby/struct:SM::Flow::P 
+    body: "@param name [String] The base name of the static method @param vars [Array&lt;Boolean&gt;] The static variable assignment @return [String] The real name of the static method"
+full_name: Haml::Util#static_method_name
+is_singleton: false
+name: static_method_name
+params: (name, *vars)
+visibility: public

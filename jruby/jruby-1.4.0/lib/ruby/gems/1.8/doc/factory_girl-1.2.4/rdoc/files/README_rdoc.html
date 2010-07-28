@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: README.rdoc</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>README.rdoc</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>README.rdoc
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Wed Apr 28 16:11:42 -0700 2010</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <h1>factory_girl</h1>
+<p>
+factory_girl is a fixtures replacement with a straightforward definition
+syntax, support for multiple build strategies (saved instances, unsaved
+instances, attribute hashes, and stubbed objects), and support for multiple
+factories for the same class (user, admin_user, and so on), including
+factory inheritance.
+</p>
+<h2>Download</h2>
+<p>
+Github: <a
+href="http://github.com/thoughtbot/factory_girl/tree/master">github.com/thoughtbot/factory_girl/tree/master</a>
+</p>
+<p>
+Gem:
+</p>
+<pre>
+  gem install factory_girl --source http://gemcutter.org
+</pre>
+<p>
+Note: if you install factory_girl using the gem from Gemcutter,
+you&#8216;ll need this in your environment.rb if you want to use Rails
+2.1+&#8217;s dependency manager:
+</p>
+<pre>
+  config.gem &quot;factory_girl&quot;, :source =&gt; &quot;http://gemcutter.org&quot;
+</pre>
+<h2>Defining factories</h2>
+<p>
+Each factory has a name and a set of attributes. The name is used to guess
+the class of the object by default, but it&#8216;s possible to explicitly
+specify it:
+</p>
+<pre>
+  # This will guess the User class
+  Factory.define :user do |u|
+    u.first_name 'John'
+    u.last_name  'Doe'
+    u.admin false
+  end
+
+  # This will use the User class (Admin would have been guessed)
+  Factory.define :admin, :class =&gt; User do |u|
+    u.first_name 'Admin'
+    u.last_name  'User'
+    u.admin true
+  end
+
+  # The same, but using a string instead of class constant
+  Factory.define :admin, :class =&gt; 'user' do |u|
+    u.first_name 'Admin'
+    u.last_name  'User'
+    u.admin true
+  end
+</pre>
+<p>
+It is highly recommended that you have one factory for each class that
+provides the simplest set of attributes necessary to create an instance of
+that class. If you&#8216;re creating ActiveRecord objects, that means that
+you should only provide attributes that are required through validations
+and that do not have defaults. Other factories can be created through
+inheritance to cover common scenarios for each class.
+</p>
+<p>
+Attempting to define multiple factories with the same name will raise an
+error.
+</p>
+<p>
+Factories can either be defined anywhere, but will automatically be loaded
+if they are defined in files at the following locations:
+</p>
+<pre>
+  test/factories.rb
+  spec/factories.rb
+  test/factories/*.rb
+  spec/factories/*.rb
+</pre>
+<h2>Using factories</h2>
+<p>
+factory_girl supports several different build strategies: build, create,
+attributes_for and stub:
+</p>
+<pre>
+  # Returns a User instance that's not saved
+  user = Factory.build(:user)
+
+  # Returns a saved User instance
+  user = Factory.create(:user)
+
+  # Returns a hash of attributes that can be used to build a User instance:
+  attrs = Factory.attributes_for(:user)
+
+  # Returns an object with all defined attributes stubbed out:
+  stub = Factory.stub(:user)
+</pre>
+<p>
+You can use the <a href="../classes/Factory.html">Factory</a> method as a
+shortcut for the default build strategy:
+</p>
+<pre>
+  # Same as Factory.create :user:
+  user = Factory(:user)
+</pre>
+<p>
+The default strategy can be overriden:
+</p>
+<pre>
+  # Now same as Factory.build(:user)
+  Factory.define :user, :default_strategy =&gt; :build do |u|
+    ...
+  end
+
+  user = Factory(:user)
+</pre>
+<p>
+No matter which strategy is used, it&#8216;s possible to override the
+defined attributes by passing a hash:
+</p>
+<pre>
+  # Build a User instance and override the first_name property
+  user = Factory.build(:user, :first_name =&gt; 'Joe')
+  user.first_name
+  # =&gt; &quot;Joe&quot;
+</pre>
+<h2>Lazy Attributes</h2>
+<p>
+Most factory attributes can be added using static values that are evaluated
+when the factory is defined, but some attributes (such as associations and
+other attributes that must be dynamically generated) will need values
+assigned each time an instance is generated. These &quot;lazy&quot;
+attributes can be added by passing a block instead of a parameter:
+</p>
+<pre>
+  Factory.define :user do |u|
+    # ...
+    u.activation_code { User.generate_activation_code }
+  end
+</pre>
+<h2>Dependent Attributes</h2>
+<p>
+Attributes can be based on the values of other attributes using the proxy
+that is yieled to lazy attribute blocks:
+</p>
+<pre>
+  Factory.define :user do |u|
+    u.first_name 'Joe'
+    u.last_name  'Blow'
+    u.email {|a| &quot;#{a.first_name}.#{a.last_name}@example.com&quot;.downcase }
+  end
+
+  Factory(:user, :last_name =&gt; 'Doe').email
+  # =&gt; &quot;joe.doe@example.com&quot;
+</pre>
+<h2>Associations</h2>
+<p>
+Associated instances can be generated by using the association method when
+defining a lazy attribute:
+</p>
+<pre>
+  Factory.define :post do |p|
+    # ...
+    p.author {|author| author.association(:user, :last_name =&gt; 'Writely') }
+  end
+</pre>
+<p>
+The behavior of the association method varies depending on the build
+strategy used for the parent object.
+</p>
+<pre>
+  # Builds and saves a User and a Post
+  post = Factory(:post)
+  post.new_record?       # =&gt; false
+  post.author.new_record # =&gt; false
+
+  # Builds and saves a User, and then builds but does not save a Post
+  Factory.build(:post)
+  post.new_record?       # =&gt; true
+  post.author.new_record # =&gt; false
+</pre>
+<p>
+Because this pattern is so common, a prettier syntax is available for
+defining associations:
+</p>
+<pre>
+  # The following definitions are equivilent:
+  Factory.define :post do |p|
+    p.author {|a| a.association(:user) }
+  end
+
+  Factory.define :post do |p|
+    p.association :author, :factory =&gt; :user
+  end
+</pre>
+<p>
+If the factory name is the same as the association name, the factory name
+can be left out.
+</p>
+<h2>Inheritance</h2>
+<p>
+You can easily create multiple factories for the same class without
+repeating common attributes by using inheritance:
+</p>
+<pre>
+  Factory.define :post do |p|
+    # the 'title' attribute is required for all posts
+    p.title 'A title'
+  end
+
+  Factory.define :approved_post, :parent =&gt; :post do |p|
+    p.approved true
+    # the 'approver' association is required for an approved post
+    p.association :approver, :factory =&gt; :user
+  end
+</pre>
+<h2>Sequences</h2>
+<p>
+Unique values in a specific format (for example, e-mail addresses) can be
+generated using sequences. Sequences are defined by calling <a
+href="../classes/Factory.html#M000007">Factory.sequence</a>, and values in
+a sequence are generated by calling <a
+href="../classes/Factory.html#M000021">Factory.next</a>:
+</p>
+<pre>
+  # Defines a new sequence
+  Factory.sequence :email do |n|
+    &quot;person#{n}@example.com&quot;
+  end
+
+  Factory.next :email
+  # =&gt; &quot;person1@example.com&quot;
+
+  Factory.next :email
+  # =&gt; &quot;person2@example.com&quot;
+</pre>
+<p>
+Sequences can be used in lazy attributes:
+</p>
+<pre>
+  Factory.define :user do |f|
+    f.email { Factory.next(:email) }
+  end
+</pre>
+<p>
+And it&#8216;s also possible to define an in-line sequence that is only
+used in a particular factory:
+</p>
+<pre>
+  Factory.define :user do |f|
+    f.sequence(:email) {|n| &quot;person#{n}@example.com&quot; }
+  end
+</pre>
+<h2>Callbacks</h2>
+<p>
+Factory_girl makes available three callbacks for injecting some code:
+</p>
+<ul>
+<li>after_build - called after a factory is built (via <a
+href="../classes/Factory.html#M000013">Factory.build</a>)
+
+</li>
+<li>after_create - called after a factory is saved (via <a
+href="../classes/Factory.html#M000014">Factory.create</a>)
+
+</li>
+<li>after_stub - called after a factory is stubbed (via <a
+href="../classes/Factory.html#M000015">Factory.stub</a>)
+
+</li>
+</ul>
+<p>
+Examples:
+</p>
+<pre>
+  # Define a factory that calls the generate_hashed_password method after it is built
+  Factory.define :user do |u|
+    u.after_build { |user| do_something_to(user) }
+  end
+</pre>
+<p>
+Note that you&#8216;ll have an instance of the user in the block. This can
+be useful.
+</p>
+<p>
+You can also define multiple types of callbacks on the same factory:
+</p>
+<pre>
+  Factory.define :user do |u|
+    u.after_build  { |user| do_something_to(user) }
+    u.after_create { |user| do_something_else_to(user) }
+  end
+</pre>
+<p>
+Factories can also define any number of the same kind of callback. These
+callbacks will be executed in the order they are specified:
+</p>
+<pre>
+  Factory.define :user do |u|
+    u.after_create { this_runs_first }
+    u.after_create { then_this }
+  end
+</pre>
+<p>
+Calling <a href="../classes/Factory.html#M000014">Factory.create</a> will
+invoke both after_build and after_create callbacks.
+</p>
+<p>
+Also, like standard attributes, child factories will inherit (and can
+define additional) callbacks from their parent factory.
+</p>
+<h2>Alternate Syntaxes</h2>
+<p>
+Users&#8217; tastes for syntax vary dramatically, but most users are
+looking for a common feature set. Because of this, factory_girl supports
+&quot;syntax layers&quot; which provide alternate interfaces. See <a
+href="../classes/Factory/Syntax.html">Factory::Syntax</a> for information
+about the various layers available. For example, the Machinist-style syntax
+is popular:
+</p>
+<pre>
+  require 'factory_girl/syntax/blueprint'
+  require 'factory_girl/syntax/make'
+  require 'factory_girl/syntax/sham'
+
+  Sham.email {|n| &quot;#{n}@example.com&quot; }
+
+  User.blueprint do
+    name  { 'Billy Bob' }
+    email { Sham.email }
+  end
+
+  User.make(:name =&gt; 'Johnny')
+</pre>
+<h2>More Information</h2>
+<ul>
+<li><a href="http://rdoc.info/projects/thoughtbot/factory_girl">RDoc</a>
+
+</li>
+<li>Mailing <a href="http://groups.google.com/group/factory_girl">list</a>
+
+</li>
+<li><a href="http://github.com/thoughtbot/factory_girl/issues">Issues</a>
+
+</li>
+<li>GIANT ROBOTS SMASHING INTO OTHER GIANT <a
+href="http://giantrobots.thoughtbot.com">ROBOTS</a>
+
+</li>
+</ul>
+<h2>Contributing</h2>
+<p>
+Please read the contribution guidelines before submitting patches or pull
+requests.
+</p>
+<h2>Author</h2>
+<p>
+factory_girl was written by Joe Ferris with contributions from several
+authors, including:
+</p>
+<ul>
+<li>Alex Sharp
+
+</li>
+<li>Eugene Bolshakov
+
+</li>
+<li>Jon Yurek
+
+</li>
+<li>Josh Nichols
+
+</li>
+<li>Josh Owens
+
+</li>
+<li>Nate Sutton
+
+</li>
+</ul>
+<p>
+The syntax layers are derived from software written by the following
+authors:
+</p>
+<ul>
+<li>Pete Yandell
+
+</li>
+<li>Rick Bradley
+
+</li>
+<li>Yossef Mendelssohn
+
+</li>
+</ul>
+<p>
+Thanks to all members of thoughtbot for inspiration, ideas, and funding.
+</p>
+<p>
+Copyright 2008-2010 Joe Ferris and <a
+href="http://www.thoughtbot.com">thoughtbot</a>, inc.
+</p>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

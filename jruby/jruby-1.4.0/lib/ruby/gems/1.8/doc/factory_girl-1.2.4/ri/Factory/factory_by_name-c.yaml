@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Factory::factory_by_name
+is_singleton: true
+name: factory_by_name
+params: (name)
+visibility: public

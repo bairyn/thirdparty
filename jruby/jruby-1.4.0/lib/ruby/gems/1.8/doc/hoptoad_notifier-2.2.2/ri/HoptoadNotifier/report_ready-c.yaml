@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Tell the log that the Notifier is good to go
+full_name: HoptoadNotifier::report_ready
+is_singleton: true
+name: report_ready
+params: ()
+visibility: public

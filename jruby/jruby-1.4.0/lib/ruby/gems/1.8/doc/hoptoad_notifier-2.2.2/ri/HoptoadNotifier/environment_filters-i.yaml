@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: HoptoadNotifier#environment_filters
+is_singleton: false
+name: environment_filters
+params: ()
+visibility: public

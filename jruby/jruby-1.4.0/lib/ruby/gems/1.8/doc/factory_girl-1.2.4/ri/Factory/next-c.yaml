@@ -1,0 +1,20 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Generates and returns the next value in a sequence.
+  - !ruby/struct:SM::Flow::P 
+    body: "Arguments:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  name: (Symbol)\n    The name of the sequence that a value should be generated for.\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "Returns:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  The next value in the sequence. (Object)\n"
+full_name: Factory::next
+is_singleton: true
+name: next
+params: (sequence)
+visibility: public

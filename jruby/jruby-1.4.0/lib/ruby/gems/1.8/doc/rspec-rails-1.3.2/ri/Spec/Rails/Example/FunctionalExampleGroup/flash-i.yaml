@@ -1,0 +1,17 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Provides access to the flash hash. Use this after rendering a view, calling a helper or calling a controller action.
+  - !ruby/struct:SM::Flow::H 
+    level: 2
+    text: Examples
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  post :create\n  flash[:notice].should == &quot;Success!&quot;\n"
+full_name: Spec::Rails::Example::FunctionalExampleGroup#flash
+is_singleton: false
+name: flash
+params: ()
+visibility: public

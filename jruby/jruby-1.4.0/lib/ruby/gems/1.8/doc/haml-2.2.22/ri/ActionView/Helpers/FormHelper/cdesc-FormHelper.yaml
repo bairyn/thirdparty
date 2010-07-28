@@ -1,0 +1,30 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: ActionView::Helpers::FormHelper
+includes: []
+
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: form_for
+  - !ruby/object:RI::MethodSummary 
+    name: form_for
+  - !ruby/object:RI::MethodSummary 
+    name: form_for
+  - !ruby/object:RI::MethodSummary 
+    name: form_for_with_haml
+  - !ruby/object:RI::MethodSummary 
+    name: form_for_with_haml
+  - !ruby/object:RI::MethodSummary 
+    name: form_for_with_haml_xss
+  - !ruby/object:RI::MethodSummary 
+    name: form_for_without_haml
+  - !ruby/object:RI::MethodSummary 
+    name: form_for_without_haml_xss
+name: FormHelper
+superclass: 

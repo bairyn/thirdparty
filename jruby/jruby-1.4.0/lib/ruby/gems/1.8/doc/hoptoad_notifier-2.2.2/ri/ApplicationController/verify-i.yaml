@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Ensure we actually have an action to go to.
+full_name: ApplicationController#verify
+is_singleton: false
+name: verify
+params: ()
+visibility: public

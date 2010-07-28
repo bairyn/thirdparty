@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Note: this does *<b>not</b>* need to be called when using Haml helpers normally in Rails."
+  - !ruby/struct:SM::Flow::P 
+    body: "Initializes the current object as though it were in the same context as a normal ActionView instance using Haml. This is useful if you want to use the helpers in a context other than the normal setup with ActionView. For example:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    context = Object.new\n    class &lt;&lt; context\n      include Haml::Helpers\n    end\n    context.init_haml_helpers\n    context.haml_tag :p, &quot;Stuff&quot;\n"
+full_name: Haml::Helpers#init_haml_helpers
+is_singleton: false
+name: init_haml_helpers
+params: ()
+visibility: public

@@ -1,0 +1,17 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+  - !ruby/object:RI::AliasName 
+    name: record
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Extension to enhance <tt>should have</tt> on AR Model classes
+full_name: Spec::Rails::Extensions::ActiveRecord::ClassMethods#records
+is_singleton: false
+name: records
+params: |
+  ModelClass.should have(:no).records
+  ModelClass.should have(1).record
+  ModelClass.should have(n).records
+
+visibility: public

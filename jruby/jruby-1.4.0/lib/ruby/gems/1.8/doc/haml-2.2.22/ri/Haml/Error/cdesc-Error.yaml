@@ -1,0 +1,25 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+  - !ruby/object:RI::Attribute 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: The line of the template on which the error occurred.
+      - !ruby/struct:SM::Flow::P 
+        body: "@return [Fixnum]"
+    name: line
+    rw: R
+class_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: new
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: An exception raised by Haml code.
+constants: []
+
+full_name: Haml::Error
+includes: []
+
+instance_methods: []
+
+name: Error
+superclass: StandardError

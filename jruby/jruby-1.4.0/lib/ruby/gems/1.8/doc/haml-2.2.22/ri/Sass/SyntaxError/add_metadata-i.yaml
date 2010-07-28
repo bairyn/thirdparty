@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Add information about the filename and line on which the error was raised, and re-raises the exception.
+  - !ruby/struct:SM::Flow::P 
+    body: "@param filename [String] See \\{#sass_filename} @param line [Fixnum] See \\{#sass_line} @raise [Sass::SyntaxError] self"
+full_name: Sass::SyntaxError#add_metadata
+is_singleton: false
+name: add_metadata
+params: (filename, line)
+visibility: public

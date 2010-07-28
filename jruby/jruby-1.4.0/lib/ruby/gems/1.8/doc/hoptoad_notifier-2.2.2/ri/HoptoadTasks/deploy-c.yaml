@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Alerts Hoptoad of a deploy.
+  - !ruby/struct:SM::Flow::P 
+    body: "@param [Hash] opts Data about the deploy that is set to Hoptoad"
+  - !ruby/struct:SM::Flow::P 
+    body: "@option opts [String] :rails_env Environment of the deploy (production, staging) @option opts [String] :scm_revision The given revision/sha that is being deployed @option opts [String] :scm_repository Address of your repository to help with code lookups @option opts [String] :local_username Who is deploying"
+full_name: HoptoadTasks::deploy
+is_singleton: true
+name: deploy
+params: (opts = {})
+visibility: public

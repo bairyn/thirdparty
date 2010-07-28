@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Returns the UUID version type. Possible values: 1 - Time-based with unique or random host identifier 2 - DCE Security version (with POSIX UIDs) 3 - Name-based (MD5 hash) 4 - Random 5 - Name-based (SHA-1 hash)"
+full_name: UUIDTools::UUID#version
+is_singleton: false
+name: version
+params: ()
+visibility: public

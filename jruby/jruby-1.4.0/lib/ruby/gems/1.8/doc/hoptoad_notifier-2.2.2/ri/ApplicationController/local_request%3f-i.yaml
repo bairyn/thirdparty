@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: ApplicationController#local_request?
+is_singleton: false
+name: local_request?
+params: ()
+visibility: public

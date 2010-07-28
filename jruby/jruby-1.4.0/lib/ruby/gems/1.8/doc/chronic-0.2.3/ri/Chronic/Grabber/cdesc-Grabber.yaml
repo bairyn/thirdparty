@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: module Chronic
+constants: []
+
+full_name: Chronic::Grabber
+includes: []
+
+instance_methods: []
+
+name: Grabber
+superclass: Chronic::Tag

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Parse a UUID from a hexdigest String.
+full_name: UUIDTools::UUID::parse_hexdigest
+is_singleton: true
+name: parse_hexdigest
+params: (uuid_hexdigest)
+visibility: public

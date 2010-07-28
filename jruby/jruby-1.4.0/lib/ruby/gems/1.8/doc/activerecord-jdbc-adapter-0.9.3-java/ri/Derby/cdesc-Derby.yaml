@@ -1,0 +1,91 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: adapter_matcher
+  - !ruby/object:RI::MethodSummary 
+    name: column_selector
+  - !ruby/object:RI::MethodSummary 
+    name: extended
+  - !ruby/object:RI::MethodSummary 
+    name: included
+  - !ruby/object:RI::MethodSummary 
+    name: monkey_rails
+comment: 
+constants: 
+  - !ruby/object:RI::Constant 
+    comment: 
+    name: COLUMN_INFO_STMT
+    value: "\"SELECT C.COLUMNNAME, C.REFERENCEID, C.COLUMNNUMBER FROM SYS.SYSCOLUMNS C, SYS.SYSTABLES T WHERE T.TABLEID = '%s' AND T.TABLEID = C.REFERENCEID ORDER BY C.COLUMNNUMBER\""
+  - !ruby/object:RI::Constant 
+    comment: 
+    name: COLUMN_TYPE_STMT
+    value: "\"SELECT COLUMNDATATYPE, COLUMNDEFAULT FROM SYS.SYSCOLUMNS WHERE REFERENCEID = '%s' AND COLUMNNAME = '%s'\""
+  - !ruby/object:RI::Constant 
+    comment: 
+    name: AUTO_INC_STMT
+    value: "\"SELECT AUTOINCREMENTSTART, AUTOINCREMENTINC, COLUMNNAME, REFERENCEID, COLUMNDEFAULT FROM SYS.SYSCOLUMNS WHERE REFERENCEID = '%s' AND COLUMNNAME = '%s'\""
+  - !ruby/object:RI::Constant 
+    comment: 
+    name: AUTO_INC_STMT2
+    value: "\"SELECT AUTOINCREMENTSTART, AUTOINCREMENTINC, COLUMNNAME, REFERENCEID, COLUMNDEFAULT FROM SYS.SYSCOLUMNS WHERE REFERENCEID = (SELECT T.TABLEID FROM SYS.SYSTABLES T WHERE T.TABLENAME = '%s') AND COLUMNNAME = '%s'\""
+  - !ruby/object:RI::Constant 
+    comment: 
+    name: SIZEABLE
+    value: "%w(VARCHAR CLOB BLOB)"
+full_name: "::Derby"
+includes: 
+  - !ruby/object:RI::IncludedModule 
+    name: JdbcSpec::MissingFunctionalityHelper
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: add_column
+  - !ruby/object:RI::MethodSummary 
+    name: add_column_options!
+  - !ruby/object:RI::MethodSummary 
+    name: add_quotes
+  - !ruby/object:RI::MethodSummary 
+    name: auto_increment_stmt
+  - !ruby/object:RI::MethodSummary 
+    name: change_column
+  - !ruby/object:RI::MethodSummary 
+    name: classes_for_table_name
+  - !ruby/object:RI::MethodSummary 
+    name: columns
+  - !ruby/object:RI::MethodSummary 
+    name: create_column
+  - !ruby/object:RI::MethodSummary 
+    name: execute
+  - !ruby/object:RI::MethodSummary 
+    name: expand_double_quotes
+  - !ruby/object:RI::MethodSummary 
+    name: modify_types
+  - !ruby/object:RI::MethodSummary 
+    name: primary_keys
+  - !ruby/object:RI::MethodSummary 
+    name: quoted_false
+  - !ruby/object:RI::MethodSummary 
+    name: quoted_true
+  - !ruby/object:RI::MethodSummary 
+    name: recreate_database
+  - !ruby/object:RI::MethodSummary 
+    name: reinstate_auto_increment
+  - !ruby/object:RI::MethodSummary 
+    name: reinstate_auto_increment
+  - !ruby/object:RI::MethodSummary 
+    name: remove_column
+  - !ruby/object:RI::MethodSummary 
+    name: rename_table
+  - !ruby/object:RI::MethodSummary 
+    name: reset_pk_sequence!
+  - !ruby/object:RI::MethodSummary 
+    name: reset_sequence!
+  - !ruby/object:RI::MethodSummary 
+    name: select_limited_ids_list
+  - !ruby/object:RI::MethodSummary 
+    name: strip_quotes
+  - !ruby/object:RI::MethodSummary 
+    name: tables
+name: Derby
+superclass: 

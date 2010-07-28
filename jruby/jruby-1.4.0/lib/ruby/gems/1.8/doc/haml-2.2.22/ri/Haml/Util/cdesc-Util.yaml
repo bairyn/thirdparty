@@ -1,0 +1,63 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: A module containing various useful functions.
+constants: 
+  - !ruby/object:RI::Constant 
+    comment: 
+      - !ruby/struct:SM::Flow::P 
+        body: An array of ints representing the Ruby version number.
+    name: RUBY_VERSION
+    value: "::RUBY_VERSION.split(\".\").map {|s| s.to_i}"
+full_name: Haml::Util
+includes: []
+
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: ap_geq_3?
+  - !ruby/object:RI::MethodSummary 
+    name: assert_html_safe!
+  - !ruby/object:RI::MethodSummary 
+    name: av_template_class
+  - !ruby/object:RI::MethodSummary 
+    name: def_static_method
+  - !ruby/object:RI::MethodSummary 
+    name: enum_with_index
+  - !ruby/object:RI::MethodSummary 
+    name: has?
+  - !ruby/object:RI::MethodSummary 
+    name: html_safe
+  - !ruby/object:RI::MethodSummary 
+    name: map_hash
+  - !ruby/object:RI::MethodSummary 
+    name: map_keys
+  - !ruby/object:RI::MethodSummary 
+    name: map_vals
+  - !ruby/object:RI::MethodSummary 
+    name: merge_adjacent_strings
+  - !ruby/object:RI::MethodSummary 
+    name: powerset
+  - !ruby/object:RI::MethodSummary 
+    name: rails_env
+  - !ruby/object:RI::MethodSummary 
+    name: rails_root
+  - !ruby/object:RI::MethodSummary 
+    name: rails_safe_buffer_class
+  - !ruby/object:RI::MethodSummary 
+    name: rails_xss_safe?
+  - !ruby/object:RI::MethodSummary 
+    name: ruby1_8?
+  - !ruby/object:RI::MethodSummary 
+    name: scope
+  - !ruby/object:RI::MethodSummary 
+    name: silence_warnings
+  - !ruby/object:RI::MethodSummary 
+    name: static_method_name
+  - !ruby/object:RI::MethodSummary 
+    name: to_hash
+name: Util
+superclass: 

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>exception_class (ApplicationController)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>    <span class="ruby-comment cmt"># File lib/hoptoad_notifier/tasks.rb, line 78</span>
+78:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">exception_class</span>
+79:         <span class="ruby-identifier">exception_name</span> = <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'EXCEPTION'</span>] <span class="ruby-operator">||</span> <span class="ruby-value str">&quot;HoptoadTestingException&quot;</span>
+80:         <span class="ruby-constant">Object</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">exception_name</span>)
+81:       <span class="ruby-keyword kw">rescue</span>
+82:         <span class="ruby-constant">Object</span>.<span class="ruby-identifier">const_set</span>(<span class="ruby-identifier">exception_name</span>, <span class="ruby-constant">Class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Exception</span>))
+83:       <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

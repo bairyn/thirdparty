@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: "::ActiveRecordExtensions#hsqldb_connection"
+is_singleton: false
+name: hsqldb_connection
+params: (config)
+visibility: public

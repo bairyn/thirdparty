@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Returns a hash of <tt>request =&gt; response</tt> pairs for all all responses this mock has delivered, where <tt>request</tt> is an instance of ActiveResource::Request and the response is, naturally, an instance of ActiveResource::Response.
+full_name: ActiveResource::HttpMock::responses
+is_singleton: true
+name: responses
+params: ()
+visibility: public

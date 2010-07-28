@@ -1,0 +1,28 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Takes an `Enumerable` object and a block and iterates over the enum, yielding each element to a Haml block and putting the result into `&lt;li&gt;` elements. This creates a list of the results of the block. For example:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    = list_of([['hello'], ['yall']]) do |i|\n      = i[0]\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "Produces:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    &lt;li&gt;hello&lt;/li&gt;\n    &lt;li&gt;yall&lt;/li&gt;\n"
+  - !ruby/struct:SM::Flow::P 
+    body: And
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    = list_of({:title =&gt; 'All the stuff', :description =&gt; 'A book about all the stuff.'}) do |key, val|\n      %h3= key.humanize\n      %p= val\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "Produces:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    &lt;li&gt;\n      &lt;h3&gt;Title&lt;/h3&gt;\n      &lt;p&gt;All the stuff&lt;/p&gt;\n    &lt;/li&gt;\n    &lt;li&gt;\n      &lt;h3&gt;Description&lt;/h3&gt;\n      &lt;p&gt;A book about all the stuff.&lt;/p&gt;\n    &lt;/li&gt;\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "@param enum [Enumerable] The list of objects to iterate over @yield [item] A block which contains Haml code that goes within list items @yieldparam item An element of `enum`"
+full_name: Haml::Helpers#list_of
+is_singleton: false
+name: list_of
+params: (enum, &block)
+visibility: public

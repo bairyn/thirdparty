@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>to_xml (HoptoadNotifier::Notice)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>     <span class="ruby-comment cmt"># File lib/hoptoad_notifier/notice.rb, line 98</span>
+ 98:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_xml</span>
+ 99:       <span class="ruby-identifier">builder</span> = <span class="ruby-constant">Builder</span><span class="ruby-operator">::</span><span class="ruby-constant">XmlMarkup</span>.<span class="ruby-identifier">new</span>
+100:       <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">instruct!</span>
+101:       <span class="ruby-identifier">xml</span> = <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">notice</span>(<span class="ruby-identifier">:version</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">HoptoadNotifier</span><span class="ruby-operator">::</span><span class="ruby-constant">API_VERSION</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">notice</span><span class="ruby-operator">|</span>
+102:         <span class="ruby-identifier">notice</span>.<span class="ruby-identifier">tag!</span>(<span class="ruby-value str">&quot;api-key&quot;</span>, <span class="ruby-identifier">api_key</span>)
+103:         <span class="ruby-identifier">notice</span>.<span class="ruby-identifier">notifier</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">notifier</span><span class="ruby-operator">|</span>
+104:           <span class="ruby-identifier">notifier</span>.<span class="ruby-identifier">name</span>(<span class="ruby-identifier">notifier_name</span>)
+105:           <span class="ruby-identifier">notifier</span>.<span class="ruby-identifier">version</span>(<span class="ruby-identifier">notifier_version</span>)
+106:           <span class="ruby-identifier">notifier</span>.<span class="ruby-identifier">url</span>(<span class="ruby-identifier">notifier_url</span>)
+107:         <span class="ruby-keyword kw">end</span>
+108:         <span class="ruby-identifier">notice</span>.<span class="ruby-identifier">error</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">error</span><span class="ruby-operator">|</span>
+109:           <span class="ruby-identifier">error</span>.<span class="ruby-identifier">tag!</span>(<span class="ruby-value str">'class'</span>, <span class="ruby-identifier">error_class</span>)
+110:           <span class="ruby-identifier">error</span>.<span class="ruby-identifier">message</span>(<span class="ruby-identifier">error_message</span>)
+111:           <span class="ruby-identifier">error</span>.<span class="ruby-identifier">backtrace</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">backtrace</span><span class="ruby-operator">|</span>
+112:             <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">lines</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+113:               <span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">line</span>(<span class="ruby-identifier">:number</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">number</span>,
+114:                              <span class="ruby-identifier">:file</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">file</span>,
+115:                              <span class="ruby-identifier">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">method</span>)
+116:             <span class="ruby-keyword kw">end</span>
+117:           <span class="ruby-keyword kw">end</span>
+118:         <span class="ruby-keyword kw">end</span>
+119:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">url</span> <span class="ruby-operator">||</span>
+120:             <span class="ruby-identifier">controller</span> <span class="ruby-operator">||</span>
+121:             <span class="ruby-identifier">action</span> <span class="ruby-operator">||</span>
+122:             <span class="ruby-operator">!</span><span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">blank?</span> <span class="ruby-operator">||</span>
+123:             <span class="ruby-operator">!</span><span class="ruby-identifier">cgi_data</span>.<span class="ruby-identifier">blank?</span> <span class="ruby-operator">||</span>
+124:             <span class="ruby-operator">!</span><span class="ruby-identifier">session_data</span>.<span class="ruby-identifier">blank?</span>
+125:           <span class="ruby-identifier">notice</span>.<span class="ruby-identifier">request</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">request</span><span class="ruby-operator">|</span>
+126:             <span class="ruby-identifier">request</span>.<span class="ruby-identifier">url</span>(<span class="ruby-identifier">url</span>)
+127:             <span class="ruby-identifier">request</span>.<span class="ruby-identifier">component</span>(<span class="ruby-identifier">controller</span>)
+128:             <span class="ruby-identifier">request</span>.<span class="ruby-identifier">action</span>(<span class="ruby-identifier">action</span>)
+129:             <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">blank?</span>
+130:               <span class="ruby-identifier">request</span>.<span class="ruby-identifier">params</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">params</span><span class="ruby-operator">|</span>
+131:                 <span class="ruby-identifier">xml_vars_for</span>(<span class="ruby-identifier">params</span>, <span class="ruby-identifier">parameters</span>)
+132:               <span class="ruby-keyword kw">end</span>
+133:             <span class="ruby-keyword kw">end</span>
+134:             <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">session_data</span>.<span class="ruby-identifier">blank?</span>
+135:               <span class="ruby-identifier">request</span>.<span class="ruby-identifier">session</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">session</span><span class="ruby-operator">|</span>
+136:                 <span class="ruby-identifier">xml_vars_for</span>(<span class="ruby-identifier">session</span>, <span class="ruby-identifier">session_data</span>)
+137:               <span class="ruby-keyword kw">end</span>
+138:             <span class="ruby-keyword kw">end</span>
+139:             <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">cgi_data</span>.<span class="ruby-identifier">blank?</span>
+140:               <span class="ruby-identifier">request</span>.<span class="ruby-identifier">tag!</span>(<span class="ruby-value str">&quot;cgi-data&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">cgi_datum</span><span class="ruby-operator">|</span>
+141:                 <span class="ruby-identifier">xml_vars_for</span>(<span class="ruby-identifier">cgi_datum</span>, <span class="ruby-identifier">cgi_data</span>)
+142:               <span class="ruby-keyword kw">end</span>
+143:             <span class="ruby-keyword kw">end</span>
+144:           <span class="ruby-keyword kw">end</span>
+145:         <span class="ruby-keyword kw">end</span>
+146:         <span class="ruby-identifier">notice</span>.<span class="ruby-identifier">tag!</span>(<span class="ruby-value str">&quot;server-environment&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">env</span><span class="ruby-operator">|</span>
+147:           <span class="ruby-identifier">env</span>.<span class="ruby-identifier">tag!</span>(<span class="ruby-value str">&quot;project-root&quot;</span>, <span class="ruby-identifier">project_root</span>)
+148:           <span class="ruby-identifier">env</span>.<span class="ruby-identifier">tag!</span>(<span class="ruby-value str">&quot;environment-name&quot;</span>, <span class="ruby-identifier">environment_name</span>)
+149:         <span class="ruby-keyword kw">end</span>
+150:       <span class="ruby-keyword kw">end</span>
+151:       <span class="ruby-identifier">xml</span>.<span class="ruby-identifier">to_s</span>
+152:     <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

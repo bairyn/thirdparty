@@ -1,0 +1,11 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+  - !ruby/object:RI::AliasName 
+    name: process
+block_params: 
+comment: 
+full_name: MerbHandler#process_with_sass
+is_singleton: false
+name: process_with_sass
+params: (request, response)
+visibility: public

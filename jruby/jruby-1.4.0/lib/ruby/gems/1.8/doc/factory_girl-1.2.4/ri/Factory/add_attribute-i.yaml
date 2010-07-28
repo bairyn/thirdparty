@@ -1,0 +1,27 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Adds an attribute that should be assigned on generated instances for this factory.
+  - !ruby/struct:SM::Flow::P 
+    body: This method should be called with either a value or block, but not both. If called with a block, the attribute will be generated &quot;lazily,&quot; whenever an instance is generated. Lazy attribute blocks will not be called if that attribute is overriden for a specific instance.
+  - !ruby/struct:SM::Flow::P 
+    body: When defining lazy attributes, an instance of Factory::Proxy will be yielded, allowing associations to be built using the correct build strategy.
+  - !ruby/struct:SM::Flow::P 
+    body: "Arguments:"
+  - !ruby/object:SM::Flow::LIST 
+    contents: 
+      - !ruby/struct:SM::Flow::LI 
+        label: "*"
+        body: "name: <tt>Symbol</tt> or <tt>String</tt> The name of this attribute. This will be assigned using :&quot;#{name}=&quot; for generated instances."
+      - !ruby/struct:SM::Flow::LI 
+        label: "*"
+        body: "value: <tt>Object</tt> If no block is given, this value will be used for this attribute."
+    type: :BULLET
+full_name: Factory#add_attribute
+is_singleton: false
+name: add_attribute
+params: (name, value = nil, &block)
+visibility: public

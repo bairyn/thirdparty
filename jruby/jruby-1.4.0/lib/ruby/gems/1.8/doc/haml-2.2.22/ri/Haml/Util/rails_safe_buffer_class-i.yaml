@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Haml::Util#rails_safe_buffer_class
+is_singleton: false
+name: rails_safe_buffer_class
+params: ()
+visibility: public

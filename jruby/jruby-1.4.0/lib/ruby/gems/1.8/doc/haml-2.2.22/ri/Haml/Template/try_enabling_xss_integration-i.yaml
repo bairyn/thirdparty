@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Enables integration with the Rails 2.2.5+ XSS protection, if it's available and enabled.
+  - !ruby/struct:SM::Flow::P 
+    body: "@return [Boolean] Whether the XSS integration was enabled."
+full_name: Haml::Template#try_enabling_xss_integration
+is_singleton: false
+name: try_enabling_xss_integration
+params: ()
+visibility: public

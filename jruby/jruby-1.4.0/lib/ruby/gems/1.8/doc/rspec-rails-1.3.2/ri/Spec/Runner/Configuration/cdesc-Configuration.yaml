@@ -1,0 +1,31 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: new
+comment: 
+constants: []
+
+full_name: Spec::Runner::Configuration
+includes: []
+
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: fixture_path
+  - !ruby/object:RI::MethodSummary 
+    name: fixture_path=
+  - !ruby/object:RI::MethodSummary 
+    name: global_fixtures
+  - !ruby/object:RI::MethodSummary 
+    name: global_fixtures=
+  - !ruby/object:RI::MethodSummary 
+    name: use_instantiated_fixtures
+  - !ruby/object:RI::MethodSummary 
+    name: use_instantiated_fixtures=
+  - !ruby/object:RI::MethodSummary 
+    name: use_transactional_fixtures
+  - !ruby/object:RI::MethodSummary 
+    name: use_transactional_fixtures=
+name: Configuration
+superclass: Object

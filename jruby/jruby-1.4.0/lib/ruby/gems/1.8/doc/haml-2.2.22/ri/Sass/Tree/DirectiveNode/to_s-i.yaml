@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Computes the CSS for the directive.
+  - !ruby/struct:SM::Flow::P 
+    body: "@param tabs [Fixnum] The level of indentation for the CSS @return [String] The resulting CSS"
+full_name: Sass::Tree::DirectiveNode#to_s
+is_singleton: false
+name: to_s
+params: (tabs)
+visibility: public

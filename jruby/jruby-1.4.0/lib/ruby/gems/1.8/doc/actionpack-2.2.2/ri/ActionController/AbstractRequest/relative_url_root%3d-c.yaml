@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: ActionController::AbstractRequest::relative_url_root=
+is_singleton: true
+name: relative_url_root=
+params: (relative_url_root)
+visibility: public

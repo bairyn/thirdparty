@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Haml::Exec::HTML2Haml</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Haml::Exec::HTML2Haml</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/haml/exec_rb.html">
+                lib/haml/exec.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                <a href="Generic.html">
+                Generic
+               </a>
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+The `html2haml` executable.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000020">new</a>&nbsp;&nbsp;
+      <a href="#M000022">process_result</a>&nbsp;&nbsp;
+      <a href="#M000021">set_opts</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000020" class="method-detail">
+        <a name="M000020"></a>
+
+        <div class="method-heading">
+          <a href="#M000020" class="method-signature">
+          <span class="method-name">new</span><span class="method-args">(args)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+@param args [Array&lt;String&gt;] The command-line arguments
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000020-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000020-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/haml/exec.rb, line 370</span>
+370:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">args</span>)
+371:         <span class="ruby-keyword kw">super</span>
+372: 
+373:         <span class="ruby-ivar">@module_opts</span> = {}
+374: 
+375:         <span class="ruby-keyword kw">begin</span>
+376:           <span class="ruby-identifier">require</span> <span class="ruby-value str">'haml/html'</span>
+377:         <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">LoadError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">err</span>
+378:           <span class="ruby-identifier">dep</span> = <span class="ruby-identifier">err</span>.<span class="ruby-identifier">message</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp re">/^no such file to load -- (.*)/</span>)[<span class="ruby-value">0</span>]
+379:           <span class="ruby-identifier">raise</span> <span class="ruby-identifier">err</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@options</span>[<span class="ruby-identifier">:trace</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">dep</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">dep</span>.<span class="ruby-identifier">empty?</span>
+380:           <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Required dependency #{dep} not found!\n  Use --trace for backtrace.&quot;</span>
+381:           <span class="ruby-identifier">exit</span> <span class="ruby-value">1</span>
+382:         <span class="ruby-keyword kw">end</span>
+383:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000022" class="method-detail">
+        <a name="M000022"></a>
+
+        <div class="method-heading">
+          <a href="#M000022" class="method-signature">
+          <span class="method-name">process_result</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Processes the options set by the command-line arguments, and runs the <a
+href="../HTML.html">HTML</a> compiler appropriately.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000022-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000022-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/haml/exec.rb, line 415</span>
+415:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">process_result</span>
+416:         <span class="ruby-keyword kw">super</span>
+417: 
+418:         <span class="ruby-identifier">input</span> = <span class="ruby-ivar">@options</span>[<span class="ruby-identifier">:input</span>]
+419:         <span class="ruby-identifier">output</span> = <span class="ruby-ivar">@options</span>[<span class="ruby-identifier">:output</span>]
+420: 
+421:         <span class="ruby-ivar">@module_opts</span>[<span class="ruby-identifier">:rhtml</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">input</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:path</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">input</span>.<span class="ruby-identifier">path</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/\.(rhtml|erb)$/</span>
+422:         <span class="ruby-ivar">@module_opts</span>[<span class="ruby-identifier">:rhtml</span>] <span class="ruby-operator">&amp;&amp;=</span> <span class="ruby-ivar">@options</span>[<span class="ruby-identifier">:no_rhtml</span>] <span class="ruby-operator">!=</span> <span class="ruby-keyword kw">false</span>
+423: 
+424:         <span class="ruby-identifier">output</span>.<span class="ruby-identifier">write</span>(<span class="ruby-operator">::</span><span class="ruby-constant">Haml</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">input</span>, <span class="ruby-ivar">@module_opts</span>).<span class="ruby-identifier">render</span>)
+425:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000021" class="method-detail">
+        <a name="M000021"></a>
+
+        <div class="method-heading">
+          <a href="#M000021" class="method-signature">
+          <span class="method-name">set_opts</span><span class="method-args">(opts)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Tells optparse how to parse the arguments.
+</p>
+<p>
+@param opts [OptionParser]
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000021-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000021-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/haml/exec.rb, line 388</span>
+388:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">set_opts</span>(<span class="ruby-identifier">opts</span>)
+389:         <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">banner</span> = <span class="ruby-value str">&quot;Usage: html2haml [options] [INPUT] [OUTPUT]\n\nDescription: Transforms an HTML file into corresponding Haml code.\n\nOptions:\n&quot;</span>
+390: 
+391:         <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">'-r'</span>, <span class="ruby-value str">'--rhtml'</span>, <span class="ruby-value str">'Parse RHTML tags.'</span>) <span class="ruby-keyword kw">do</span>
+392:           <span class="ruby-ivar">@module_opts</span>[<span class="ruby-identifier">:rhtml</span>] = <span class="ruby-keyword kw">true</span>
+393:         <span class="ruby-keyword kw">end</span>
+394: 
+395:         <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">'--no-rhtml'</span>, <span class="ruby-value str">&quot;Don't parse RHTML tags.&quot;</span>) <span class="ruby-keyword kw">do</span>
+396:           <span class="ruby-ivar">@options</span>[<span class="ruby-identifier">:no_rhtml</span>] = <span class="ruby-keyword kw">true</span>
+397:         <span class="ruby-keyword kw">end</span>
+398: 
+399:         <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">'-x'</span>, <span class="ruby-value str">'--xhtml'</span>, <span class="ruby-value str">'Parse the input using the more strict XHTML parser.'</span>) <span class="ruby-keyword kw">do</span>
+400:           <span class="ruby-ivar">@module_opts</span>[<span class="ruby-identifier">:xhtml</span>] = <span class="ruby-keyword kw">true</span>
+401:         <span class="ruby-keyword kw">end</span>
+402: 
+403:         <span class="ruby-keyword kw">super</span>
+404:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

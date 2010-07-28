@@ -1,0 +1,15 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Chronic::RepeaterFortnight
+includes: []
+
+instance_methods: []
+
+name: RepeaterFortnight
+superclass: Chronic::Repeater

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Haml::Plugin#cache_fragment
+is_singleton: false
+name: cache_fragment
+params: (block, name = {}, options = nil)
+visibility: public

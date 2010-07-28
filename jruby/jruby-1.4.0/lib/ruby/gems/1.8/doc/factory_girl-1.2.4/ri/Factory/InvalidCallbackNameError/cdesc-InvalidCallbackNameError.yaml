@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Raised when a callback is defined that has an invalid name
+constants: []
+
+full_name: Factory::InvalidCallbackNameError
+includes: []
+
+instance_methods: []
+
+name: InvalidCallbackNameError
+superclass: RuntimeError

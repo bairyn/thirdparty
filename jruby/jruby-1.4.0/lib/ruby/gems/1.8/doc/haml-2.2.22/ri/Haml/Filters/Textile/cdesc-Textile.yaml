@@ -1,0 +1,19 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Parses the filtered text with [Textile](http://www.textism.com/tools/textile). Only works if [RedCloth](http://redcloth.org) is installed.
+constants: []
+
+full_name: Haml::Filters::Textile
+includes: 
+  - !ruby/object:RI::IncludedModule 
+    name: Base
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: render
+name: Textile
+superclass: 

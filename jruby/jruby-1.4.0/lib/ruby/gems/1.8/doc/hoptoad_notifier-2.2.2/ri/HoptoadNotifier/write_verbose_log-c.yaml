@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Writes out the given message to the #logger"
+full_name: HoptoadNotifier::write_verbose_log
+is_singleton: true
+name: write_verbose_log
+params: (message)
+visibility: public

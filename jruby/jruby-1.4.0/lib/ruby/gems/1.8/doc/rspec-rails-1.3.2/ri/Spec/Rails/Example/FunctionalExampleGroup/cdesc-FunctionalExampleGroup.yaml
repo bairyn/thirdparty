@@ -1,0 +1,33 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: request
+    rw: R
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: response
+    rw: R
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Spec::Rails::Example::FunctionalExampleGroup
+includes: []
+
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: assigns
+  - !ruby/object:RI::MethodSummary 
+    name: cookies
+  - !ruby/object:RI::MethodSummary 
+    name: flash
+  - !ruby/object:RI::MethodSummary 
+    name: params
+  - !ruby/object:RI::MethodSummary 
+    name: session
+  - !ruby/object:RI::MethodSummary 
+    name: setup
+name: FunctionalExampleGroup
+superclass: ActionController::TestCase

@@ -1,0 +1,42 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+  - !ruby/object:RI::Attribute 
+    comment: 
+    name: key_prefix
+    rw: RW
+class_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: new
+comment: 
+constants: []
+
+full_name: OpenID::Store::Memcache
+includes: []
+
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: assoc_key
+  - !ruby/object:RI::MethodSummary 
+    name: cleanup
+  - !ruby/object:RI::MethodSummary 
+    name: cleanup_associations
+  - !ruby/object:RI::MethodSummary 
+    name: cleanup_nonces
+  - !ruby/object:RI::MethodSummary 
+    name: delete
+  - !ruby/object:RI::MethodSummary 
+    name: deserialize
+  - !ruby/object:RI::MethodSummary 
+    name: expiry
+  - !ruby/object:RI::MethodSummary 
+    name: get_association
+  - !ruby/object:RI::MethodSummary 
+    name: remove_association
+  - !ruby/object:RI::MethodSummary 
+    name: serialize
+  - !ruby/object:RI::MethodSummary 
+    name: store_association
+  - !ruby/object:RI::MethodSummary 
+    name: use_nonce
+name: Memcache
+superclass: Interface

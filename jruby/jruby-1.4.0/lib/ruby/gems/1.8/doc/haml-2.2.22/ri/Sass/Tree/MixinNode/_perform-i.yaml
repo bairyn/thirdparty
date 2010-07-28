@@ -1,0 +1,18 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Runs the mixin.
+  - !ruby/struct:SM::Flow::P 
+    body: "@param environment [Sass::Environment] The lexical environment containing"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  variable and mixin values\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "@return [Array&lt;Tree::Node&gt;] The resulting static nodes @raise [Sass::SyntaxError] if there is no mixin with the given name @raise [Sass::SyntaxError] if an incorrect number of arguments was passed @see Sass::Tree"
+full_name: Sass::Tree::MixinNode#_perform
+is_singleton: false
+name: _perform
+params: (environment)
+visibility: protected

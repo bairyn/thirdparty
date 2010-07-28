@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Updates out-of-date stylesheets.
+  - !ruby/struct:SM::Flow::P 
+    body: Checks each Sass file in {file:SASS_REFERENCE.md#template_location-option `:template_location`} to see if it's been modified more recently than the corresponding CSS file in {file:SASS_REFERENCE.md#css_location-option `:css_location`}. If it has, it updates the CSS file.
+full_name: Sass::Plugin#update_stylesheets
+is_singleton: false
+name: update_stylesheets
+params: ()
+visibility: public

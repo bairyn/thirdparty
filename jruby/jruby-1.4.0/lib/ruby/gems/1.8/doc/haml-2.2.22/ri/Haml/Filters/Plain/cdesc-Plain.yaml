@@ -1,0 +1,19 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Does not parse the filtered text. This is useful for large blocks of text without HTML tags, when you don't want lines starting with `.` or `-` to be parsed.
+constants: []
+
+full_name: Haml::Filters::Plain
+includes: 
+  - !ruby/object:RI::IncludedModule 
+    name: Base
+instance_methods: 
+  - !ruby/object:RI::MethodSummary 
+    name: render
+name: Plain
+superclass: 
