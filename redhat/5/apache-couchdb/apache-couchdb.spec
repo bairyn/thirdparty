@@ -3,11 +3,11 @@
 #
 Summary: Apache CouchDB Document-Oriented Database
 Name: apache-couchdb
-Version: 1.0.0
+Version: 1.0.1
 Release: 1
 License: GPL
 Group: Productivity/Databases/Servers
-Source: http://www.takeyellow.com/apachemirror/couchdb/1.0.0/apache-couchdb-1.0.0.tar.gz
+Source: http://www.takeyellow.com/apachemirror/couchdb/1.0.0/apache-couchdb-1.0.1.tar.gz
 URL: http://couchdb.apache.org/
 Distribution: RedHat Linux
 Vendor: The Apache Software Foundation
